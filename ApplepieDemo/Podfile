@@ -1,5 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'http://git.jimubox.com/app-labs/pintec-podspecs.git'
 
 platform :ios, '9.0'
 
@@ -9,6 +8,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 def pods
+    pod "Alamofire", "~> 4.7.0"
 end
 
 target 'ApplepieDemo' do

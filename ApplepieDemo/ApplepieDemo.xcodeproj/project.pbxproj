@@ -387,6 +387,7 @@
 				7A02DEC12182EE5D00B41DB6 /* Frameworks */,
 				7A02DEC22182EE5D00B41DB6 /* Resources */,
 				7A02DF092182F11600B41DB6 /* Embed Frameworks */,
+				6A49642874FFDE10FDF8EB24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,6 +407,7 @@
 				7A02DED42182EE5D00B41DB6 /* Sources */,
 				7A02DED52182EE5D00B41DB6 /* Frameworks */,
 				7A02DED62182EE5D00B41DB6 /* Resources */,
+				EBBC9DCE5E8291762C765402 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -558,6 +560,50 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A49642874FFDE10FDF8EB24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBBC9DCE5E8291762C765402 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC0C5B1998F73F2ADABF1FC6 /* [CP] Check Pods Manifest.lock */ = {
@@ -786,7 +832,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A708B3B8E554359C9EE713C6 /* Pods-ApplepieDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ApplepieDemo/Info.plist;
@@ -805,7 +850,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BC216603F3D0574CA037EDF /* Pods-ApplepieDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ApplepieDemo/Info.plist;
@@ -824,7 +868,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E5ECF6CBA4EC61D93AF5DDD /* Pods-ApplepieDemoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ApplepieDemoTests/Info.plist;
@@ -845,7 +888,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B348281EB924182B3E73AF92 /* Pods-ApplepieDemoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ApplepieDemoTests/Info.plist;
@@ -922,7 +964,6 @@
 		7A02DF0B2182F11600B41DB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE2BYM67AU;
@@ -943,7 +984,6 @@
 		7A02DF0C2182F11600B41DB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE2BYM67AU;
