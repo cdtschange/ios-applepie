@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode10
-xcode_project: ApplepieDemo/ApplepieDemo.xcworkspace
+xcode_project: ApplepieDemo/ApplepieDemo.xcodeproj
 xcode_scheme: ApplepieDemo
 xcode_sdk: iphoneos12.0
 podfile: ApplepieDemo/Podfile
