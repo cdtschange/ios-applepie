@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode10
+xcode_project: ApplepieDemo/ApplepieDemo.xcworkspace
+xcode_scheme: ApplepieDemo
+xcode_sdk: iOS Simulator,OS=12.0,name=iPhone XS Max
+podfile: ApplepieDemo/Podfile
