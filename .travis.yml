@@ -1,6 +1,10 @@
 language: objective-c
 osx_image: xcode10
-xcode_workspace: ApplepieDemo/ApplepieDemo.xcworkspace
-xcode_scheme: ApplepieDemo
-xcode_sdk: iphonesimulator12.0
+# xcode_workspace: ApplepieDemo/ApplepieDemo.xcworkspace
+# xcode_scheme: ApplepieDemo
+# xcode_sdk: iphonesimulator12.0
 podfile: ApplepieDemo/Podfile
+script:
+- |
+    set -o pipefail
+    xcodebuild clean test -workspace ApplepieDemo/ApplepieDemo.xcworkspace -scheme ApplepieDemo -sdk iphonesimulator12.0 -enableCodeCoverage YES | bundle exec xcpretty
