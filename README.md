@@ -2,7 +2,7 @@
 
 <p align="left">
 <a href="https://travis-ci.org/cdtschange/ios-applepie">
-  <img src="https://travis-ci.org/cdtschange/ios-applepie.svg?branch=master">
+  <img src="https://travis-ci.org/cdtschange/ios-applepie.svg?branch=master" />
 </a>
 <a href="https://codecov.io/gh/cdtschange/ios-applepie">
   <img src="https://codecov.io/gh/cdtschange/ios-applepie/branch/master/graph/badge.svg" />
