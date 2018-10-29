@@ -11,4 +11,4 @@ podfile: ApplepieDemo/Podfile
 script:
 - |
     set -o pipefail
-    xcodebuild clean test -workspace ApplepieDemo/ApplepieDemo.xcworkspace -scheme ApplepieDemo -sdk iphonesimulator12.0 -enableCodeCoverage YES | bundle exec xcpretty
+    xcodebuild clean test -workspace ApplepieDemo/ApplepieDemo.xcworkspace -scheme ApplepieDemo -destination 'platform=iOS Simulator,name=iPhone X,OS=12.0' -enableCodeCoverage YES | bundle exec xcpretty
