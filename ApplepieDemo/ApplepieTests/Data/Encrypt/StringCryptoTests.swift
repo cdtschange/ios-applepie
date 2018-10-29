@@ -17,8 +17,15 @@ class StringCryptoTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testCer() {
+        let cerPath = Bundle.main.path(forResource: "demo", ofType: "crt")
+        let data = try! Data(contentsOf: URL(fileURLWithPath: cerPath!))
+        let hash = data.ap.hashWithRSA2048Asn1Header(.sha1)
+        assert(hash == "f3c26c86b34e51dd6163e4e45b9e262542805708")
+    }
 
-    func testExample() {
+    func testEncrypt() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let value = "Hello world!"

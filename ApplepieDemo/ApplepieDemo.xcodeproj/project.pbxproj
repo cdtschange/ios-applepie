@@ -23,6 +23,7 @@
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
 		7AD9A0382182FE61007BAD59 /* StringCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0372182FE61007BAD59 /* StringCryptoTests.swift */; };
+		7AD9A0402186B15E007BAD59 /* demo.crt in Resources */ = {isa = PBXBuildFile; fileRef = 7AD9A03E2186B020007BAD59 /* demo.crt */; };
 		85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792096979078263CF25324BB /* Pods_ApplepieDemo.framework */; };
 		C6D3197780F25DF37ED2B9A5 /* Pods_ApplepieDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE8E2808A654BA650644B0D /* Pods_ApplepieDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0372182FE61007BAD59 /* StringCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCryptoTests.swift; sourceTree = "<group>"; };
+		7AD9A03E2186B020007BAD59 /* demo.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.crt; sourceTree = SOURCE_ROOT; };
 		A708B3B8E554359C9EE713C6 /* Pods-ApplepieDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B348281EB924182B3E73AF92 /* Pods-ApplepieDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 				7A02DEE72182EE6400B41DB6 /* pod */,
 				7A02DEF02182F11500B41DB6 /* Applepie */,
 				7A02DEC62182EE5D00B41DB6 /* ApplepieDemo */,
+				7AD9A03D2186B00C007BAD59 /* Resources */,
 				7A02DEDB2182EE5D00B41DB6 /* ApplepieDemoTests */,
 				7A02DEFD2182F11600B41DB6 /* ApplepieTests */,
 				7A02DEC52182EE5D00B41DB6 /* Products */,
@@ -344,6 +347,14 @@
 			path = Encrypt;
 			sourceTree = "<group>";
 		};
+		7AD9A03D2186B00C007BAD59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7AD9A03E2186B020007BAD59 /* demo.crt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E1D2FA8A5B27EF1DDA9C292F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +524,7 @@
 				7A02DECF2182EE5D00B41DB6 /* Assets.xcassets in Resources */,
 				7A02DEE92182EECA00B41DB6 /* Podfile in Resources */,
 				7A02DECD2182EE5D00B41DB6 /* Main.storyboard in Resources */,
+				7AD9A0402186B15E007BAD59 /* demo.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
