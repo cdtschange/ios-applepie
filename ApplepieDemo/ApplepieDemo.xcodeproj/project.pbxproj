@@ -23,9 +23,10 @@
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
 		7AD9A0382182FE61007BAD59 /* StringCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0372182FE61007BAD59 /* StringCryptoTests.swift */; };
-		7AD9A0402186B15E007BAD59 /* demo.crt in Resources */ = {isa = PBXBuildFile; fileRef = 7AD9A03E2186B020007BAD59 /* demo.crt */; };
 		85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792096979078263CF25324BB /* Pods_ApplepieDemo.framework */; };
+		9151F49F299249E04F01A7EC /* Pods_Applepie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3042003C407A00925F2BD /* Pods_Applepie.framework */; };
 		C6D3197780F25DF37ED2B9A5 /* Pods_ApplepieDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE8E2808A654BA650644B0D /* Pods_ApplepieDemoTests.framework */; };
+		EE2B7DC44D1ECDF837B9D4EC /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD9A0432186E8C3007BAD59 /* Pods_ApplepieDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0EE3042003C407A00925F2BD /* Pods_Applepie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Applepie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC216603F3D0574CA037EDF /* Pods-ApplepieDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo.release.xcconfig"; sourceTree = "<group>"; };
 		1DE8E2808A654BA650644B0D /* Pods_ApplepieDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplepieDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5ECF6CBA4EC61D93AF5DDD /* Pods-ApplepieDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +101,10 @@
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0372182FE61007BAD59 /* StringCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCryptoTests.swift; sourceTree = "<group>"; };
-		7AD9A03E2186B020007BAD59 /* demo.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.crt; sourceTree = SOURCE_ROOT; };
+		7AD9A0412186E7C6007BAD59 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD9A0432186E8C3007BAD59 /* Pods_ApplepieDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ApplepieDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.release.xcconfig"; sourceTree = "<group>"; };
+		9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.debug.xcconfig"; sourceTree = "<group>"; };
 		A708B3B8E554359C9EE713C6 /* Pods-ApplepieDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B348281EB924182B3E73AF92 /* Pods-ApplepieDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +116,7 @@
 			files = (
 				7A02DF042182F11600B41DB6 /* Applepie.framework in Frameworks */,
 				85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */,
+				EE2B7DC44D1ECDF837B9D4EC /* Pods_ApplepieDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9151F49F299249E04F01A7EC /* Pods_Applepie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +357,6 @@
 		7AD9A03D2186B00C007BAD59 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7AD9A03E2186B020007BAD59 /* demo.crt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -358,8 +364,11 @@
 		E1D2FA8A5B27EF1DDA9C292F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AD9A0432186E8C3007BAD59 /* Pods_ApplepieDemo.framework */,
+				7AD9A0412186E7C6007BAD59 /* CryptoSwift.framework */,
 				792096979078263CF25324BB /* Pods_ApplepieDemo.framework */,
 				1DE8E2808A654BA650644B0D /* Pods_ApplepieDemoTests.framework */,
+				0EE3042003C407A00925F2BD /* Pods_Applepie.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -371,6 +380,8 @@
 				1BC216603F3D0574CA037EDF /* Pods-ApplepieDemo.release.xcconfig */,
 				2E5ECF6CBA4EC61D93AF5DDD /* Pods-ApplepieDemoTests.debug.xcconfig */,
 				B348281EB924182B3E73AF92 /* Pods-ApplepieDemoTests.release.xcconfig */,
+				9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */,
+				7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -434,6 +445,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A02DF062182F11600B41DB6 /* Build configuration list for PBXNativeTarget "Applepie" */;
 			buildPhases = (
+				DE4B09318D4843639D25F1D4 /* [CP] Check Pods Manifest.lock */,
 				7A02DEEA2182F11500B41DB6 /* Headers */,
 				7A02DEEB2182F11500B41DB6 /* Sources */,
 				7A02DEEC2182F11500B41DB6 /* Frameworks */,
@@ -524,7 +536,6 @@
 				7A02DECF2182EE5D00B41DB6 /* Assets.xcassets in Resources */,
 				7A02DEE92182EECA00B41DB6 /* Podfile in Resources */,
 				7A02DECD2182EE5D00B41DB6 /* Main.storyboard in Resources */,
-				7AD9A0402186B15E007BAD59 /* demo.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,16 +595,40 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE4B09318D4843639D25F1D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Applepie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBBC9DCE5E8291762C765402 /* [CP] Embed Pods Frameworks */ = {
@@ -918,6 +953,7 @@
 		};
 		7A02DF072182F11600B41DB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -947,6 +983,7 @@
 		};
 		7A02DF082182F11600B41DB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";

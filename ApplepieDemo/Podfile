@@ -7,8 +7,13 @@ inhibit_all_warnings!
 
 use_frameworks!
 
+target 'Applepie' do
+    pod 'Alamofire', '~> 4.7.0'
+    pod 'CryptoSwift'
+end
+
 def pods
-    pod "Alamofire", "~> 4.7.0"
+    pod 'Alamofire', '~> 4.7.0'
 end
 
 target 'ApplepieDemo' do
