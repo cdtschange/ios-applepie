@@ -44,3 +44,4 @@ xcuserdata
 Carthage/Build
 
 ApplepieDemo/Pods
+Podfile.lock
