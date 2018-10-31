@@ -2,8 +2,8 @@
 //  StringCryptoTests.swift
 //  ApplepieTests
 //
-//  Created by 毛蔚 on 2018/10/26.
-//  Copyright © 2018 毛蔚. All rights reserved.
+//  Created by 山天大畜 on 2018/10/26.
+//  Copyright © 2018 山天大畜. All rights reserved.
 //
 
 import XCTest
