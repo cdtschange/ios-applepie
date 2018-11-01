@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 import CocoaLumberjack
 
-public protocol APIndicatorProtocol {
-    var indicator: APNetIndicator? { get set }
-    func setIndicator(_ indicator: APNetIndicator?, view: UIView?, text: String?) -> Self
+public protocol APNetIndicatorProtocol {
+    var indicator: APIndicatorProtocol? { get set }
+    func setIndicator(_ indicator: APIndicatorProtocol?, view: UIView?, text: String?) -> Self
 }
 
 public protocol APResponseHandler {
@@ -39,7 +39,7 @@ public extension APRequestHandler {
     }
 }
 
-public protocol APNetApi: class, APResponseHandler, APIndicatorProtocol {
+public protocol APNetApi: class, APResponseHandler, APNetIndicatorProtocol {
     var url: String { get }
     var method: HTTPMethod { get }
     var params: [String: Any]? { get }
@@ -88,7 +88,7 @@ public extension APNetApi {
 }
 
 public extension APNetApi {
-    public func setIndicator(_ indicator: APNetIndicator?, view: UIView?, text: String?) -> Self {
+    public func setIndicator(_ indicator: APIndicatorProtocol?, view: UIView?, text: String?) -> Self {
         APNetIndicator.add(api: self, indicator: indicator, view: view, text: text)
         return self
     }

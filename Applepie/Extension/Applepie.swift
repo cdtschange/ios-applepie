@@ -8,6 +8,7 @@
 
 import Foundation
 import ImageIO
+import UIKit
 
 #if os(macOS)
 import AppKit
@@ -57,6 +58,7 @@ extension Dictionary: ApplepieCompatible { }
 extension Image: ApplepieCompatible { }
 extension String: ApplepieCompatible { }
 extension Data: ApplepieCompatible { }
+extension UIApplication: ApplepieCompatible { }
 #if !os(watchOS)
 extension ImageView: ApplepieCompatible { }
 extension Button: ApplepieCompatible { }
