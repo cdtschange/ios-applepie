@@ -28,7 +28,8 @@
 		7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEF9218A988D00636A8E /* APIndicator.swift */; };
 		7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */; };
 		7A4CCF02218AA2C800636A8E /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF01218AA2C800636A8E /* Async.swift */; };
-		7ACE591C218947AE0002F73C /* APNetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE591B218947AE0002F73C /* APNetError.swift */; };
+		7A4CCF06218C655C00636A8E /* APNetApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF05218C655C00636A8E /* APNetApiTests.swift */; };
+		7ACE591C218947AE0002F73C /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE591B218947AE0002F73C /* APError.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -117,7 +118,8 @@
 		7A4CCEF9218A988D00636A8E /* APIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicator.swift; sourceTree = "<group>"; };
 		7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Indicator.swift"; sourceTree = "<group>"; };
 		7A4CCF01218AA2C800636A8E /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
-		7ACE591B218947AE0002F73C /* APNetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetError.swift; sourceTree = "<group>"; };
+		7A4CCF05218C655C00636A8E /* APNetApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApiTests.swift; sourceTree = "<group>"; };
+		7ACE591B218947AE0002F73C /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,14 @@
 			path = Async;
 			sourceTree = "<group>";
 		};
+		7A4CCF04218C653B00636A8E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7A4CCF05218C655C00636A8E /* APNetApiTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +397,7 @@
 		7AD9A0352182FE37007BAD59 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7A4CCF04218C653B00636A8E /* Network */,
 				7AD9A0362182FE4A007BAD59 /* Encrypt */,
 			);
 			path = Data;
@@ -413,7 +424,7 @@
 				7A2DBB8A21898D9D0011A730 /* APNetIndicator.swift */,
 				7AD9A0462188083C007BAD59 /* APNetApi.swift */,
 				7A2DBB86218986A80011A730 /* APNetClient.swift */,
-				7ACE591B218947AE0002F73C /* APNetError.swift */,
+				7ACE591B218947AE0002F73C /* APError.swift */,
 			);
 			path = Alamofire;
 			sourceTree = "<group>";
@@ -776,7 +787,7 @@
 				7A2DBB7F2189584D0011A730 /* Dictionary+Ex.swift in Sources */,
 				7A2DBB8121897E660011A730 /* String+Ex.swift in Sources */,
 				7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */,
-				7ACE591C218947AE0002F73C /* APNetError.swift in Sources */,
+				7ACE591C218947AE0002F73C /* APError.swift in Sources */,
 				7A2DBB852189806F0011A730 /* Convertor.swift in Sources */,
 				7A2DBB892189885E0011A730 /* Operator.swift in Sources */,
 				7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */,
@@ -794,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A02DEFF2182F11600B41DB6 /* ApplepieTests.swift in Sources */,
+				7A4CCF06218C655C00636A8E /* APNetApiTests.swift in Sources */,
 				7AD9A0382182FE61007BAD59 /* StringCryptoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,7 +18,7 @@ public enum APStatusCode: Int {
     
 }
 
-open class APNetError : NSError {
+open class APError : NSError {
     public var response: HTTPURLResponse?
     public var statusCode: Int = 0
     public var message: String = ""
@@ -29,7 +29,7 @@ open class APNetError : NSError {
         self.statusCode = statusCode
         self.message = message
         self.originalMessage = message
-        super.init(domain: "NetError", code: statusCode, userInfo: ["message":message])
+        super.init(domain: "APError", code: statusCode, userInfo: ["message":message])
         if message.count == 0 {
             self.message = defaultMessage
         }

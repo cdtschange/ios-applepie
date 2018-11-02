@@ -66,21 +66,21 @@ public extension APIndicatorProtocol {
             DDLogVerbose("Task Indicator resume")
             if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
                 guard let model = APNetIndicator.getIndicatorModel(identifier: identifier), model.task == task else { return }
-                model.indicator?.turn(status: .running, view: model.view, text: model.text)
+                model.indicator?.show(inView: model.view, text: model.text, detailText: nil, animated: true)
             }
         }
         notificationCenter.addObserver(forName: Notification.Name.Task.DidSuspend, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator suspend")
             if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
                 guard let model = APNetIndicator.getIndicatorModel(identifier: identifier), model.task == task else { return }
-                model.indicator?.turn(status: .stop, view: model.view, text: model.text)
+                model.indicator?.hide(inView: model.view, animated: true)
             }
         }
         notificationCenter.addObserver(forName: Notification.Name.Task.DidCancel, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator cancel")
             if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
                 guard let model = APNetIndicator.getIndicatorModel(identifier: identifier), model.task == task else { return }
-                model.indicator?.turn(status: .stop, view: model.view, text: model.text)
+                model.indicator?.hide(inView: model.view, animated: true)
                 APNetIndicator.remove(api: model.api)
             }
         }
@@ -88,7 +88,7 @@ public extension APIndicatorProtocol {
             DDLogVerbose("Task Indicator complete")
             if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
                 guard let model = APNetIndicator.getIndicatorModel(identifier: identifier), model.task == task else { return }
-                model.indicator?.turn(status: .stop, view: model.view, text: model.text)
+                model.indicator?.hide(inView: model.view, animated: true)
                 APNetIndicator.remove(api: model.api)
             }
         }
