@@ -8,11 +8,10 @@
 
 import Foundation
 
-public extension Applepie where Base == UIApplication {
+public extension UIApplication {
     
     private struct UIApplicationConstant {
         static var indicatorCountAssociatedKey = "indicatorCount"
-        static var queueName = "com.applepie.LockQueue"
     }
     
     public var indicatorCount : Int {
@@ -27,23 +26,30 @@ public extension Applepie where Base == UIApplication {
             objc_setAssociatedObject(self,&UIApplicationConstant.indicatorCountAssociatedKey,NSNumber(value: value),objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
+}
+
+public extension Applepie where Base == UIApplication {
+    
+    private struct UIApplicationConstant {
+        static var queueName = "com.applepie.LockQueue"
+    }
     
     public func setNetworkActivityIndicator(show: Bool) {
         let lockQueue = DispatchQueue(label: UIApplicationConstant.queueName, attributes: [])
         lockQueue.sync {
             if show {
-                if base.ap.indicatorCount == 0 {
-                    base.ap.indicatorCount += 1
+                if base.indicatorCount == 0 {
+                    base.indicatorCount += 1
                     Async.main { [weak self] in
                         self?.base.isNetworkActivityIndicatorVisible = true
                     }
                 } else {
-                    base.ap.indicatorCount += 1
+                    base.indicatorCount += 1
                 }
             } else {
-                base.ap.indicatorCount -= 1
-                if base.ap.indicatorCount <= 0 {
-                    base.ap.indicatorCount = 0
+                base.indicatorCount -= 1
+                if base.indicatorCount <= 0 {
+                    base.indicatorCount = 0
                     Async.main { [weak self] in
                         self?.base.isNetworkActivityIndicatorVisible = false
                     }

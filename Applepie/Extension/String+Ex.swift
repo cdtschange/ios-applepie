@@ -9,8 +9,8 @@
 import Foundation
 
 public extension Applepie where Base == String {
-    public func addingPercentEncodingForUrlQueryValue() -> String? {
+    public func addingPercentEncodingForUrlQueryValue() -> String {
         let allowedCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
-        return base.addingPercentEncoding(withAllowedCharacters: allowedCharacters)
+        return base.addingPercentEncoding(withAllowedCharacters: allowedCharacters)!
     }
 }

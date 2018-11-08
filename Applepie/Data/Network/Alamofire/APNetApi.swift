@@ -61,7 +61,8 @@ public protocol APNetApi: class, APResponseHandler, APNetIndicatorProtocol {
     
     var identifier: String { get }
     var sessionIdentifier: String { get }
-    var baseHeader: [String: Any]? { get }
+    var baseHeaders: [String: Any]? { get }
+    var baseParams: [String: Any]? { get }
     var baseUrlString: String { get }
     var timeoutIntervalForRequest: TimeInterval { get }
     var timeoutIntervalForResource: TimeInterval { get }
@@ -88,6 +89,8 @@ public extension APNetApi {
             fill(array: array)
         }
     }
+    public func fill(map: [String : Any]) {}
+    public func fill(array: [Any]) {}
 }
 
 public extension APNetApi {
@@ -103,7 +106,7 @@ public extension APNetApi {
 
 public extension APNetApi {
     public func setIndicator(_ indicator: APIndicatorProtocol?, view: UIView?, text: String?) -> Self {
-        APNetIndicator.add(api: self, indicator: indicator, view: view, text: text)
+        APNetIndicatorClient.add(api: self, indicator: indicator, view: view, text: text)
         return self
     }
 }
@@ -111,16 +114,17 @@ public extension APNetApi {
 public extension APNetApi {
     private func getDataRequest(data: Data? = nil) -> DataRequest {
         let requestUrl = try! self.baseUrlString.asURL().appendingPathComponent(self.url)
-        DDLogInfo("[AP][NetApi] 请求发起: [\(method.rawValue)] \(requestUrl.absoluteURL.absoluteString)?\(params?.ap.toHttpQueryString() ?? "")")
+        let requestParams = baseParams + params
+        DDLogInfo("[AP][NetApi] 请求发起: [\(method.rawValue)] \(requestUrl.absoluteURL.absoluteString)?\(requestParams.ap.queryString)")
         let sessionManager = APNetClient.getSessionManager(api: self)
         let request = { () -> DataRequest in
             if let data = data {
                 return sessionManager.upload(data, to: requestUrl, method: self.method, headers: self.headers)
             }
-            return sessionManager.request(requestUrl, method: self.method, parameters: self.params, headers: self.headers)
+            return sessionManager.request(requestUrl, method: self.method, parameters: requestParams, headers: self.headers)
         }()
         if let task = request.task {
-            APNetIndicator.bindTask(api: self, task: task)
+            APNetIndicatorClient.bind(api: self, task: task)
         }
         request.resume()
         if let validate = requestHandler?.validate {
@@ -130,19 +134,20 @@ public extension APNetApi {
     }
     private func getMultipartUploadDataRequest(task: URLSessionTask) -> SignalProducer<DataRequest, APError> {
         let requestUrl = try! self.baseUrlString.asURL().appendingPathComponent(self.url)
-        DDLogInfo("[AP][NetApi] 请求发起: [\(method.rawValue)]\(requestUrl.absoluteURL.absoluteString)?\(params?.ap.toHttpQueryString() ?? "")")
+        let requestParams = baseParams + params
+        DDLogInfo("[AP][NetApi] 请求发起: [\(method.rawValue)]\(requestUrl.absoluteURL.absoluteString)?\(requestParams.ap.queryString)")
         let sessionManager = APNetClient.getSessionManager(api: self)
         sessionManager.startRequestsImmediately = true
         var request = URLRequest(url: requestUrl)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
 
-        APNetIndicator.bindTask(api: self, task: task)
+        APNetIndicatorClient.bind(api: self, task: task)
         NotificationCenter.default.post(name: Notification.Name.Task.DidResume, object: nil, userInfo: [Notification.Key.Task: task])
       
         return SignalProducer { [unowned self] sink, disposable in
             sessionManager.upload(multipartFormData: { [unowned self] formData in
-                self.fillMultipartData(upload: self as! APNetApiUploadProtocol, params: self.params, multipart: formData)
+                self.fillMultipartData(upload: self as! APNetApiUploadProtocol, params: requestParams, multipart: formData)
                 }, with: request, encodingCompletion: { [weak self] result in
                     guard let strongSelf = self else {
                         sink.sendInterrupted()

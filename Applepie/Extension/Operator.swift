@@ -10,18 +10,21 @@ import Foundation
 
 public func + <K, V>(left: Dictionary<K, V>, right: Dictionary<K, V>)
     -> Dictionary<K, V> {
-        var map = Dictionary<K, V>()
-        for (k, v) in left {
-            map[k] = v
-        }
-        for (k, v) in right {
-            map[k] = v
-        }
-        return map
+        return left.merging(right, uniquingKeysWith: { v1, v2 in v2})
+}
+public func + <K, V>(left: Dictionary<K, V>?, right: Dictionary<K, V>?)
+    -> Dictionary<K, V> {
+        return (left ?? [:]) + (right ?? [:])
+}
+public func + <K, V>(left: Dictionary<K, V>, right: Dictionary<K, V>?)
+    -> Dictionary<K, V> {
+        return left + (right ?? [:])
+}
+public func + <K, V>(left: Dictionary<K, V>?, right: Dictionary<K, V>)
+    -> Dictionary<K, V> {
+        return (left ?? [:]) + right
 }
 
-func += <K, V> (left: inout Dictionary<K, V>, right: Dictionary<K, V>) {
-    for (k, v) in right {
-        left[k] = v
-    }
+public func += <K, V> (left: inout Dictionary<K, V>, right: Dictionary<K, V>) {
+    left.merge(right, uniquingKeysWith: { v1, v2 in v2})
 }

@@ -24,11 +24,17 @@
 		7A2DBB852189806F0011A730 /* Convertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB842189806F0011A730 /* Convertor.swift */; };
 		7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB86218986A80011A730 /* APNetClient.swift */; };
 		7A2DBB892189885E0011A730 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB882189885E0011A730 /* Operator.swift */; };
-		7A2DBB8B21898D9D0011A730 /* APNetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB8A21898D9D0011A730 /* APNetIndicator.swift */; };
+		7A41803E21927B2A00C6BBD0 /* ConvertorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41803D21927B2A00C6BBD0 /* ConvertorTests.swift */; };
+		7A41804021927C4D00C6BBD0 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41803F21927C4D00C6BBD0 /* OperatorTests.swift */; };
 		7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEF9218A988D00636A8E /* APIndicator.swift */; };
 		7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */; };
 		7A4CCF02218AA2C800636A8E /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF01218AA2C800636A8E /* Async.swift */; };
-		7A4CCF06218C655C00636A8E /* APNetApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF05218C655C00636A8E /* APNetApiTests.swift */; };
+		7A4CCF06218C655C00636A8E /* APNetApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF05218C655C00636A8E /* APNetApiRequestTests.swift */; };
+		7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7121918A9500D41919 /* DictionaryExTests.swift */; };
+		7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7321918D4D00D41919 /* StringExTests.swift */; };
+		7AC5D12C2193D38A006ABC48 /* APIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */; };
+		7AC5D1302193D770006ABC48 /* APNetIndicatorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */; };
+		7AC5D1332193DDF3006ABC48 /* AsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D1322193DDF3006ABC48 /* AsyncTests.swift */; };
 		7ACE591C218947AE0002F73C /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE591B218947AE0002F73C /* APError.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
@@ -37,6 +43,7 @@
 		7AD9A0472188083C007BAD59 /* APNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0462188083C007BAD59 /* APNetApi.swift */; };
 		85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792096979078263CF25324BB /* Pods_ApplepieDemo.framework */; };
 		9151F49F299249E04F01A7EC /* Pods_Applepie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3042003C407A00925F2BD /* Pods_Applepie.framework */; };
+		AB6870C28A41E36769B10CEC /* Pods_ApplepieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */; };
 		C6D3197780F25DF37ED2B9A5 /* Pods_ApplepieDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE8E2808A654BA650644B0D /* Pods_ApplepieDemoTests.framework */; };
 		EE2B7DC44D1ECDF837B9D4EC /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD9A0432186E8C3007BAD59 /* Pods_ApplepieDemo.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +98,7 @@
 		1BC216603F3D0574CA037EDF /* Pods-ApplepieDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo.release.xcconfig"; sourceTree = "<group>"; };
 		1DE8E2808A654BA650644B0D /* Pods_ApplepieDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplepieDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5ECF6CBA4EC61D93AF5DDD /* Pods-ApplepieDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		73DFC90302B3AD64B8631DF7 /* Pods-ApplepieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieTests/Pods-ApplepieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		792096979078263CF25324BB /* Pods_ApplepieDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplepieDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A02DEC42182EE5D00B41DB6 /* ApplepieDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplepieDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A02DEC72182EE5D00B41DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,11 +122,17 @@
 		7A2DBB842189806F0011A730 /* Convertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertor.swift; sourceTree = "<group>"; };
 		7A2DBB86218986A80011A730 /* APNetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetClient.swift; sourceTree = "<group>"; };
 		7A2DBB882189885E0011A730 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		7A2DBB8A21898D9D0011A730 /* APNetIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetIndicator.swift; sourceTree = "<group>"; };
+		7A41803D21927B2A00C6BBD0 /* ConvertorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertorTests.swift; sourceTree = "<group>"; };
+		7A41803F21927C4D00C6BBD0 /* OperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
 		7A4CCEF9218A988D00636A8E /* APIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicator.swift; sourceTree = "<group>"; };
 		7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Indicator.swift"; sourceTree = "<group>"; };
 		7A4CCF01218AA2C800636A8E /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
-		7A4CCF05218C655C00636A8E /* APNetApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApiTests.swift; sourceTree = "<group>"; };
+		7A4CCF05218C655C00636A8E /* APNetApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApiRequestTests.swift; sourceTree = "<group>"; };
+		7AB71B7121918A9500D41919 /* DictionaryExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExTests.swift; sourceTree = "<group>"; };
+		7AB71B7321918D4D00D41919 /* StringExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExTests.swift; sourceTree = "<group>"; };
+		7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicatorTests.swift; sourceTree = "<group>"; };
+		7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APNetIndicatorClient.swift; sourceTree = "<group>"; };
+		7AC5D1322193DDF3006ABC48 /* AsyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTests.swift; sourceTree = "<group>"; };
 		7ACE591B218947AE0002F73C /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
@@ -128,9 +142,11 @@
 		7AD9A0432186E8C3007BAD59 /* Pods_ApplepieDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ApplepieDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD9A0462188083C007BAD59 /* APNetApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApi.swift; sourceTree = "<group>"; };
 		7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.release.xcconfig"; sourceTree = "<group>"; };
+		8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplepieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.debug.xcconfig"; sourceTree = "<group>"; };
 		A708B3B8E554359C9EE713C6 /* Pods-ApplepieDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B348281EB924182B3E73AF92 /* Pods-ApplepieDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5038B7859EA86D922C7DC7E /* Pods-ApplepieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplepieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplepieTests/Pods-ApplepieTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A02DEF82182F11600B41DB6 /* Applepie.framework in Frameworks */,
+				AB6870C28A41E36769B10CEC /* Pods_ApplepieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +257,8 @@
 		7A02DEFD2182F11600B41DB6 /* ApplepieTests */ = {
 			isa = PBXGroup;
 			children = (
+				7AC5D1282193D36F006ABC48 /* UI */,
+				7AB71B7021918A7200D41919 /* Extension */,
 				7AD9A0352182FE37007BAD59 /* Data */,
 				7A02DEFE2182F11600B41DB6 /* ApplepieTests.swift */,
 				7A02DF002182F11600B41DB6 /* Info.plist */,
@@ -267,9 +286,52 @@
 		7A4CCF04218C653B00636A8E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7A4CCF05218C655C00636A8E /* APNetApiTests.swift */,
+				7A4CCF05218C655C00636A8E /* APNetApiRequestTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		7AB71B7021918A7200D41919 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7A41803D21927B2A00C6BBD0 /* ConvertorTests.swift */,
+				7AB71B7121918A9500D41919 /* DictionaryExTests.swift */,
+				7A41803F21927C4D00C6BBD0 /* OperatorTests.swift */,
+				7AB71B7321918D4D00D41919 /* StringExTests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7AC5D1282193D36F006ABC48 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7AC5D1292193D376006ABC48 /* View */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7AC5D1292193D376006ABC48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AC5D12A2193D37B006ABC48 /* Indicator */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AC5D12A2193D37B006ABC48 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		7AC5D1312193DDE2006ABC48 /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				7AC5D1322193DDF3006ABC48 /* AsyncTests.swift */,
+			);
+			path = Async;
 			sourceTree = "<group>";
 		};
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
@@ -311,10 +373,10 @@
 			isa = PBXGroup;
 			children = (
 				7AD9A0262182FE2C007BAD59 /* Applepie.swift */,
-				7A2DBB7E2189584D0011A730 /* Dictionary+Ex.swift */,
-				7A2DBB8021897E660011A730 /* String+Ex.swift */,
 				7A2DBB842189806F0011A730 /* Convertor.swift */,
+				7A2DBB7E2189584D0011A730 /* Dictionary+Ex.swift */,
 				7A2DBB882189885E0011A730 /* Operator.swift */,
+				7A2DBB8021897E660011A730 /* String+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -397,6 +459,7 @@
 		7AD9A0352182FE37007BAD59 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7AC5D1312193DDE2006ABC48 /* Async */,
 				7A4CCF04218C653B00636A8E /* Network */,
 				7AD9A0362182FE4A007BAD59 /* Encrypt */,
 			);
@@ -421,10 +484,10 @@
 		7AD9A045218805DC007BAD59 /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				7A2DBB8A21898D9D0011A730 /* APNetIndicator.swift */,
+				7ACE591B218947AE0002F73C /* APError.swift */,
 				7AD9A0462188083C007BAD59 /* APNetApi.swift */,
 				7A2DBB86218986A80011A730 /* APNetClient.swift */,
-				7ACE591B218947AE0002F73C /* APError.swift */,
+				7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */,
 			);
 			path = Alamofire;
 			sourceTree = "<group>";
@@ -437,6 +500,7 @@
 				792096979078263CF25324BB /* Pods_ApplepieDemo.framework */,
 				1DE8E2808A654BA650644B0D /* Pods_ApplepieDemoTests.framework */,
 				0EE3042003C407A00925F2BD /* Pods_Applepie.framework */,
+				8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -450,6 +514,8 @@
 				B348281EB924182B3E73AF92 /* Pods-ApplepieDemoTests.release.xcconfig */,
 				9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */,
 				7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */,
+				73DFC90302B3AD64B8631DF7 /* Pods-ApplepieTests.debug.xcconfig */,
+				F5038B7859EA86D922C7DC7E /* Pods-ApplepieTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -532,9 +598,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A02DF0A2182F11600B41DB6 /* Build configuration list for PBXNativeTarget "ApplepieTests" */;
 			buildPhases = (
+				DD2789C61CE0C4FB100ECE40 /* [CP] Check Pods Manifest.lock */,
 				7A02DEF32182F11600B41DB6 /* Sources */,
 				7A02DEF42182F11600B41DB6 /* Frameworks */,
 				7A02DEF52182F11600B41DB6 /* Resources */,
+				D2CF4C7723F9AD0CEBB491E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -662,11 +730,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
@@ -674,17 +742,73 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2CF4C7723F9AD0CEBB491E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieTests/Pods-ApplepieTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieTests/Pods-ApplepieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD2789C61CE0C4FB100ECE40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApplepieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE4B09318D4843639D25F1D4 /* [CP] Check Pods Manifest.lock */ = {
@@ -718,6 +842,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
@@ -727,6 +852,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
@@ -783,13 +909,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A2DBB8B21898D9D0011A730 /* APNetIndicator.swift in Sources */,
 				7A2DBB7F2189584D0011A730 /* Dictionary+Ex.swift in Sources */,
 				7A2DBB8121897E660011A730 /* String+Ex.swift in Sources */,
 				7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */,
 				7ACE591C218947AE0002F73C /* APError.swift in Sources */,
 				7A2DBB852189806F0011A730 /* Convertor.swift in Sources */,
 				7A2DBB892189885E0011A730 /* Operator.swift in Sources */,
+				7AC5D1302193D770006ABC48 /* APNetIndicatorClient.swift in Sources */,
 				7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */,
 				7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */,
 				7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */,
@@ -804,8 +930,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */,
+				7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */,
+				7AC5D12C2193D38A006ABC48 /* APIndicatorTests.swift in Sources */,
+				7A41803E21927B2A00C6BBD0 /* ConvertorTests.swift in Sources */,
 				7A02DEFF2182F11600B41DB6 /* ApplepieTests.swift in Sources */,
-				7A4CCF06218C655C00636A8E /* APNetApiTests.swift in Sources */,
+				7AC5D1332193DDF3006ABC48 /* AsyncTests.swift in Sources */,
+				7A4CCF06218C655C00636A8E /* APNetApiRequestTests.swift in Sources */,
+				7A41804021927C4D00C6BBD0 /* OperatorTests.swift in Sources */,
 				7AD9A0382182FE61007BAD59 /* StringCryptoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1108,6 +1240,7 @@
 		};
 		7A02DF0B2182F11600B41DB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73DFC90302B3AD64B8631DF7 /* Pods-ApplepieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1128,6 +1261,7 @@
 		};
 		7A02DF0C2182F11600B41DB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5038B7859EA86D922C7DC7E /* Pods-ApplepieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

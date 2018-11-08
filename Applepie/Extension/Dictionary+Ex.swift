@@ -9,9 +9,9 @@
 import Foundation
 
 public extension Applepie where Base == Dictionary<String, Any> {
-    public func toHttpQueryString() -> String {
+    public var queryString: String {
         let parameterArray = base.map { (key, value) -> String in
-            let pKey = key.ap.addingPercentEncodingForUrlQueryValue()!
+            let pKey = key.ap.addingPercentEncodingForUrlQueryValue()
             var stringValue = ""
             switch value {
             case let intValue as Int: stringValue = intValue.ap.toString
@@ -20,16 +20,25 @@ public extension Applepie where Base == Dictionary<String, Any> {
             default:
                 stringValue = "\(value)"
             }
-            let pValue = stringValue.ap.addingPercentEncodingForUrlQueryValue() ?? ""
+            let pValue = stringValue.ap.addingPercentEncodingForUrlQueryValue()
             return "\(pKey)=\(pValue)"
         }
         
         return parameterArray.joined(separator: "&")
     }
-    
-    
-    public func toModel<T>(_ type: T.Type) -> T? where T : Decodable {
-        guard let data = try? JSONSerialization.data(withJSONObject: self) else { return nil }
-        return try? JSONDecoder().decode(type, from: data)
+}
+
+public extension Applepie where Base == String {
+    public var queryDictionary: [String: String] {
+        var queryStrings = [String: String]()
+        for pair in base.components(separatedBy: "&") {
+            let key = pair.components(separatedBy: "=")[0]
+            let value = pair
+                .components(separatedBy:"=")[1]
+                .replacingOccurrences(of: "+", with: " ")
+                .removingPercentEncoding!
+            queryStrings[key] = value
+        }
+        return queryStrings
     }
 }

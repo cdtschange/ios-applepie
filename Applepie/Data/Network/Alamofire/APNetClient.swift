@@ -21,7 +21,7 @@ struct APNetClient {
         let sessionManager: SessionManager = {
             let configuration = URLSessionConfiguration.default
             var headers: [String : Any] = SessionManager.defaultHTTPHeaders
-            if let baseHeader = api.baseHeader {
+            if let baseHeader = api.baseHeaders {
                 headers += baseHeader
             }
             configuration.httpAdditionalHeaders = headers

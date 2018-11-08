@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 public protocol APIndicatorProtocol: class {
-    var apiIdentifiers: [String] { get set }
     var showing: Bool { get set }
     func show(inView view: UIView?, text: String?, detailText: String?, animated: Bool)
     func hide(inView view: UIView?, animated: Bool)
 }
 
 public class APSingleIndicator: APIndicatorProtocol {
-    public var apiIdentifiers: [String] = []
     public var showing: Bool = false
+    
+    public init() {}
     
     public func show(inView view: UIView?, text: String?, detailText: String?, animated: Bool) {
         UIApplication.shared.ap.setNetworkActivityIndicator(show: true)
@@ -37,13 +37,14 @@ public class APSingleIndicator: APIndicatorProtocol {
     
     deinit{
         NotificationCenter.default.removeObserver(self)
-        APNetIndicator.removeIndicator(indicator: self)
+        APNetIndicatorClient.remove(indicator: self)
     }
 }
 
 public class APListIndicator: APIndicatorProtocol {
-    public var apiIdentifiers: [String] = []
     public var showing: Bool = false
+    
+    public init() {}
     
     public func show(inView view: UIView?, text: String?, detailText: String?, animated: Bool) {
         UIApplication.shared.ap.setNetworkActivityIndicator(show: true)
@@ -60,6 +61,6 @@ public class APListIndicator: APIndicatorProtocol {
     
     deinit{
         NotificationCenter.default.removeObserver(self)
-        APNetIndicator.removeIndicator(indicator: self)
+        APNetIndicatorClient.remove(indicator: self)
     }
 }
