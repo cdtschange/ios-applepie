@@ -12,27 +12,25 @@ import CocoaLumberjack
 public class APNetIndicatorClient {
     
     public struct IndicatorModel {
-        var api: APNetApi
-        var indicator: APIndicatorProtocol?
-        var view: UIView?
-        var text: String?
-        var task: URLSessionTask?
+        public var api: APNetApi
+        public weak var indicator: APIndicatorProtocol?
+        public weak var view: UIView?
+        public var text: String?
+        public var task: URLSessionTask?
     }
     
-    private static var indicators: [String: IndicatorModel] = [:]
+    public static var indicators: [String: IndicatorModel] = [:]
     
     public static func getIndicatorModel(identifier: String) -> IndicatorModel? {
         return indicators[identifier]
     }
     public static func remove(indicator: APIndicatorProtocol) {
         let models = indicators.filter { (key, value) in value.indicator === indicator }
-        for (key, value) in models {
+        for (_, value) in models {
             if let task = value.task {
                 task.cancel()
                 DDLogVerbose("[AP][NetIndicator] Cancel task: \(task.taskIdentifier)")
             }
-            indicators.removeValue(forKey: key)
-            DDLogDebug("[AP][NetIndicator][-][\(indicators.count)] \(value.api)")
         }
     }
     

@@ -10,13 +10,18 @@ import Foundation
 import Alamofire
 import CocoaLumberjack
 
-struct APNetClient {
+public struct APNetClient {
     
-    static var sessions: [String: SessionManager] = [:]
+    public static var sessions: [String: SessionManager] = [:]
     
-    static func getSessionManager(api: APNetApi) -> SessionManager {
+    public static func getSessionManager(api: APNetApi) -> SessionManager {
         if sessions.keys.contains(api.sessionIdentifier) {
-            return sessions[api.sessionIdentifier]!
+            let sm = sessions[api.sessionIdentifier]!
+            let handler = api.requestHandler
+            sm.adapter = handler
+            sm.retrier = handler
+            sm.startRequestsImmediately = false
+            return sm
         }
         let sessionManager: SessionManager = {
             let configuration = URLSessionConfiguration.default
@@ -38,7 +43,7 @@ struct APNetClient {
         return sessionManager
     }
     
-    static func clearCookie() {
+    public static func clearCookie() {
         DDLogInfo("[AP][NetClient] 清除Cookie")
         let cookieJar = HTTPCookieStorage.shared
         

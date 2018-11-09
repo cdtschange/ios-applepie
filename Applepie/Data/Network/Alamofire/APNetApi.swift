@@ -12,10 +12,9 @@ import ReactiveSwift
 import CocoaLumberjack
 
 public enum APRequestType {
-    case json, data, string, uploadMultipart
+    case json, data, string, upload, multipartUpload
 }
 public protocol APNetIndicatorProtocol {
-    var indicator: APIndicatorProtocol? { get set }
     func setIndicator(_ indicator: APIndicatorProtocol?, view: UIView?, text: String?) -> Self
 }
 
@@ -43,14 +42,23 @@ public extension APRequestHandler {
     }
 }
 
-public struct APUploadFile {
-    var data: Data
-    var name: String
-    var fileName: String
-    var mimeType: String
+public struct APUploadMultipartFile {
+    public var data: Data
+    public var name: String
+    public var fileName: String
+    public var mimeType: String
+    public init(data: Data, name: String, fileName: String, mimeType: String) {
+        self.data = data
+        self.name = name
+        self.fileName = fileName
+        self.mimeType = mimeType
+    }
+}
+public protocol APNetApiUploadMultipartProtocol {
+    var files: [APUploadMultipartFile]? { get set }
 }
 public protocol APNetApiUploadProtocol {
-    var files: [APUploadFile]? { get set }
+    var dataUrl: URL? { get set }
 }
 
 public protocol APNetApi: class, APResponseHandler, APNetIndicatorProtocol {
@@ -73,16 +81,16 @@ public protocol APNetApi: class, APResponseHandler, APNetIndicatorProtocol {
 
 public extension APNetApi {
     
-    func adapt(_ result: Result<Any>) -> Result<Any> {
+    public func adapt(_ result: Result<Any>) -> Result<Any> {
         return result
     }
-    func adapt(_ result: Result<Data>) -> Result<Data> {
+    public func adapt(_ result: Result<Data>) -> Result<Data> {
         return result
     }
-    func adapt(_ result: Result<String>) -> Result<String> {
+    public func adapt(_ result: Result<String>) -> Result<String> {
         return result
     }
-    func fill(data: Any) {
+    public func fill(data: Any) {
         if let map = data as? [String: Any] {
             fill(map: map)
         } else if let array = data as? [Any] {
@@ -112,14 +120,14 @@ public extension APNetApi {
 }
 
 public extension APNetApi {
-    private func getDataRequest(data: Data? = nil) -> DataRequest {
+    private func getDataRequest() -> DataRequest {
         let requestUrl = try! self.baseUrlString.asURL().appendingPathComponent(self.url)
         let requestParams = baseParams + params
         DDLogInfo("[AP][NetApi] 请求发起: [\(method.rawValue)] \(requestUrl.absoluteURL.absoluteString)?\(requestParams.ap.queryString)")
         let sessionManager = APNetClient.getSessionManager(api: self)
         let request = { () -> DataRequest in
-            if let data = data {
-                return sessionManager.upload(data, to: requestUrl, method: self.method, headers: self.headers)
+            if self is APNetApiUploadProtocol {
+                return sessionManager.upload((self as! APNetApiUploadProtocol).dataUrl!, to: requestUrl, method: self.method, headers: self.headers)
             }
             return sessionManager.request(requestUrl, method: self.method, parameters: requestParams, headers: self.headers)
         }()
@@ -147,25 +155,22 @@ public extension APNetApi {
       
         return SignalProducer { [unowned self] sink, disposable in
             sessionManager.upload(multipartFormData: { [unowned self] formData in
-                self.fillMultipartData(upload: self as! APNetApiUploadProtocol, params: requestParams, multipart: formData)
-                }, with: request, encodingCompletion: { [weak self] result in
-                    guard let strongSelf = self else {
-                        sink.sendInterrupted()
-                        return
-                    }
+                self.fillMultipartData(upload: self as! APNetApiUploadMultipartProtocol, params: requestParams, multipart: formData)
+                }, with: request, encodingCompletion: { [unowned self] result in
                     switch result {
                     case .success(var uploadRequest, _, _):
-                        if let validate = strongSelf.requestHandler?.validate {
+                        if let validate = self.requestHandler?.validate {
                             uploadRequest = uploadRequest.validate(validate)
                         }
                         sink.send(value: uploadRequest)
+                        sink.sendCompleted()
                     case .failure(let error):
-                        let (error, canceled) = strongSelf.handleError(error, request: request, response: nil)
+                        let (error, canceled) = self.handleError(error, request: request, response: nil)
                         if canceled {
                             NotificationCenter.default.post(name: Notification.Name.Task.DidCancel, object: nil, userInfo: [Notification.Key.Task: task])
                             sink.sendInterrupted()
                         } else {
-                            NotificationCenter.default.post(name: Notification.Name.Task.DidSuspend, object: nil, userInfo: [Notification.Key.Task: task])
+                            NotificationCenter.default.post(name: Notification.Name.Task.DidComplete, object: nil, userInfo: [Notification.Key.Task: task])
                             sink.send(error: error)
                         }
                     }
@@ -173,12 +178,7 @@ public extension APNetApi {
         }
     }
     
-    private func createBody(upload: APNetApiUploadProtocol, params: [String: Any]?) -> Data {
-        let multipart = MultipartFormData()
-        fillMultipartData(upload: upload, params: params, multipart: multipart)
-        return try! multipart.encode()
-    }
-    private func fillMultipartData(upload: APNetApiUploadProtocol, params: [String: Any]?, multipart: MultipartFormData) {
+    private func fillMultipartData(upload: APNetApiUploadMultipartProtocol, params: [String: Any]?, multipart: MultipartFormData) {
         if let params = params {
             for (key, value) in params {
                 multipart.append("\(value)".data(using: .utf8, allowLossyConversion: false)!, withName: key)
@@ -195,7 +195,7 @@ public extension APNetApi {
         if let statusCode = APStatusCode(rawValue:error.code) {
             switch(statusCode) {
             case .canceled:
-                DDLogWarn("[AP][NetApi] 请求取消: \(request?.url?.absoluteString ?? "" )")
+                DDLogWarn("[AP][NetApi] 请求取消: \(request!.url!.absoluteString)")
                 let err = APError(statusCode: statusCode.rawValue, message: "请求取消")
                 self.error = err
                 return (err, true)
@@ -206,19 +206,19 @@ public extension APNetApi {
         let err = error is APError ? error as! APError : APError(error: error)
         err.response = response
         self.error = err
-        DDLogError("[AP][NetApi] 请求失败: \(request?.url?.absoluteString ?? "" ), 错误: \(err)")
+        DDLogError("[AP][NetApi] 请求失败: \(request!.url!.absoluteString), 错误: \(err)")
         return (err, false)
     }
 }
 
 public extension APNetApi {
-    private func requestJson(data: Data? = nil) -> SignalProducer<Self, APError> {
+    private func requestJson() -> SignalProducer<Self, APError> {
         APNetClient.add(api: self)
         return SignalProducer { [unowned self] sink, disposable in
-            self.getDataRequest(data: data).responseJSON { [weak self] response in
+            self.getDataRequest().responseJSON { [weak self] response in
                 guard let strongSelf = self else { return }
                 APNetClient.remove(api: strongSelf)
-                DDLogInfo("[AP][NetApi] 请求完成: \(response.request?.url?.absoluteString ?? "" ), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
+                DDLogInfo("[AP][NetApi] 请求完成: \(response.request!.url!.absoluteString), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
                 strongSelf.responseData = response.data
                 
                 let str: String = response.result.value == nil ? "" :  "\(response.result.value!)"
@@ -257,7 +257,7 @@ public extension APNetApi {
             self.getDataRequest().responseData { [weak self] response in
                 guard let strongSelf = self else { return }
                 APNetClient.remove(api: strongSelf)
-                DDLogInfo("[AP][NetApi] 请求完成: \(response.request?.url?.absoluteString ?? "" ), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
+                DDLogInfo("[AP][NetApi] 请求完成: \(response.request!.url!.absoluteString), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
                 strongSelf.responseData = response.data
                 DDLogInfo("[AP][NetApi] 请求结果：Data: \(response.result.value?.count ?? 0) bytes")
                 let result = strongSelf.adapt(response.result)
@@ -290,7 +290,7 @@ public extension APNetApi {
             self.getDataRequest().responseString { [weak self] response in
                 guard let strongSelf = self else { return }
                 APNetClient.remove(api: strongSelf)
-                DDLogInfo("[AP][NetApi] 请求完成: \(response.request?.url?.absoluteString ?? "" ), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
+                DDLogInfo("[AP][NetApi] 请求完成: \(response.request!.url!.absoluteString), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
                 strongSelf.responseData = response.data
                 DDLogInfo("[AP][NetApi] 请求结果：String: \(String(describing: response.result.value))")
                 let result = strongSelf.adapt(response.result)
@@ -329,7 +329,7 @@ public extension APNetApi {
                 request.responseJSON { [weak self] response in
                     guard let strongSelf = self else { return }
                     APNetClient.remove(api: strongSelf)
-                    DDLogInfo("[AP][NetApi] 请求完成: \(response.request?.url?.absoluteString ?? "" ), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
+                    DDLogInfo("[AP][NetApi] 请求完成: \(response.request!.url!.absoluteString), 耗时: \(String(format:"%.2f", response.timeline.requestDuration))")
                     strongSelf.responseData = response.data
                     DDLogInfo("[AP][NetApi] 请求结果：Json: \(String(describing: response.result.value))")
                     let result = strongSelf.adapt(response.result)
@@ -369,19 +369,21 @@ public extension APNetApi {
                 sink.send(error: err)
             }
         }
+        var it = self
+        if APNetIndicatorClient.getIndicatorModel(identifier: identifier) == nil {
+            it = self.setIndicator(nil, view: nil, text: nil)
+        }
         switch format {
         case .json:
-            if let uploador = self as? APNetApiUploadProtocol {
-                let data = self.createBody(upload: uploador, params: self.params)
-                return self.requestJson(data: data)
-            }
-            return self.requestJson()
+            return it.requestJson()
         case .data:
-            return self.requestData()
+            return it.requestData()
         case .string:
-            return self.requestString()
-        case .uploadMultipart:
-            return self.requestUploadMultipart()
+            return it.requestString()
+        case .upload:
+            return it.requestJson()
+        case .multipartUpload:
+            return it.requestUploadMultipart()
         }
         
     }

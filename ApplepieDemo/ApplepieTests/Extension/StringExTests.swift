@@ -8,7 +8,7 @@
 
 import XCTest
 
-class StringExTests: XCTestCase {
+class StringExTests: BaseTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,13 +21,6 @@ class StringExTests: XCTestCase {
     func testAddingPercentEncodingForUrlQueryValue() {
         let str = "+&%$!"
         assert("%2B%26%25%24%21" == str.ap.addingPercentEncodingForUrlQueryValue())
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

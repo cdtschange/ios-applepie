@@ -9,7 +9,7 @@
 import XCTest
 import Applepie
 
-class OperatorTests: XCTestCase {
+class OperatorTests: BaseTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -45,12 +45,4 @@ class OperatorTests: XCTestCase {
         e += b
         assert(e == ["k1": "v1", "k2": "vv2", "k3": "v3"])
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

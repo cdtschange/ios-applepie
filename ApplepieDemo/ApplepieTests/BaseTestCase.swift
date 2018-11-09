@@ -1,15 +1,14 @@
 //
-//  ApplepieTests.swift
+//  BaseTestCase.swift
 //  ApplepieTests
 //
-//  Created by 山天大畜 on 2018/10/26.
+//  Created by 毛蔚 on 2018/11/9.
 //  Copyright © 2018 山天大畜. All rights reserved.
 //
 
 import XCTest
-@testable import Applepie
 
-class ApplepieTests: XCTestCase {
+class BaseTestCase: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -31,4 +30,8 @@ class ApplepieTests: XCTestCase {
         }
     }
 
+    func url(forResource fileName: String, withExtension ext: String) -> URL {
+        let bundle = Bundle(for: BaseTestCase.self)
+        return bundle.url(forResource: fileName, withExtension: ext)!
+    }
 }

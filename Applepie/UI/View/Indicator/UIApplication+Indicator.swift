@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Async
 
 public extension UIApplication {
     

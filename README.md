@@ -1,6 +1,12 @@
 # Applepie
 
 <p align="left">
+<a href="">
+  <img src="http://img.shields.io/badge/OS%20X-10.10%2B-blue.svg" />
+</a>
+<a href="">
+  <img src="http://img.shields.io/badge/Swift-4.2-blue.svg" />
+</a>
 <a href="https://travis-ci.org/cdtschange/ios-applepie">
   <img src="https://travis-ci.org/cdtschange/ios-applepie.svg?branch=master" />
 </a>

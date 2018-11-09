@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Async
 
 public protocol APIndicatorProtocol: class {
     var showing: Bool { get set }
