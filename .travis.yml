@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode10
+cache: cocoapods
 # xcode_workspace: ApplepieDemo/ApplepieDemo.xcworkspace
 # xcode_scheme: ApplepieDemo
 # xcode_sdk: iphonesimulator12.0
