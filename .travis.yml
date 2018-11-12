@@ -3,7 +3,7 @@ osx_image: xcode10
 # xcode_workspace: ApplepieDemo/ApplepieDemo.xcworkspace
 # xcode_scheme: ApplepieDemo
 # xcode_sdk: iphonesimulator12.0
-podfile: ApplepieDemo/Podfile
+# podfile: ApplepieDemo/Podfile
 
 branches:
   only:
