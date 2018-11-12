@@ -11,8 +11,10 @@ branches:
 
 -before_install:
  - |
-    pod repo update
     gem install xcpretty -N --no-ri --no-rdoc
+    pod repo update
+    pod install --project-directory=ApplepieDemo
+
 script:
 - |
     set -o pipefail
