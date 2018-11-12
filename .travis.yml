@@ -9,11 +9,10 @@ branches:
   only:
   - master
 
--before_install:
- - |
-    gem install xcpretty -N --no-ri --no-rdoc
-    pod repo update
-    pod install --project-directory=ApplepieDemo
+before_install:
+    - gem install xcpretty -N --no-ri --no-rdoc
+    - pod repo update
+    - pod install --project-directory=ApplepieDemo
 
 script:
 - |
