@@ -56,4 +56,12 @@ public extension Applepie where Base == String {
         return String(data: data, encoding: .utf8)
     }
     
+    func unicodeDecode() -> String {
+        let str = NSMutableString(string: base)
+        str.replaceOccurrences(of: "\\U", with: "\\u", options: [], range: NSMakeRange(0, str.length))
+        CFStringTransform(str, nil, "Any-Hex/Java" as NSString, true)
+        str.replaceOccurrences(of: "\\\"", with: "\"", options: [], range: NSMakeRange(0, str.length))
+        return str as String
+    }
+    
 }

@@ -8,15 +8,26 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'Applepie' do
-    pod 'Alamofire', '~> 4.7.0'
-    pod 'CryptoSwift'
+    pod 'Alamofire', '~> 4.7.3'
+    pod 'ReactiveCocoa', '~> 8.0.2'
+    pod 'CryptoSwift', '~> 0.13.0'
+    pod 'Kingfisher', '~> 4.10.0'
+    pod 'AsyncSwift', '~> 2.0.4'
+    pod 'CocoaLumberjack/Swift', '~> 3.4.2'
 end
 
 def pods
-    pod 'Alamofire', '~> 4.7.0'
+    pod 'Alamofire', '~> 4.7.3'
+    pod 'ReactiveCocoa', '~> 8.0.2'
+    pod 'CocoaLumberjack/Swift', '~> 3.4.2'
+    pod 'AsyncSwift', '~> 2.0.4'
 end
 
 target 'ApplepieDemo' do
+    pods
+end
+
+target 'ApplepieTests' do
     pods
 end
 

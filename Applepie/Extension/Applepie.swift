@@ -2,12 +2,13 @@
 //  Applepie.swift
 //  Applepie
 //
-//  Created by 毛蔚 on 2018/10/26.
-//  Copyright © 2018 毛蔚. All rights reserved.
+//  Created by 山天大畜 on 2018/10/26.
+//  Copyright © 2018 山天大畜. All rights reserved.
 //
 
 import Foundation
 import ImageIO
+import UIKit
 
 #if os(macOS)
 import AppKit
@@ -50,9 +51,14 @@ public extension ApplepieCompatible {
     }
 }
 
+extension Int: ApplepieCompatible { }
+extension Double: ApplepieCompatible { }
+extension Bool: ApplepieCompatible { }
+extension Dictionary: ApplepieCompatible { }
 extension Image: ApplepieCompatible { }
 extension String: ApplepieCompatible { }
 extension Data: ApplepieCompatible { }
+extension UIApplication: ApplepieCompatible { }
 #if !os(watchOS)
 extension ImageView: ApplepieCompatible { }
 extension Button: ApplepieCompatible { }

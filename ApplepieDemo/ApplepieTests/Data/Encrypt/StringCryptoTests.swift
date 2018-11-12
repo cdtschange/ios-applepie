@@ -2,13 +2,13 @@
 //  StringCryptoTests.swift
 //  ApplepieTests
 //
-//  Created by 毛蔚 on 2018/10/26.
-//  Copyright © 2018 毛蔚. All rights reserved.
+//  Created by 山天大畜 on 2018/10/26.
+//  Copyright © 2018 山天大畜. All rights reserved.
 //
 
 import XCTest
 
-class StringCryptoTests: XCTestCase {
+class StringCryptoTests: BaseTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -56,12 +56,4 @@ class StringCryptoTests: XCTestCase {
         assert(encode.ap.aesDecrypt(key: key, iv: iv) == value)
     }
     
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
