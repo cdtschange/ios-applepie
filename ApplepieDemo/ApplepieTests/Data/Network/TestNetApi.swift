@@ -82,6 +82,16 @@ class TestUploadNetApi: TestNetApi, APNetApiUploadProtocol {
 class TestUploadMultipartNetApi: TestNetApi, APNetApiUploadMultipartProtocol {
     var files: [APUploadMultipartFile]? = nil
 }
+class TestUploadMultipartForExceptionNetApi: TestNetApi, APNetApiUploadMultipartProtocol {
+    var files: [APUploadMultipartFile]? = nil
+    
+    func beginMultipartFormData(formData: MultipartFormData) {}
+    func adaptMultipartFormDataResult(result: SessionManager.MultipartFormDataEncodingResult) -> SessionManager.MultipartFormDataEncodingResult {
+        return result
+    }
+    func didFinishUploadMultipartRequest() {}
+
+}
 
 class TestNetApiWithoutFill: APNetApi {
     
