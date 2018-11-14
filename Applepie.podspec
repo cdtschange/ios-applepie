@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "Applepie"
   s.version      = "0.0.1"
-  s.summary      = "Applepie is a convenient sdk for ios project."
+  s.summary      = "Applepie for swift."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
-  s.resources = "Applepie/**/*.{xib, png, jpg, xcdatamodeld, xcdatamodel}"
+  # s.resources = "Applepie/**/*.{xib, png, jpg, xcdatamodeld, xcdatamodel}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
