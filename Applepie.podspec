@@ -139,6 +139,7 @@ Pod::Spec.new do |s|
   
   s.dependency "CocoaLumberjack/Swift", "~> 3.4.2"
   s.dependency "ReactiveCocoa", "~> 8.0.2"
+  s.dependency "PromiseKit", "~> 6.7.0"
   s.dependency "Alamofire", "~> 4.7.3"
   s.dependency "Kingfisher", "~> 4.10.0"
   s.dependency "AsyncSwift", "~> 2.0.4"

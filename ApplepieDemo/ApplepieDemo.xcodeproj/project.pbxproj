@@ -35,8 +35,8 @@
 		7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEF9218A988D00636A8E /* APIndicator.swift */; };
 		7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */; };
 		7A4CCF06218C655C00636A8E /* APNetApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF05218C655C00636A8E /* APNetApiRequestTests.swift */; };
-		7A97733D21ABBE1100E79893 /* APEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733C21ABBE1100E79893 /* APEvent.swift */; };
-		7A97734021AC403E00E79893 /* APEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733F21AC403E00E79893 /* APEventTests.swift */; };
+		7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733C21ABBE1100E79893 /* APGCD.swift */; };
+		7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733F21AC403E00E79893 /* APGCDTests.swift */; };
 		7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7121918A9500D41919 /* DictionaryExTests.swift */; };
 		7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7321918D4D00D41919 /* StringExTests.swift */; };
 		7AC5D12C2193D38A006ABC48 /* APIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */; };
@@ -44,6 +44,7 @@
 		7AC5D1362193E12D006ABC48 /* APErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D1352193E12D006ABC48 /* APErrorTests.swift */; };
 		7AC5D13821942914006ABC48 /* APNetIndicatorClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D13721942914006ABC48 /* APNetIndicatorClientTests.swift */; };
 		7AC5D13A21942941006ABC48 /* TestNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D13921942941006ABC48 /* TestNetApi.swift */; };
+		7AC936A321B7A0E40022EAC4 /* APPNetApiPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC936A221B7A0E40022EAC4 /* APPNetApiPromiseTests.swift */; };
 		7ACE591C218947AE0002F73C /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE591B218947AE0002F73C /* APError.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
@@ -141,8 +142,8 @@
 		7A4CCEF9218A988D00636A8E /* APIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicator.swift; sourceTree = "<group>"; };
 		7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Indicator.swift"; sourceTree = "<group>"; };
 		7A4CCF05218C655C00636A8E /* APNetApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApiRequestTests.swift; sourceTree = "<group>"; };
-		7A97733C21ABBE1100E79893 /* APEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APEvent.swift; sourceTree = "<group>"; };
-		7A97733F21AC403E00E79893 /* APEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APEventTests.swift; sourceTree = "<group>"; };
+		7A97733C21ABBE1100E79893 /* APGCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCD.swift; sourceTree = "<group>"; };
+		7A97733F21AC403E00E79893 /* APGCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCDTests.swift; sourceTree = "<group>"; };
 		7AB71B7121918A9500D41919 /* DictionaryExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExTests.swift; sourceTree = "<group>"; };
 		7AB71B7321918D4D00D41919 /* StringExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExTests.swift; sourceTree = "<group>"; };
 		7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicatorTests.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		7AC5D1352193E12D006ABC48 /* APErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APErrorTests.swift; sourceTree = "<group>"; };
 		7AC5D13721942914006ABC48 /* APNetIndicatorClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetIndicatorClientTests.swift; sourceTree = "<group>"; };
 		7AC5D13921942941006ABC48 /* TestNetApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetApi.swift; sourceTree = "<group>"; };
+		7AC936A221B7A0E40022EAC4 /* APPNetApiPromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPNetApiPromiseTests.swift; sourceTree = "<group>"; };
 		7ACE591B218947AE0002F73C /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				7A0E271221953316001FE212 /* APNetApiToModelTests.swift */,
 				7A0E271421955F63001FE212 /* APNetApiUploadTests.swift */,
 				7AC5D13721942914006ABC48 /* APNetIndicatorClientTests.swift */,
+				7AC936A221B7A0E40022EAC4 /* APPNetApiPromiseTests.swift */,
 				7AC5D13921942941006ABC48 /* TestNetApi.swift */,
 			);
 			path = Network;
@@ -319,7 +322,7 @@
 		7A97733B21ABBDF100E79893 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
-				7A97733C21ABBE1100E79893 /* APEvent.swift */,
+				7A97733C21ABBE1100E79893 /* APGCD.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -327,7 +330,7 @@
 		7A97733E21AC3FFB00E79893 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
-				7A97733F21AC403E00E79893 /* APEventTests.swift */,
+				7A97733F21AC403E00E79893 /* APGCDTests.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -788,6 +792,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -811,6 +816,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -824,6 +830,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -965,7 +972,7 @@
 				7AD9A0472188083C007BAD59 /* APNetApi.swift in Sources */,
 				7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */,
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
-				7A97733D21ABBE1100E79893 /* APEvent.swift in Sources */,
+				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,7 +983,7 @@
 				7AC5D13821942914006ABC48 /* APNetIndicatorClientTests.swift in Sources */,
 				7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */,
 				7A0E272021958A42001FE212 /* APNetApiOtherTests.swift in Sources */,
-				7A97734021AC403E00E79893 /* APEventTests.swift in Sources */,
+				7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */,
 				7A0E271521955F63001FE212 /* APNetApiUploadTests.swift in Sources */,
 				7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */,
 				7A0E271321953316001FE212 /* APNetApiToModelTests.swift in Sources */,
@@ -989,6 +996,7 @@
 				7A4CCF06218C655C00636A8E /* APNetApiRequestTests.swift in Sources */,
 				7A41804021927C4D00C6BBD0 /* OperatorTests.swift in Sources */,
 				7AD9A0382182FE61007BAD59 /* StringCryptoTests.swift in Sources */,
+				7AC936A321B7A0E40022EAC4 /* APPNetApiPromiseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

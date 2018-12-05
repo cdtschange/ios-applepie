@@ -55,6 +55,7 @@ extension Int: ApplepieCompatible { }
 extension Double: ApplepieCompatible { }
 extension Bool: ApplepieCompatible { }
 extension Dictionary: ApplepieCompatible { }
+extension Array: ApplepieCompatible { }
 extension Image: ApplepieCompatible { }
 extension String: ApplepieCompatible { }
 extension Data: ApplepieCompatible { }

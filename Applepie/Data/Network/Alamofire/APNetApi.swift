@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import ReactiveSwift
+import PromiseKit
 import CocoaLumberjack
 
 public enum APRequestType {
@@ -19,9 +20,9 @@ public protocol APNetIndicatorProtocol {
 }
 
 public protocol APResponseHandler {
-    func adapt(_ result: Result<Any>) -> Result<Any>
-    func adapt(_ result: Result<Data>) -> Result<Data>
-    func adapt(_ result: Result<String>) -> Result<String>
+    func adapt(_ result: Alamofire.Result<Any>) -> Alamofire.Result<Any>
+    func adapt(_ result: Alamofire.Result<Data>) -> Alamofire.Result<Data>
+    func adapt(_ result: Alamofire.Result<String>) -> Alamofire.Result<String>
     
     func fill(data: Any)
     func fill(map: [String: Any])
@@ -84,13 +85,13 @@ public protocol APNetApi: class, APResponseHandler, APNetIndicatorProtocol {
 
 public extension APNetApi {
     
-    public func adapt(_ result: Result<Any>) -> Result<Any> {
+    public func adapt(_ result: Alamofire.Result<Any>) -> Alamofire.Result<Any> {
         return result
     }
-    public func adapt(_ result: Result<Data>) -> Result<Data> {
+    public func adapt(_ result: Alamofire.Result<Data>) -> Alamofire.Result<Data> {
         return result
     }
-    public func adapt(_ result: Result<String>) -> Result<String> {
+    public func adapt(_ result: Alamofire.Result<String>) -> Alamofire.Result<String> {
         return result
     }
     public func fill(data: Any) {
@@ -423,5 +424,59 @@ public extension APNetApi {
             return it.requestUploadMultipart()
         }
         
+    }
+    
+    func promise(format: APRequestType = .json) -> Promise<Self> {
+        if let err = error {
+            return Promise { sink in
+                sink.reject(err)
+            }
+        }
+        var it = self
+        if APNetIndicatorClient.getIndicatorModel(identifier: identifier) == nil {
+            it = self.setIndicator(nil, view: nil, text: nil)
+        }
+        switch format {
+        case .json:
+            return Promise { sink in
+                it.requestJson().on(failed: { err in
+                    sink.reject(err)
+                }, value: { data in
+                    sink.fulfill(data)
+                }).start()
+            }
+        case .data:
+            return Promise { sink in
+                it.requestData().on(failed: { err in
+                    sink.reject(err)
+                }, value: { data in
+                    sink.fulfill(data)
+                }).start()
+            }
+        case .string:
+            return Promise { sink in
+                it.requestString().on(failed: { err in
+                    sink.reject(err)
+                }, value: { data in
+                    sink.fulfill(data)
+                }).start()
+            }
+        case .upload:
+            return Promise { sink in
+                it.requestJson().on(failed: { err in
+                    sink.reject(err)
+                }, value: { data in
+                    sink.fulfill(data)
+                }).start()
+            }
+        case .multipartUpload:
+            return Promise { sink in
+                it.requestUploadMultipart().on(failed: { err in
+                    sink.reject(err)
+                }, value: { data in
+                    sink.fulfill(data)
+                }).start()
+            }
+        }
     }
 }
