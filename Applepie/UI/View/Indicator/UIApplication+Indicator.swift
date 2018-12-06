@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Async
 
 public extension UIApplication {
     
@@ -37,11 +36,12 @@ public extension Applepie where Base == UIApplication {
     
     public func setNetworkActivityIndicator(show: Bool) {
         let lockQueue = DispatchQueue(label: UIApplicationConstant.queueName, attributes: [])
+        
         lockQueue.sync {
             if show {
                 if base.indicatorCount == 0 {
                     base.indicatorCount += 1
-                    Async.main { [weak self] in
+                    DispatchQueue.main.async {[weak self] in
                         self?.base.isNetworkActivityIndicatorVisible = true
                     }
                 } else {
@@ -51,7 +51,7 @@ public extension Applepie where Base == UIApplication {
                 base.indicatorCount -= 1
                 if base.indicatorCount <= 0 {
                     base.indicatorCount = 0
-                    Async.main { [weak self] in
+                    DispatchQueue.main.async { [weak self] in
                         self?.base.isNetworkActivityIndicatorVisible = false
                     }
                 }

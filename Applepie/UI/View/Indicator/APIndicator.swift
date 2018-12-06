@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Async
 
 public protocol APIndicatorProtocol: class {
     var showing: Bool { get set }
@@ -24,14 +23,14 @@ public class APSingleIndicator: APIndicatorProtocol {
     public func show(inView view: UIView?, text: String?, detailText: String?, animated: Bool) {
         UIApplication.shared.ap.setNetworkActivityIndicator(show: true)
         showing = true
-        Async.main {
+        DispatchQueue.main.async {
 //            self.show(inView: view, text: text, detailText: nil, animated: false)
         }
     }
     public func hide(inView view: UIView?, animated: Bool) {
         UIApplication.shared.ap.setNetworkActivityIndicator(show: false)
         self.showing = false
-        Async.main {
+        DispatchQueue.main.async {
 //            self.hide(inView: view, animated: false)
         }
     }

@@ -30,6 +30,8 @@
 		7A2DBB852189806F0011A730 /* Convertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB842189806F0011A730 /* Convertor.swift */; };
 		7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB86218986A80011A730 /* APNetClient.swift */; };
 		7A2DBB892189885E0011A730 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB882189885E0011A730 /* Operator.swift */; };
+		7A34D58021B8CE530041E5D5 /* APPinCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D57F21B8CE530041E5D5 /* APPinCache.swift */; };
+		7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D58421B8D40A0041E5D5 /* APPinCacheTests.swift */; };
 		7A41803E21927B2A00C6BBD0 /* ConvertorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41803D21927B2A00C6BBD0 /* ConvertorTests.swift */; };
 		7A41804021927C4D00C6BBD0 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41803F21927C4D00C6BBD0 /* OperatorTests.swift */; };
 		7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEF9218A988D00636A8E /* APIndicator.swift */; };
@@ -137,6 +139,8 @@
 		7A2DBB842189806F0011A730 /* Convertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertor.swift; sourceTree = "<group>"; };
 		7A2DBB86218986A80011A730 /* APNetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetClient.swift; sourceTree = "<group>"; };
 		7A2DBB882189885E0011A730 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		7A34D57F21B8CE530041E5D5 /* APPinCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPinCache.swift; sourceTree = "<group>"; };
+		7A34D58421B8D40A0041E5D5 /* APPinCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPinCacheTests.swift; sourceTree = "<group>"; };
 		7A41803D21927B2A00C6BBD0 /* ConvertorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertorTests.swift; sourceTree = "<group>"; };
 		7A41803F21927C4D00C6BBD0 /* OperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
 		7A4CCEF9218A988D00636A8E /* APIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicator.swift; sourceTree = "<group>"; };
@@ -292,6 +296,14 @@
 				7A0E2717219563A3001FE212 /* rainbow.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		7A34D58121B8D03C0041E5D5 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				7A34D58421B8D40A0041E5D5 /* APPinCacheTests.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		7A4CCEF8218A986C00636A8E /* Indicator */ = {
@@ -465,6 +477,7 @@
 		7AD9A02C2182FE2C007BAD59 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				7A34D57F21B8CE530041E5D5 /* APPinCache.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -497,6 +510,7 @@
 			children = (
 				7AD9A0362182FE4A007BAD59 /* Encrypt */,
 				7A97733E21AC3FFB00E79893 /* GCD */,
+				7A34D58121B8D03C0041E5D5 /* Local */,
 				7A4CCF04218C653B00636A8E /* Network */,
 			);
 			path = Data;
@@ -771,28 +785,32 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -809,28 +827,32 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieTests/Pods-ApplepieTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -891,7 +913,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
@@ -902,7 +923,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
@@ -970,6 +990,7 @@
 				7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */,
 				7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */,
 				7AD9A0472188083C007BAD59 /* APNetApi.swift in Sources */,
+				7A34D58021B8CE530041E5D5 /* APPinCache.swift in Sources */,
 				7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */,
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
@@ -982,6 +1003,7 @@
 			files = (
 				7AC5D13821942914006ABC48 /* APNetIndicatorClientTests.swift in Sources */,
 				7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */,
+				7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */,
 				7A0E272021958A42001FE212 /* APNetApiOtherTests.swift in Sources */,
 				7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */,
 				7A0E271521955F63001FE212 /* APNetApiUploadTests.swift in Sources */,
