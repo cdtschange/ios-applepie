@@ -14,6 +14,8 @@ target 'Applepie' do
     pod 'PromiseKit', '~> 6.7.0'
     pod 'Kingfisher', '~> 4.10.1'
     pod 'PINCache', '~> 3.0.1-beta.7'
+    pod 'Valet', '~> 3.2.2'
+    pod 'DeviceKit', '~> 1.10.0'
     pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
     pod 'CocoaLumberjack/Swift', '~> 3.4.2'
 end

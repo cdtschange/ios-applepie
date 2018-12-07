@@ -52,6 +52,7 @@ public extension ApplepieCompatible {
 }
 
 extension Int: ApplepieCompatible { }
+extension Int64: ApplepieCompatible { }
 extension Double: ApplepieCompatible { }
 extension Bool: ApplepieCompatible { }
 extension Dictionary: ApplepieCompatible { }

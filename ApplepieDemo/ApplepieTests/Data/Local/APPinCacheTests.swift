@@ -2,7 +2,7 @@
 //  APDiskCacheTests.swift
 //  ApplepieTests
 //
-//  Created by 毛蔚 on 2018/12/6.
+//  Created by 山天大畜 on 2018/12/6.
 //  Copyright © 2018 山天大畜. All rights reserved.
 //
 
@@ -28,26 +28,26 @@ class APPinCacheTests: BaseTestCase {
     struct TestPinCacheModel {
         static var name: String? {
             get {
-                return APPinCache.object(forKey: "TestMemoryCacheModel.name") as? String
+                return APPinCache.object(forKey: "TestPinCacheModel.name") as? String
             }
             set {
-                return APPinCache.setObject(newValue, forKey: "TestMemoryCacheModel.name")
+                return APPinCache.setObject(newValue, forKey: "TestPinCacheModel.name")
             }
         }
         static var age: Int? {
             get {
-                return APPinCache.object(forKey: "TestMemoryCacheModel.age") as? Int
+                return APPinCache.object(forKey: "TestPinCacheModel.age") as? Int
             }
             set {
-                return APPinCache.setObject(newValue, forKey: "TestMemoryCacheModel.age")
+                return APPinCache.setObject(newValue, forKey: "TestPinCacheModel.age")
             }
         }
         static var money: Double? {
             get {
-                return APPinCache.object(forKey: "TestMemoryCacheModel.money") as? Double
+                return APPinCache.object(forKey: "TestPinCacheModel.money") as? Double
             }
             set {
-                return APPinCache.setObject(newValue, forKey: "TestMemoryCacheModel.money")
+                return APPinCache.setObject(newValue, forKey: "TestPinCacheModel.money")
             }
         }
     }

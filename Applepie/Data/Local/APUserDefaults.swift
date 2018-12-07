@@ -1,5 +1,5 @@
 //
-//  APDiskCache.swift
+//  APUserDefaults.swift
 //  Applepie
 //
 //  Created by 山天大畜 on 2018/12/6.
@@ -7,26 +7,20 @@
 //
 
 import Foundation
-import PINCache
+import SwiftyUserDefaults
 
-public struct APPinCache {
+public struct APUserDefaults {
     public static func object(forKey key: String) -> Any? {
-        return PINCache.shared.object(forKey: key)
+        return Defaults.object(forKey: key)
     }
     public static func setObject(_ object: Any?, forKey key: String) {
         guard let obj = object else {
             removeObject(forKey: key)
             return
         }
-        return PINCache.shared.setObject(obj, forKey: key)
-    }
-    public static func containsObject(forKey key: String) -> Bool {
-        return PINCache.shared.containsObject(forKey: key)
+        return Defaults.set(obj, forKey: key)
     }
     public static func removeObject(forKey key: String) {
-        PINCache.shared.removeObject(forKey: key)
-    }
-    public static func removeAllObjects() {
-        PINCache.shared.removeAllObjects()
+        Defaults.removeObject(forKey: key)
     }
 }

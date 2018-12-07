@@ -8,9 +8,22 @@
 
 import Foundation
 import Alamofire
+import PromiseKit
 import CocoaLumberjack
 
 public struct APNetClient {
+    
+    private static var reachability = NetworkReachabilityManager()
+    
+    public static func getNetworkStatus() -> Guarantee<NetworkReachabilityManager.NetworkReachabilityStatus> {
+        return Guarantee { sink in
+            reachability?.listener = { status in
+                reachability?.stopListening()
+                sink(status)
+            }
+            reachability?.startListening()
+        }
+    }
     
     public static var sessions: [String: SessionManager] = [:]
     
