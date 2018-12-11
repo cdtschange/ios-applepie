@@ -18,12 +18,14 @@ target 'Applepie' do
     pod 'DeviceKit', '~> 1.10.0'
     pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
     pod 'CocoaLumberjack/Swift', '~> 3.4.2'
+    pod 'SwiftLocation', '~> 3.2.3'
 end
 
 def pods
     pod 'Alamofire', '~> 4.7.3'
     pod 'ReactiveCocoa', '~> 8.0.2'
     pod 'CocoaLumberjack/Swift', '~> 3.4.2'
+    pod 'SwiftLocation', '~> 3.2.3'
 end
 
 target 'ApplepieDemo' do

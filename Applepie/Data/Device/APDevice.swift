@@ -204,6 +204,10 @@ public struct APDevice {
         
         if #available(iOS 12.0, *) {
             map = CTTelephonyNetworkInfo().serviceSubscriberCellularProviders
+        } else {
+            if let carrier = CTTelephonyNetworkInfo().subscriberCellularProvider {
+                map = ["carrier": carrier]
+            }
         }
         return map
     }
@@ -234,6 +238,10 @@ public struct APDevice {
         
         if #available(iOS 12.0, *) {
             map = CTTelephonyNetworkInfo().serviceCurrentRadioAccessTechnology
+        } else {
+            if let radio = CTTelephonyNetworkInfo().currentRadioAccessTechnology {
+                map = ["radio": radio]
+            }
         }
         return map
     }

@@ -43,6 +43,8 @@
 		7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEF9218A988D00636A8E /* APIndicator.swift */; };
 		7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */; };
 		7A4CCF06218C655C00636A8E /* APNetApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CCF05218C655C00636A8E /* APNetApiRequestTests.swift */; };
+		7A7B930A21BE1F06008B2BCC /* APLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B930921BE1F06008B2BCC /* APLocation.swift */; };
+		7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8482D921BF4AF600CFC910 /* APLocationTests.swift */; };
 		7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733C21ABBE1100E79893 /* APGCD.swift */; };
 		7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733F21AC403E00E79893 /* APGCDTests.swift */; };
 		7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7121918A9500D41919 /* DictionaryExTests.swift */; };
@@ -158,6 +160,8 @@
 		7A4CCEF9218A988D00636A8E /* APIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicator.swift; sourceTree = "<group>"; };
 		7A4CCEFB218A9B9800636A8E /* UIApplication+Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Indicator.swift"; sourceTree = "<group>"; };
 		7A4CCF05218C655C00636A8E /* APNetApiRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApiRequestTests.swift; sourceTree = "<group>"; };
+		7A7B930921BE1F06008B2BCC /* APLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLocation.swift; sourceTree = "<group>"; };
+		7A8482D921BF4AF600CFC910 /* APLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLocationTests.swift; sourceTree = "<group>"; };
 		7A97733C21ABBE1100E79893 /* APGCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCD.swift; sourceTree = "<group>"; };
 		7A97733F21AC403E00E79893 /* APGCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCDTests.swift; sourceTree = "<group>"; };
 		7AB71B7121918A9500D41919 /* DictionaryExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExTests.swift; sourceTree = "<group>"; };
@@ -361,6 +365,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		7A8482D821BF4AE200CFC910 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7A8482D921BF4AF600CFC910 /* APLocationTests.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		7A97733B21ABBDF100E79893 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +498,7 @@
 		7AD9A0292182FE2C007BAD59 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				7A7B930921BE1F06008B2BCC /* APLocation.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -545,6 +558,7 @@
 				7AD9A0362182FE4A007BAD59 /* Encrypt */,
 				7A97733E21AC3FFB00E79893 /* GCD */,
 				7A34D58121B8D03C0041E5D5 /* Local */,
+				7A8482D821BF4AE200CFC910 /* Location */,
 				7A4CCF04218C653B00636A8E /* Network */,
 			);
 			path = Data;
@@ -829,6 +843,8 @@
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 			);
@@ -847,6 +863,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 			);
@@ -875,6 +893,8 @@
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 			);
@@ -893,6 +913,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 			);
@@ -1026,6 +1048,7 @@
 				7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */,
 				7ACE591C218947AE0002F73C /* APError.swift in Sources */,
 				7A2DBB852189806F0011A730 /* Convertor.swift in Sources */,
+				7A7B930A21BE1F06008B2BCC /* APLocation.swift in Sources */,
 				7A2DBB892189885E0011A730 /* Operator.swift in Sources */,
 				7AC5D1302193D770006ABC48 /* APNetIndicatorClient.swift in Sources */,
 				7A34D58721B8F9F50041E5D5 /* APUserDefaults.swift in Sources */,
@@ -1049,6 +1072,7 @@
 				7AC5D13821942914006ABC48 /* APNetIndicatorClientTests.swift in Sources */,
 				7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */,
 				7A34D59321BA0A080041E5D5 /* APKeychainTests.swift in Sources */,
+				7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */,
 				7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */,
 				7A0E272021958A42001FE212 /* APNetApiOtherTests.swift in Sources */,
 				7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */,
@@ -1237,6 +1261,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TE2BYM67AU;
 				INFOPLIST_FILE = ApplepieDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1255,6 +1280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TE2BYM67AU;
 				INFOPLIST_FILE = ApplepieDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
