@@ -49,6 +49,8 @@
 		7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733F21AC403E00E79893 /* APGCDTests.swift */; };
 		7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7121918A9500D41919 /* DictionaryExTests.swift */; };
 		7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7321918D4D00D41919 /* StringExTests.swift */; };
+		7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */; };
+		7ABF7BFE21C0DD8C00049632 /* APBiometricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF7BFD21C0DD8C00049632 /* APBiometricsTests.swift */; };
 		7AC5D12C2193D38A006ABC48 /* APIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */; };
 		7AC5D1302193D770006ABC48 /* APNetIndicatorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */; };
 		7AC5D1362193E12D006ABC48 /* APErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D1352193E12D006ABC48 /* APErrorTests.swift */; };
@@ -166,6 +168,8 @@
 		7A97733F21AC403E00E79893 /* APGCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCDTests.swift; sourceTree = "<group>"; };
 		7AB71B7121918A9500D41919 /* DictionaryExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExTests.swift; sourceTree = "<group>"; };
 		7AB71B7321918D4D00D41919 /* StringExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExTests.swift; sourceTree = "<group>"; };
+		7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBiometrics.swift; sourceTree = "<group>"; };
+		7ABF7BFD21C0DD8C00049632 /* APBiometricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBiometricsTests.swift; sourceTree = "<group>"; };
 		7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicatorTests.swift; sourceTree = "<group>"; };
 		7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APNetIndicatorClient.swift; sourceTree = "<group>"; };
 		7AC5D1342193E030006ABC48 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
@@ -400,6 +404,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		7ABF7BF921C0AC3F00049632 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7ABF7BFC21C0DD6F00049632 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7ABF7BFD21C0DD8C00049632 /* APBiometricsTests.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		7AC5D1282193D36F006ABC48 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,9 +494,9 @@
 		7AD9A0272182FE2C007BAD59 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7ABF7BF921C0AC3F00049632 /* Auth */,
 				7A34D58A21B8FFDD0041E5D5 /* Device */,
 				7AD9A02F2182FE2C007BAD59 /* Encrypt */,
-				7AD9A0282182FE2C007BAD59 /* FingerPrint */,
 				7A97733B21ABBDF100E79893 /* GCD */,
 				7AD9A02B2182FE2C007BAD59 /* Image */,
 				7AD9A02C2182FE2C007BAD59 /* Local */,
@@ -486,13 +506,6 @@
 				7AD9A02D2182FE2C007BAD59 /* Push */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		7AD9A0282182FE2C007BAD59 /* FingerPrint */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FingerPrint;
 			sourceTree = "<group>";
 		};
 		7AD9A0292182FE2C007BAD59 /* Location */ = {
@@ -554,6 +567,7 @@
 		7AD9A0352182FE37007BAD59 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7ABF7BFC21C0DD6F00049632 /* Auth */,
 				7A34D58D21B9060D0041E5D5 /* Device */,
 				7AD9A0362182FE4A007BAD59 /* Encrypt */,
 				7A97733E21AC3FFB00E79893 /* GCD */,
@@ -837,14 +851,15 @@
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 			);
@@ -857,14 +872,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 			);
@@ -887,14 +903,15 @@
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 			);
@@ -907,14 +924,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 			);
@@ -981,6 +999,8 @@
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -991,6 +1011,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1062,6 +1084,7 @@
 				7A34D58C21B900280041E5D5 /* APDevice.swift in Sources */,
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
+				7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,6 +1096,7 @@
 				7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */,
 				7A34D59321BA0A080041E5D5 /* APKeychainTests.swift in Sources */,
 				7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */,
+				7ABF7BFE21C0DD8C00049632 /* APBiometricsTests.swift in Sources */,
 				7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */,
 				7A0E272021958A42001FE212 /* APNetApiOtherTests.swift in Sources */,
 				7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */,

@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 # ignore all warnings from all pods
 inhibit_all_warnings!
@@ -19,6 +19,7 @@ target 'Applepie' do
     pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
     pod 'CocoaLumberjack/Swift', '~> 3.4.2'
     pod 'SwiftLocation', '~> 3.2.3'
+    pod 'SPPermission', '~> 2.4.2'
 end
 
 def pods
