@@ -60,10 +60,7 @@ extension Array: ApplepieCompatible { }
 extension Image: ApplepieCompatible { }
 extension String: ApplepieCompatible { }
 extension Data: ApplepieCompatible { }
+extension UIViewController: ApplepieCompatible { }
 extension UIApplication: ApplepieCompatible { }
-#if !os(watchOS)
 extension ImageView: ApplepieCompatible { }
 extension Button: ApplepieCompatible { }
-#else
-extension WKInterfaceImage: KingfisherCompatible { }
-#endif

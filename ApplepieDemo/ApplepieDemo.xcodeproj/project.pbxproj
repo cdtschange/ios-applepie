@@ -18,6 +18,13 @@
 		7A02DF012182F11600B41DB6 /* Applepie.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A02DEF12182F11500B41DB6 /* Applepie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A02DF042182F11600B41DB6 /* Applepie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02DEEF2182F11500B41DB6 /* Applepie.framework */; };
 		7A02DF052182F11600B41DB6 /* Applepie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02DEEF2182F11500B41DB6 /* Applepie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A0BE4F821C1F8F2000748D5 /* NSObject+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE4F721C1F8F2000748D5 /* NSObject+Ex.swift */; };
+		7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */; };
+		7A0BE4FC21C24558000748D5 /* UIViewControllerExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE4FB21C24558000748D5 /* UIViewControllerExTests.swift */; };
+		7A0BE4FE21C2456C000748D5 /* NSObjectExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE4FD21C2456C000748D5 /* NSObjectExTests.swift */; };
+		7A0BE50021C254C2000748D5 /* ViewControllerNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0BE4FF21C254C2000748D5 /* ViewControllerNib.xib */; };
+		7A0BE50221C2598D000748D5 /* ViewControllerNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE50121C2598D000748D5 /* ViewControllerNib.swift */; };
+		7A0BE50521C25EE8000748D5 /* APRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE50421C25EE8000748D5 /* APRouterTests.swift */; };
 		7A0E271321953316001FE212 /* APNetApiToModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E271221953316001FE212 /* APNetApiToModelTests.swift */; };
 		7A0E271521955F63001FE212 /* APNetApiUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E271421955F63001FE212 /* APNetApiUploadTests.swift */; };
 		7A0E2719219563A3001FE212 /* rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A0E2717219563A3001FE212 /* rainbow.jpg */; };
@@ -51,6 +58,7 @@
 		7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7321918D4D00D41919 /* StringExTests.swift */; };
 		7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */; };
 		7ABF7BFE21C0DD8C00049632 /* APBiometricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF7BFD21C0DD8C00049632 /* APBiometricsTests.swift */; };
+		7ABF7C0121C0E5B200049632 /* APRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF7C0021C0E5B200049632 /* APRouter.swift */; };
 		7AC5D12C2193D38A006ABC48 /* APIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */; };
 		7AC5D1302193D770006ABC48 /* APNetIndicatorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */; };
 		7AC5D1362193E12D006ABC48 /* APErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D1352193E12D006ABC48 /* APErrorTests.swift */; };
@@ -138,6 +146,13 @@
 		7A02DEF22182F11500B41DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A02DEF72182F11600B41DB6 /* ApplepieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplepieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A02DF002182F11600B41DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A0BE4F721C1F8F2000748D5 /* NSObject+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ex.swift"; sourceTree = "<group>"; };
+		7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
+		7A0BE4FB21C24558000748D5 /* UIViewControllerExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExTests.swift; sourceTree = "<group>"; };
+		7A0BE4FD21C2456C000748D5 /* NSObjectExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExTests.swift; sourceTree = "<group>"; };
+		7A0BE4FF21C254C2000748D5 /* ViewControllerNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewControllerNib.xib; sourceTree = "<group>"; };
+		7A0BE50121C2598D000748D5 /* ViewControllerNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNib.swift; sourceTree = "<group>"; };
+		7A0BE50421C25EE8000748D5 /* APRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRouterTests.swift; sourceTree = "<group>"; };
 		7A0E271221953316001FE212 /* APNetApiToModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApiToModelTests.swift; sourceTree = "<group>"; };
 		7A0E271421955F63001FE212 /* APNetApiUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApiUploadTests.swift; sourceTree = "<group>"; };
 		7A0E2717219563A3001FE212 /* rainbow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbow.jpg; sourceTree = "<group>"; };
@@ -170,6 +185,7 @@
 		7AB71B7321918D4D00D41919 /* StringExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExTests.swift; sourceTree = "<group>"; };
 		7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBiometrics.swift; sourceTree = "<group>"; };
 		7ABF7BFD21C0DD8C00049632 /* APBiometricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBiometricsTests.swift; sourceTree = "<group>"; };
+		7ABF7C0021C0E5B200049632 /* APRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRouter.swift; sourceTree = "<group>"; };
 		7AC5D12B2193D38A006ABC48 /* APIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIndicatorTests.swift; sourceTree = "<group>"; };
 		7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APNetIndicatorClient.swift; sourceTree = "<group>"; };
 		7AC5D1342193E030006ABC48 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
@@ -267,6 +283,8 @@
 				7A02DECE2182EE5D00B41DB6 /* Assets.xcassets */,
 				7A02DED02182EE5D00B41DB6 /* LaunchScreen.storyboard */,
 				7A02DED32182EE5D00B41DB6 /* Info.plist */,
+				7A0BE4FF21C254C2000748D5 /* ViewControllerNib.xib */,
+				7A0BE50121C2598D000748D5 /* ViewControllerNib.swift */,
 			);
 			path = ApplepieDemo;
 			sourceTree = "<group>";
@@ -308,6 +326,14 @@
 				7A02DF002182F11600B41DB6 /* Info.plist */,
 			);
 			path = ApplepieTests;
+			sourceTree = "<group>";
+		};
+		7A0BE50321C25ED6000748D5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7A0BE50421C25EE8000748D5 /* APRouterTests.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		7A0E27162195638E001FE212 /* Images */ = {
@@ -398,8 +424,10 @@
 			children = (
 				7A41803D21927B2A00C6BBD0 /* ConvertorTests.swift */,
 				7AB71B7121918A9500D41919 /* DictionaryExTests.swift */,
+				7A0BE4FD21C2456C000748D5 /* NSObjectExTests.swift */,
 				7A41803F21927C4D00C6BBD0 /* OperatorTests.swift */,
 				7AB71B7321918D4D00D41919 /* StringExTests.swift */,
+				7A0BE4FB21C24558000748D5 /* UIViewControllerExTests.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -420,9 +448,18 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		7ABF7BFF21C0E5A100049632 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7ABF7C0021C0E5B200049632 /* APRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		7AC5D1282193D36F006ABC48 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7A0BE50321C25ED6000748D5 /* Router */,
 				7AC5D1292193D376006ABC48 /* View */,
 			);
 			path = UI;
@@ -459,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD9A0232182FE2C007BAD59 /* Schema */,
+				7ABF7BFF21C0E5A100049632 /* Router */,
 				7AD9A0242182FE2C007BAD59 /* View */,
 			);
 			path = UI;
@@ -485,8 +523,10 @@
 				7AD9A0262182FE2C007BAD59 /* Applepie.swift */,
 				7A2DBB842189806F0011A730 /* Convertor.swift */,
 				7A2DBB7E2189584D0011A730 /* Dictionary+Ex.swift */,
+				7A0BE4F721C1F8F2000748D5 /* NSObject+Ex.swift */,
 				7A2DBB882189885E0011A730 /* Operator.swift */,
 				7A2DBB8021897E660011A730 /* String+Ex.swift */,
+				7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -784,6 +824,7 @@
 			files = (
 				7A02DED22182EE5D00B41DB6 /* LaunchScreen.storyboard in Resources */,
 				7A02DECF2182EE5D00B41DB6 /* Assets.xcassets in Resources */,
+				7A0BE50021C254C2000748D5 /* ViewControllerNib.xib in Resources */,
 				7A02DEE92182EECA00B41DB6 /* Podfile in Resources */,
 				7A02DECD2182EE5D00B41DB6 /* Main.storyboard in Resources */,
 			);
@@ -1049,6 +1090,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A02DECA2182EE5D00B41DB6 /* ViewController.swift in Sources */,
+				7A0BE50221C2598D000748D5 /* ViewControllerNib.swift in Sources */,
 				7A02DEC82182EE5D00B41DB6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1069,11 +1111,13 @@
 				7A2DBB8121897E660011A730 /* String+Ex.swift in Sources */,
 				7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */,
 				7ACE591C218947AE0002F73C /* APError.swift in Sources */,
+				7A0BE4F821C1F8F2000748D5 /* NSObject+Ex.swift in Sources */,
 				7A2DBB852189806F0011A730 /* Convertor.swift in Sources */,
 				7A7B930A21BE1F06008B2BCC /* APLocation.swift in Sources */,
 				7A2DBB892189885E0011A730 /* Operator.swift in Sources */,
 				7AC5D1302193D770006ABC48 /* APNetIndicatorClient.swift in Sources */,
 				7A34D58721B8F9F50041E5D5 /* APUserDefaults.swift in Sources */,
+				7ABF7C0121C0E5B200049632 /* APRouter.swift in Sources */,
 				7A34D59121BA07730041E5D5 /* APKeychain.swift in Sources */,
 				7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */,
 				7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */,
@@ -1083,6 +1127,7 @@
 				7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */,
 				7A34D58C21B900280041E5D5 /* APDevice.swift in Sources */,
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
+				7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
 				7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */,
 			);
@@ -1097,9 +1142,11 @@
 				7A34D59321BA0A080041E5D5 /* APKeychainTests.swift in Sources */,
 				7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */,
 				7ABF7BFE21C0DD8C00049632 /* APBiometricsTests.swift in Sources */,
+				7A0BE4FC21C24558000748D5 /* UIViewControllerExTests.swift in Sources */,
 				7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */,
 				7A0E272021958A42001FE212 /* APNetApiOtherTests.swift in Sources */,
 				7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */,
+				7A0BE50521C25EE8000748D5 /* APRouterTests.swift in Sources */,
 				7A0E271521955F63001FE212 /* APNetApiUploadTests.swift in Sources */,
 				7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */,
 				7A0E271321953316001FE212 /* APNetApiToModelTests.swift in Sources */,
@@ -1113,6 +1160,7 @@
 				7AC5D1362193E12D006ABC48 /* APErrorTests.swift in Sources */,
 				7A4CCF06218C655C00636A8E /* APNetApiRequestTests.swift in Sources */,
 				7A41804021927C4D00C6BBD0 /* OperatorTests.swift in Sources */,
+				7A0BE4FE21C2456C000748D5 /* NSObjectExTests.swift in Sources */,
 				7AD9A0382182FE61007BAD59 /* StringCryptoTests.swift in Sources */,
 				7AC936A321B7A0E40022EAC4 /* APPNetApiPromiseTests.swift in Sources */,
 			);
