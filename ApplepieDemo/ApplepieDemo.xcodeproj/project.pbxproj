@@ -37,6 +37,7 @@
 		7A2DBB852189806F0011A730 /* Convertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB842189806F0011A730 /* Convertor.swift */; };
 		7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB86218986A80011A730 /* APNetClient.swift */; };
 		7A2DBB892189885E0011A730 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB882189885E0011A730 /* Operator.swift */; };
+		7A31F6E621C74432004FA00A /* APWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A31F6E521C74432004FA00A /* APWebView.swift */; };
 		7A34D58021B8CE530041E5D5 /* APPinCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D57F21B8CE530041E5D5 /* APPinCache.swift */; };
 		7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D58421B8D40A0041E5D5 /* APPinCacheTests.swift */; };
 		7A34D58721B8F9F50041E5D5 /* APUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D58621B8F9F50041E5D5 /* APUserDefaults.swift */; };
@@ -164,6 +165,7 @@
 		7A2DBB842189806F0011A730 /* Convertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertor.swift; sourceTree = "<group>"; };
 		7A2DBB86218986A80011A730 /* APNetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetClient.swift; sourceTree = "<group>"; };
 		7A2DBB882189885E0011A730 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		7A31F6E521C74432004FA00A /* APWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APWebView.swift; sourceTree = "<group>"; };
 		7A34D57F21B8CE530041E5D5 /* APPinCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPinCache.swift; sourceTree = "<group>"; };
 		7A34D58421B8D40A0041E5D5 /* APPinCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPinCacheTests.swift; sourceTree = "<group>"; };
 		7A34D58621B8F9F50041E5D5 /* APUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APUserDefaults.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		7A8482D921BF4AF600CFC910 /* APLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLocationTests.swift; sourceTree = "<group>"; };
 		7A97733C21ABBE1100E79893 /* APGCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCD.swift; sourceTree = "<group>"; };
 		7A97733F21AC403E00E79893 /* APGCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCDTests.swift; sourceTree = "<group>"; };
+		7AA0CF6021D8DFC000A59EE7 /* Applepie.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = Applepie.podspec; path = ../../Applepie.podspec; sourceTree = "<group>"; };
 		7AB71B7121918A9500D41919 /* DictionaryExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExTests.swift; sourceTree = "<group>"; };
 		7AB71B7321918D4D00D41919 /* StringExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExTests.swift; sourceTree = "<group>"; };
 		7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBiometrics.swift; sourceTree = "<group>"; };
@@ -302,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				7A02DEE82182EECA00B41DB6 /* Podfile */,
+				7AA0CF6021D8DFC000A59EE7 /* Applepie.podspec */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -342,6 +346,22 @@
 				7A0E2717219563A3001FE212 /* rainbow.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		7A31F6E321C74418004FA00A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A31F6E421C74422004FA00A /* WebView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A31F6E421C74422004FA00A /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7A31F6E521C74432004FA00A /* APWebView.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		7A34D58121B8D03C0041E5D5 /* Local */ = {
@@ -505,6 +525,7 @@
 		7AD9A0232182FE2C007BAD59 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
+				7A31F6E321C74418004FA00A /* View */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -900,9 +921,9 @@
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -921,9 +942,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -952,9 +973,9 @@
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SPPermission/SPPermission.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -973,9 +994,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPPermission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1127,6 +1148,7 @@
 				7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */,
 				7A34D58C21B900280041E5D5 /* APDevice.swift in Sources */,
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
+				7A31F6E621C74432004FA00A /* APWebView.swift in Sources */,
 				7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
 				7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */,

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Applepie"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Applepie for swift."
 
   # This description is used to generate tags and improve search results.
@@ -141,8 +141,14 @@ Pod::Spec.new do |s|
   s.dependency "ReactiveCocoa", "~> 8.0.2"
   s.dependency "PromiseKit", "~> 6.7.0"
   s.dependency "Alamofire", "~> 4.7.3"
-  s.dependency "Kingfisher", "~> 4.10.0"
+  s.dependency "Kingfisher", "~> 4.10.1"
   s.dependency "AsyncSwift", "~> 2.0.4"
   s.dependency "CryptoSwift", "~> 0.13.0"
+  s.dependency "PINCache", "~> 3.0.1-beta.7"
+  s.dependency "Valet", "~> 3.2.2"
+  s.dependency "DeviceKit", "~> 1.10.0"
+  s.dependency "SwiftyUserDefaults", "~> 4.0.0-alpha.1"
+  s.dependency "WebViewJavascriptBridge", "~> 6.0.0"
+  s.dependency "SwiftLocation", "~> 3.2.3"
 
 end
