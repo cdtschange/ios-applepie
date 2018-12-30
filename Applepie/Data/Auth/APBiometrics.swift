@@ -42,10 +42,14 @@ public struct APBiometrics {
     
     public static var isBiometryTypeTouchID: Guarantee<Bool> {
         return context.map { context in
-            if context.biometryType == .touchID {
+            if #available(iOS 11, *) {
+                if context.biometryType == .touchID {
+                    return true
+                }
+                return false
+            } else {
                 return true
             }
-            return false
             }.recover { _ in
                 return Guarantee { sink in
                     sink(false)
@@ -54,10 +58,14 @@ public struct APBiometrics {
     }
     public static var isBiometryTypeFaceID: Guarantee<Bool> {
         return context.map { context in
-            if context.biometryType == .faceID {
-                return true
+            if #available(iOS 11, *) {
+                if context.biometryType == .faceID {
+                    return true
+                }
+                return false
+            } else {
+                return false
             }
-            return false
             }.recover { _ in
                 return Guarantee { sink in
                     sink(false)
