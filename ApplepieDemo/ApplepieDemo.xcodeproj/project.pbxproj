@@ -37,7 +37,6 @@
 		7A2DBB852189806F0011A730 /* Convertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB842189806F0011A730 /* Convertor.swift */; };
 		7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB86218986A80011A730 /* APNetClient.swift */; };
 		7A2DBB892189885E0011A730 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DBB882189885E0011A730 /* Operator.swift */; };
-		7A31F6E621C74432004FA00A /* APWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A31F6E521C74432004FA00A /* APWebView.swift */; };
 		7A34D58021B8CE530041E5D5 /* APPinCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D57F21B8CE530041E5D5 /* APPinCache.swift */; };
 		7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D58421B8D40A0041E5D5 /* APPinCacheTests.swift */; };
 		7A34D58721B8F9F50041E5D5 /* APUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A34D58621B8F9F50041E5D5 /* APUserDefaults.swift */; };
@@ -72,6 +71,21 @@
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
 		7AD9A0382182FE61007BAD59 /* StringCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0372182FE61007BAD59 /* StringCryptoTests.swift */; };
 		7AD9A0472188083C007BAD59 /* APNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0462188083C007BAD59 /* APNetApi.swift */; };
+		7AF0CFC421EC1DCD00D3E4C4 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB421EC1DCC00D3E4C4 /* UIColor+Hex.swift */; };
+		7AF0CFC521EC1DCD00D3E4C4 /* APBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB521EC1DCC00D3E4C4 /* APBaseWebViewController.swift */; };
+		7AF0CFC621EC1DCD00D3E4C4 /* APBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB621EC1DCC00D3E4C4 /* APBaseRepository.swift */; };
+		7AF0CFC721EC1DCD00D3E4C4 /* APBaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB721EC1DCC00D3E4C4 /* APBaseListViewController.swift */; };
+		7AF0CFC821EC1DCD00D3E4C4 /* APBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB821EC1DCC00D3E4C4 /* APBaseViewModel.swift */; };
+		7AF0CFC921EC1DCD00D3E4C4 /* APSendCodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB921EC1DCD00D3E4C4 /* APSendCodeButton.swift */; };
+		7AF0CFCA21EC1DCD00D3E4C4 /* APLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBA21EC1DCD00D3E4C4 /* APLog.swift */; };
+		7AF0CFCC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */; };
+		7AF0CFCD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */; };
+		7AF0CFCE21EC1DCD00D3E4C4 /* APBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBE21EC1DCD00D3E4C4 /* APBaseViewController.swift */; };
+		7AF0CFCF21EC1DCD00D3E4C4 /* APValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBF21EC1DCD00D3E4C4 /* APValidator.swift */; };
+		7AF0CFD021EC1DCD00D3E4C4 /* APWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFC021EC1DCD00D3E4C4 /* APWKWebView.swift */; };
+		7AF0CFD221EC1DCD00D3E4C4 /* APBaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFC221EC1DCD00D3E4C4 /* APBaseListViewModel.swift */; };
+		7AF0CFD321EC1DCD00D3E4C4 /* PropertyReflector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFC321EC1DCD00D3E4C4 /* PropertyReflector.swift */; };
+		7AF0CFDB21EC204B00D3E4C4 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFDA21EC204B00D3E4C4 /* Date+Ex.swift */; };
 		85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792096979078263CF25324BB /* Pods_ApplepieDemo.framework */; };
 		9151F49F299249E04F01A7EC /* Pods_Applepie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3042003C407A00925F2BD /* Pods_Applepie.framework */; };
 		AB6870C28A41E36769B10CEC /* Pods_ApplepieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */; };
@@ -165,7 +179,6 @@
 		7A2DBB842189806F0011A730 /* Convertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertor.swift; sourceTree = "<group>"; };
 		7A2DBB86218986A80011A730 /* APNetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetClient.swift; sourceTree = "<group>"; };
 		7A2DBB882189885E0011A730 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		7A31F6E521C74432004FA00A /* APWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APWebView.swift; sourceTree = "<group>"; };
 		7A34D57F21B8CE530041E5D5 /* APPinCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPinCache.swift; sourceTree = "<group>"; };
 		7A34D58421B8D40A0041E5D5 /* APPinCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPinCacheTests.swift; sourceTree = "<group>"; };
 		7A34D58621B8F9F50041E5D5 /* APUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APUserDefaults.swift; sourceTree = "<group>"; };
@@ -204,6 +217,21 @@
 		7AD9A0412186E7C6007BAD59 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD9A0432186E8C3007BAD59 /* Pods_ApplepieDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ApplepieDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD9A0462188083C007BAD59 /* APNetApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNetApi.swift; sourceTree = "<group>"; };
+		7AF0CFB421EC1DCC00D3E4C4 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		7AF0CFB521EC1DCC00D3E4C4 /* APBaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseWebViewController.swift; sourceTree = "<group>"; };
+		7AF0CFB621EC1DCC00D3E4C4 /* APBaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseRepository.swift; sourceTree = "<group>"; };
+		7AF0CFB721EC1DCC00D3E4C4 /* APBaseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseListViewController.swift; sourceTree = "<group>"; };
+		7AF0CFB821EC1DCC00D3E4C4 /* APBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewModel.swift; sourceTree = "<group>"; };
+		7AF0CFB921EC1DCD00D3E4C4 /* APSendCodeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APSendCodeButton.swift; sourceTree = "<group>"; };
+		7AF0CFBA21EC1DCD00D3E4C4 /* APLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APLog.swift; sourceTree = "<group>"; };
+		7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ap_arrow_right@2x.png"; sourceTree = "<group>"; };
+		7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ap_arrow_left@2x.png"; sourceTree = "<group>"; };
+		7AF0CFBE21EC1DCD00D3E4C4 /* APBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewController.swift; sourceTree = "<group>"; };
+		7AF0CFBF21EC1DCD00D3E4C4 /* APValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APValidator.swift; sourceTree = "<group>"; };
+		7AF0CFC021EC1DCD00D3E4C4 /* APWKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APWKWebView.swift; sourceTree = "<group>"; };
+		7AF0CFC221EC1DCD00D3E4C4 /* APBaseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseListViewModel.swift; sourceTree = "<group>"; };
+		7AF0CFC321EC1DCD00D3E4C4 /* PropertyReflector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyReflector.swift; sourceTree = "<group>"; };
+		7AF0CFDA21EC204B00D3E4C4 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.release.xcconfig"; sourceTree = "<group>"; };
 		8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplepieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -351,6 +379,9 @@
 		7A31F6E321C74418004FA00A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7AF0CFBE21EC1DCD00D3E4C4 /* APBaseViewController.swift */,
+				7AF0CFB721EC1DCC00D3E4C4 /* APBaseListViewController.swift */,
+				7AF0CFB521EC1DCC00D3E4C4 /* APBaseWebViewController.swift */,
 				7A31F6E421C74422004FA00A /* WebView */,
 			);
 			path = View;
@@ -359,7 +390,9 @@
 		7A31F6E421C74422004FA00A /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				7A31F6E521C74432004FA00A /* APWebView.swift */,
+				7AF0CFC021EC1DCD00D3E4C4 /* APWKWebView.swift */,
+				7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */,
+				7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -526,6 +559,8 @@
 			isa = PBXGroup;
 			children = (
 				7A31F6E321C74418004FA00A /* View */,
+				7AF0CFD421EC1DD900D3E4C4 /* ViewModel */,
+				7AF0CFD521EC1DE000D3E4C4 /* Repository */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -533,6 +568,7 @@
 		7AD9A0242182FE2C007BAD59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7AF0CFD721EC1E3500D3E4C4 /* Button */,
 				7A4CCEF8218A986C00636A8E /* Indicator */,
 			);
 			path = View;
@@ -545,6 +581,8 @@
 				7A2DBB842189806F0011A730 /* Convertor.swift */,
 				7A2DBB7E2189584D0011A730 /* Dictionary+Ex.swift */,
 				7A0BE4F721C1F8F2000748D5 /* NSObject+Ex.swift */,
+				7AF0CFB421EC1DCC00D3E4C4 /* UIColor+Hex.swift */,
+				7AF0CFDA21EC204B00D3E4C4 /* Date+Ex.swift */,
 				7A2DBB882189885E0011A730 /* Operator.swift */,
 				7A2DBB8021897E660011A730 /* String+Ex.swift */,
 				7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */,
@@ -562,9 +600,12 @@
 				7AD9A02B2182FE2C007BAD59 /* Image */,
 				7AD9A02C2182FE2C007BAD59 /* Local */,
 				7AD9A0292182FE2C007BAD59 /* Location */,
+				7AF0CFD621EC1E2000D3E4C4 /* Log */,
 				7AD9A02E2182FE2C007BAD59 /* Model */,
 				7AD9A02A2182FE2C007BAD59 /* Network */,
 				7AD9A02D2182FE2C007BAD59 /* Push */,
+				7AF0CFD921EC1F2A00D3E4C4 /* Reflect */,
+				7AF0CFD821EC1F0900D3E4C4 /* Validate */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -665,6 +706,55 @@
 				7AC5D12F2193D770006ABC48 /* APNetIndicatorClient.swift */,
 			);
 			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		7AF0CFD421EC1DD900D3E4C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0CFC221EC1DCD00D3E4C4 /* APBaseListViewModel.swift */,
+				7AF0CFB821EC1DCC00D3E4C4 /* APBaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AF0CFD521EC1DE000D3E4C4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0CFB621EC1DCC00D3E4C4 /* APBaseRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7AF0CFD621EC1E2000D3E4C4 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0CFBA21EC1DCD00D3E4C4 /* APLog.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		7AF0CFD721EC1E3500D3E4C4 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0CFB921EC1DCD00D3E4C4 /* APSendCodeButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		7AF0CFD821EC1F0900D3E4C4 /* Validate */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0CFBF21EC1DCD00D3E4C4 /* APValidator.swift */,
+			);
+			path = Validate;
+			sourceTree = "<group>";
+		};
+		7AF0CFD921EC1F2A00D3E4C4 /* Reflect */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0CFC321EC1DCD00D3E4C4 /* PropertyReflector.swift */,
+			);
+			path = Reflect;
 			sourceTree = "<group>";
 		};
 		E1D2FA8A5B27EF1DDA9C292F /* Frameworks */ = {
@@ -863,6 +953,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF0CFCD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png in Resources */,
+				7AF0CFCC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,9 +1019,11 @@
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
@@ -956,9 +1050,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
@@ -996,9 +1092,11 @@
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
@@ -1025,9 +1123,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
@@ -1177,6 +1277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2DBB7F2189584D0011A730 /* Dictionary+Ex.swift in Sources */,
+				7AF0CFC821EC1DCD00D3E4C4 /* APBaseViewModel.swift in Sources */,
 				7A2DBB8121897E660011A730 /* String+Ex.swift in Sources */,
 				7A4CCEFC218A9B9800636A8E /* UIApplication+Indicator.swift in Sources */,
 				7ACE591C218947AE0002F73C /* APError.swift in Sources */,
@@ -1186,17 +1287,28 @@
 				7A2DBB892189885E0011A730 /* Operator.swift in Sources */,
 				7AC5D1302193D770006ABC48 /* APNetIndicatorClient.swift in Sources */,
 				7A34D58721B8F9F50041E5D5 /* APUserDefaults.swift in Sources */,
+				7AF0CFC921EC1DCD00D3E4C4 /* APSendCodeButton.swift in Sources */,
+				7AF0CFD321EC1DCD00D3E4C4 /* PropertyReflector.swift in Sources */,
+				7AF0CFC621EC1DCD00D3E4C4 /* APBaseRepository.swift in Sources */,
 				7ABF7C0121C0E5B200049632 /* APRouter.swift in Sources */,
 				7A34D59121BA07730041E5D5 /* APKeychain.swift in Sources */,
+				7AF0CFCA21EC1DCD00D3E4C4 /* APLog.swift in Sources */,
 				7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */,
 				7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */,
+				7AF0CFD021EC1DCD00D3E4C4 /* APWKWebView.swift in Sources */,
 				7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */,
 				7AD9A0472188083C007BAD59 /* APNetApi.swift in Sources */,
 				7A34D58021B8CE530041E5D5 /* APPinCache.swift in Sources */,
+				7AF0CFCF21EC1DCD00D3E4C4 /* APValidator.swift in Sources */,
+				7AF0CFDB21EC204B00D3E4C4 /* Date+Ex.swift in Sources */,
+				7AF0CFD221EC1DCD00D3E4C4 /* APBaseListViewModel.swift in Sources */,
+				7AF0CFCE21EC1DCD00D3E4C4 /* APBaseViewController.swift in Sources */,
 				7A4CCEFA218A988D00636A8E /* APIndicator.swift in Sources */,
 				7A34D58C21B900280041E5D5 /* APDevice.swift in Sources */,
+				7AF0CFC521EC1DCD00D3E4C4 /* APBaseWebViewController.swift in Sources */,
+				7AF0CFC421EC1DCD00D3E4C4 /* UIColor+Hex.swift in Sources */,
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
-				7A31F6E621C74432004FA00A /* APWebView.swift in Sources */,
+				7AF0CFC721EC1DCD00D3E4C4 /* APBaseListViewController.swift in Sources */,
 				7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
 				7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */,
@@ -1405,6 +1517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE2BYM67AU;
 				INFOPLIST_FILE = ApplepieDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1424,6 +1537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE2BYM67AU;
 				INFOPLIST_FILE = ApplepieDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1489,7 +1603,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Applepie/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1520,7 +1634,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Applepie/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

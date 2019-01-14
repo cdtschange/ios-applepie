@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MBProgressHUD
+import PromiseKit
 
 public protocol APIndicatorProtocol: class {
     var showing: Bool { get set }
@@ -21,6 +22,23 @@ public class APIndicator: APIndicatorProtocol {
     private var hud: MBProgressHUD?
     
     public init() {}
+    
+    public func showTip(inView view: UIView?, text: String?, detailText: String?, animated: Bool, hideAfter: Int) {
+        DispatchQueue.main.async {
+            guard view != nil else { return }
+            let hud = MBProgressHUD.showAdded(to: view!, animated: animated)
+            hud.mode = .text
+            if let text = text {
+                hud.label.text = text
+            }
+            if let detailText = detailText {
+                hud.detailsLabel.text = detailText
+            }
+            after(.seconds(hideAfter)).done {
+                hud.hide(animated: animated)
+            }
+        }
+    }
     
     public func show(inView view: UIView?, text: String?, detailText: String?, animated: Bool) {
         UIApplication.shared.ap.setNetworkActivityIndicator(show: true)

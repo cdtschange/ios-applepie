@@ -35,3 +35,21 @@ public extension Applepie where Base == Double {
 public extension Applepie where Base == Bool {
     public var toString: String { return base ? "true" : "false" }
 }
+
+
+public extension Applepie where Base == String {
+    public var toInt: Int? { return NumberFormatter().number(from: base)?.intValue }
+    public var toDouble: Double? { return NumberFormatter().number(from: base)?.doubleValue }
+    public var toFloat: Float? { return NumberFormatter().number(from: base)?.floatValue }
+    public var toBool: Bool? {
+        let trimmedString = base.ap.trim().lowercased()
+        if trimmedString == "true" || trimmedString == "false" {
+            return (trimmedString as NSString).boolValue
+        }
+        return nil
+    }
+    
+    public func trim() -> String {
+        return base.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
