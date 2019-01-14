@@ -1,5 +1,5 @@
 //
-//  MenuListViewController.swift
+//  DataViewController.swift
 //  ApplepieDemo
 //
 //  Created by 山天大畜 on 2019/1/14.
@@ -9,17 +9,15 @@
 import UIKit
 import Applepie
 
-class MenuListViewController: BaseListViewController {
-    
+class DataViewController: BaseListViewController {
+
     struct InnerConst {
-        static let CellIdentifier = "MenuListTableViewCell"
+        static let CellIdentifier = "DataTableViewCell"
     }
     
     @IBOutlet weak var tableView: UITableView!
     
-    @objc
-    var type: String = MenuType.none.rawValue
-
+    
     private var _viewModel = MenuListViewModel()
     override var viewModel: APBaseViewModel? {
         return _viewModel
@@ -30,7 +28,6 @@ class MenuListViewController: BaseListViewController {
     override var listViewType: ListViewType {
         return .none
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +41,7 @@ class MenuListViewController: BaseListViewController {
     
     override func setupBinding() {
         super.setupBinding()
-        _viewModel.type = MenuType(rawValue: type) ?? .none
+        _viewModel.type = .data
     }
     
     override func loadData() {
@@ -63,10 +60,6 @@ class MenuListViewController: BaseListViewController {
     }
     override func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         if let model = object as? MenuModel {
-            if let callback = model.callback {
-                callback()
-                return
-            }
             if model.url.hasPrefix("http") == true {
                 APRouter.route(toUrl: model.url, params: model.params)
                 return
@@ -76,5 +69,4 @@ class MenuListViewController: BaseListViewController {
             }
         }
     }
-
 }
