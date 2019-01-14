@@ -9,8 +9,8 @@
 import UIKit
 import CocoaLumberjack
 
-public class APLog: NSObject {
-    public class func setup(level: DDLogLevel = DDLogLevel.debug) {
+public struct LumberjackLib {
+    public static func setup(level: DDLogLevel = DDLogLevel.debug) {
         defaultDebugLevel = level
         DDLog.add(DDTTYLogger.sharedInstance)
         //        DDLog.add(DDASLLogger.sharedInstance)

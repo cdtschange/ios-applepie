@@ -25,7 +25,7 @@ class MenuListRepository: BaseRepository {
             return Promise { sink in
                 sink.fulfill(
                     [
-                        MenuModel(title: "Color Change", detail: "Change color of navigation bar when scrolling", url: "MenuListViewController", params: ["type": MenuType.scrollView.rawValue, "title": "ScrollView"])
+                        MenuModel(title: "Color Gradual Change", detail: "Change color of navigation bar when scrolling", url: "NavigatinBarColorScrollViewController", params: [:])
                     ]
                 )
             }

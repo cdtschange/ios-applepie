@@ -64,3 +64,4 @@ extension UIViewController: ApplepieCompatible { }
 extension UIApplication: ApplepieCompatible { }
 extension ImageView: ApplepieCompatible { }
 extension Button: ApplepieCompatible { }
+extension UIColor: ApplepieCompatible { }

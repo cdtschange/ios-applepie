@@ -77,7 +77,6 @@
 		7AF0CFC721EC1DCD00D3E4C4 /* APBaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB721EC1DCC00D3E4C4 /* APBaseListViewController.swift */; };
 		7AF0CFC821EC1DCD00D3E4C4 /* APBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB821EC1DCC00D3E4C4 /* APBaseViewModel.swift */; };
 		7AF0CFC921EC1DCD00D3E4C4 /* APSendCodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB921EC1DCD00D3E4C4 /* APSendCodeButton.swift */; };
-		7AF0CFCA21EC1DCD00D3E4C4 /* APLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBA21EC1DCD00D3E4C4 /* APLog.swift */; };
 		7AF0CFCC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */; };
 		7AF0CFCD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */; };
 		7AF0CFCE21EC1DCD00D3E4C4 /* APBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBE21EC1DCD00D3E4C4 /* APBaseViewController.swift */; };
@@ -99,6 +98,9 @@
 		7AF0CFFF21EC2EF400D3E4C4 /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFFE21EC2EF400D3E4C4 /* MenuListViewController.swift */; };
 		7AF0D00121EC2F0600D3E4C4 /* MenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D00021EC2F0600D3E4C4 /* MenuListViewModel.swift */; };
 		7AF0D00321EC2F1A00D3E4C4 /* MenuListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D00221EC2F1A00D3E4C4 /* MenuListRepository.swift */; };
+		7AF0D00521EC3E9700D3E4C4 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D00421EC3E9700D3E4C4 /* UIColor+Ex.swift */; };
+		7AF0D01021EC548800D3E4C4 /* DoraemonLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D00E21EC541900D3E4C4 /* DoraemonLib.swift */; };
+		7AF0D01121EC548B00D3E4C4 /* LumberjackLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBA21EC1DCD00D3E4C4 /* LumberjackLib.swift */; };
 		85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792096979078263CF25324BB /* Pods_ApplepieDemo.framework */; };
 		9151F49F299249E04F01A7EC /* Pods_Applepie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3042003C407A00925F2BD /* Pods_Applepie.framework */; };
 		AB6870C28A41E36769B10CEC /* Pods_ApplepieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */; };
@@ -236,7 +238,7 @@
 		7AF0CFB721EC1DCC00D3E4C4 /* APBaseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseListViewController.swift; sourceTree = "<group>"; };
 		7AF0CFB821EC1DCC00D3E4C4 /* APBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewModel.swift; sourceTree = "<group>"; };
 		7AF0CFB921EC1DCD00D3E4C4 /* APSendCodeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APSendCodeButton.swift; sourceTree = "<group>"; };
-		7AF0CFBA21EC1DCD00D3E4C4 /* APLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APLog.swift; sourceTree = "<group>"; };
+		7AF0CFBA21EC1DCD00D3E4C4 /* LumberjackLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LumberjackLib.swift; sourceTree = "<group>"; };
 		7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ap_arrow_right@2x.png"; sourceTree = "<group>"; };
 		7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ap_arrow_left@2x.png"; sourceTree = "<group>"; };
 		7AF0CFBE21EC1DCD00D3E4C4 /* APBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,8 @@
 		7AF0CFFE21EC2EF400D3E4C4 /* MenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
 		7AF0D00021EC2F0600D3E4C4 /* MenuListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewModel.swift; sourceTree = "<group>"; };
 		7AF0D00221EC2F1A00D3E4C4 /* MenuListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListRepository.swift; sourceTree = "<group>"; };
+		7AF0D00421EC3E9700D3E4C4 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		7AF0D00E21EC541900D3E4C4 /* DoraemonLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoraemonLib.swift; sourceTree = "<group>"; };
 		7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.release.xcconfig"; sourceTree = "<group>"; };
 		8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplepieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -335,9 +339,11 @@
 			isa = PBXGroup;
 			children = (
 				7AF0CFDC21EC238C00D3E4C4 /* Config */,
+				7AF0D00D21EC534800D3E4C4 /* Libs */,
 				7AF0CFDD21EC239200D3E4C4 /* Schema */,
 				7AF0CFF021EC240C00D3E4C4 /* Router */,
 				7AF0CFDE21EC239F00D3E4C4 /* Tab */,
+				7AF0D00621EC4CC500D3E4C4 /* UI */,
 				7A02DEC72182EE5D00B41DB6 /* AppDelegate.swift */,
 				7A02DEC92182EE5D00B41DB6 /* ViewController.swift */,
 				7A02DECB2182EE5D00B41DB6 /* Main.storyboard */,
@@ -612,6 +618,7 @@
 				7A2DBB7E2189584D0011A730 /* Dictionary+Ex.swift */,
 				7A0BE4F721C1F8F2000748D5 /* NSObject+Ex.swift */,
 				7AF0CFB421EC1DCC00D3E4C4 /* UIColor+Hex.swift */,
+				7AF0D00421EC3E9700D3E4C4 /* UIColor+Ex.swift */,
 				7AF0CFDA21EC204B00D3E4C4 /* Date+Ex.swift */,
 				7A2DBB882189885E0011A730 /* Operator.swift */,
 				7A2DBB8021897E660011A730 /* String+Ex.swift */,
@@ -630,7 +637,6 @@
 				7AD9A02B2182FE2C007BAD59 /* Image */,
 				7AD9A02C2182FE2C007BAD59 /* Local */,
 				7AD9A0292182FE2C007BAD59 /* Location */,
-				7AF0CFD621EC1E2000D3E4C4 /* Log */,
 				7AD9A02E2182FE2C007BAD59 /* Model */,
 				7AD9A02A2182FE2C007BAD59 /* Network */,
 				7AD9A02D2182FE2C007BAD59 /* Push */,
@@ -755,14 +761,6 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		7AF0CFD621EC1E2000D3E4C4 /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				7AF0CFBA21EC1DCD00D3E4C4 /* APLog.swift */,
-			);
-			path = Log;
-			sourceTree = "<group>";
-		};
 		7AF0CFD721EC1E3500D3E4C4 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +872,38 @@
 				7AF0D00221EC2F1A00D3E4C4 /* MenuListRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		7AF0D00621EC4CC500D3E4C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0D00721EC4CD500D3E4C4 /* NavigationBar */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7AF0D00721EC4CD500D3E4C4 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0D00821EC4CE300D3E4C4 /* View */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		7AF0D00821EC4CE300D3E4C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AF0D00D21EC534800D3E4C4 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				7AF0D00E21EC541900D3E4C4 /* DoraemonLib.swift */,
+				7AF0CFBA21EC1DCD00D3E4C4 /* LumberjackLib.swift */,
+			);
+			path = Libs;
 			sourceTree = "<group>";
 		};
 		E1D2FA8A5B27EF1DDA9C292F /* Frameworks */ = {
@@ -1386,9 +1416,11 @@
 				7AF0D00321EC2F1A00D3E4C4 /* MenuListRepository.swift in Sources */,
 				7AF0CFE721EC23C300D3E4C4 /* BaseViewModel.swift in Sources */,
 				7A0BE50221C2598D000748D5 /* ViewControllerNib.swift in Sources */,
+				7AF0D01021EC548800D3E4C4 /* DoraemonLib.swift in Sources */,
 				7AF0CFE621EC23C300D3E4C4 /* BaseRepository.swift in Sources */,
 				7AF0CFFF21EC2EF400D3E4C4 /* MenuListViewController.swift in Sources */,
 				7AF0CFEA21EC23C300D3E4C4 /* BaseListViewModel.swift in Sources */,
+				7AF0D01121EC548B00D3E4C4 /* LumberjackLib.swift in Sources */,
 				7AF0CFE921EC23C300D3E4C4 /* BaseViewController.swift in Sources */,
 				7A02DEC82182EE5D00B41DB6 /* AppDelegate.swift in Sources */,
 				7AF0CFF921EC261300D3E4C4 /* HomeViewController.swift in Sources */,
@@ -1424,11 +1456,11 @@
 				7AF0CFC621EC1DCD00D3E4C4 /* APBaseRepository.swift in Sources */,
 				7ABF7C0121C0E5B200049632 /* APRouter.swift in Sources */,
 				7A34D59121BA07730041E5D5 /* APKeychain.swift in Sources */,
-				7AF0CFCA21EC1DCD00D3E4C4 /* APLog.swift in Sources */,
 				7A2DBB87218986A80011A730 /* APNetClient.swift in Sources */,
 				7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */,
 				7AF0CFD021EC1DCD00D3E4C4 /* APWKWebView.swift in Sources */,
 				7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */,
+				7AF0D00521EC3E9700D3E4C4 /* UIColor+Ex.swift in Sources */,
 				7AD9A0472188083C007BAD59 /* APNetApi.swift in Sources */,
 				7A34D58021B8CE530041E5D5 /* APPinCache.swift in Sources */,
 				7AF0CFCF21EC1DCD00D3E4C4 /* APValidator.swift in Sources */,
