@@ -50,7 +50,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let handler = TestRequestHandler()
         handler.testApi = api
         api.requestHandler = handler
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         api.setIndicator(indicator, view: view, text: text).signal(format: .json).on(started: {
@@ -78,7 +78,7 @@ class APNetIndicatorClientTests: BaseTestCase {
             let handler2 = TestRequestHandler()
             handler2.testApi = api2
             api2.requestHandler = handler2
-            let indicator2 = APListIndicator()
+            let indicator2 = APIndicator()
             let view2 = UIView()
             let text2 = "Loading"
             api2.setIndicator(indicator2, view: view2, text: text2).signal(format: .json).on(started: {
@@ -118,7 +118,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let handler = TestRequestHandler()
         handler.testApi = api
         api.requestHandler = handler
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         api.setIndicator(indicator, view: view, text: text).signal(format: .json).on(started: {
@@ -152,7 +152,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let handler = TestRequestHandler()
         handler.testApi = api
         api.requestHandler = handler
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         api.setIndicator(indicator, view: view, text: text).signal(format: .json).on(started: {
@@ -188,7 +188,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let handler = TestRequestHandler()
         handler.testApi = api
         api.requestHandler = handler
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         
@@ -219,7 +219,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let handler = TestRequestHandler()
         handler.testApi = api
         api.requestHandler = handler
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         

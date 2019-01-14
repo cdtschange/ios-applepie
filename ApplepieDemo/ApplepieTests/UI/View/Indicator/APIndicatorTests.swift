@@ -25,7 +25,7 @@ class APIndicatorTests: BaseTestCase {
         
         // single indicator
         assert(UIApplication.shared.indicatorCount == 0)
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         assert(indicator.showing == false)
         indicator.show(inView: nil, text: nil, detailText: nil, animated: true)
         assert(indicator.showing == true)
@@ -34,18 +34,10 @@ class APIndicatorTests: BaseTestCase {
         assert(indicator.showing == false)
         assert(UIApplication.shared.indicatorCount == 0)
 
-        let listIndicator = APListIndicator()
-        assert(listIndicator.showing == false)
-        listIndicator.show(inView: nil, text: nil, detailText: nil, animated: true)
-        assert(UIApplication.shared.indicatorCount == 1)
-        assert(listIndicator.showing == true)
-        listIndicator.hide(inView: nil, animated: true)
-        assert(listIndicator.showing == false)
-        assert(UIApplication.shared.indicatorCount == 0)
         
         // multi indicator concurrent
-        let indicator1 = APSingleIndicator()
-        let indicator2 = APSingleIndicator()
+        let indicator1 = APIndicator()
+        let indicator2 = APIndicator()
         assert(UIApplication.shared.indicatorCount == 0)
         indicator1.show(inView: nil, text: nil, detailText: nil, animated: true)
         assert(indicator1.showing == true)

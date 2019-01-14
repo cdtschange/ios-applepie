@@ -20,6 +20,7 @@ target 'Applepie' do
     pod 'WebViewJavascriptBridge', '~> 6.0.0'
     pod 'CocoaLumberjack/Swift', '~> 3.4.2'
     pod 'SwiftLocation', '~> 3.2.3'
+    pod 'MBProgressHUD', '~> 1.1.0'
 end
 
 def pods
@@ -27,6 +28,8 @@ def pods
     pod 'ReactiveCocoa', '~> 8.0.2'
     pod 'CocoaLumberjack/Swift', '~> 3.4.2'
     pod 'SwiftLocation', '~> 3.2.3'
+    pod 'DoraemonKit/WithLogger','1.1.3', :configurations => ['Debug']
+
 end
 
 target 'ApplepieDemo' do

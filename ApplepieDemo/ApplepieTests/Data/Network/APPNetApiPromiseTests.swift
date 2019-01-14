@@ -43,7 +43,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         api.params = Constant.params
         api.requestHandler = TestRequestHandler()
         
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         
@@ -93,7 +93,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         api2.params = Constant.params
         api2.requestHandler = TestRequestHandler()
 
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
 
@@ -146,7 +146,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api2 = TestNetApi()
         api2.error = err
         
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         
@@ -195,7 +195,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         api2.params = Constant.params
         api2.requestHandler = TestRequestHandler()
         
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         
@@ -245,7 +245,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api2 = TestNetApi()
         api2.error = err
         
-        let indicator = APSingleIndicator()
+        let indicator = APIndicator()
         let view = UIView()
         let text = "Loading"
         
