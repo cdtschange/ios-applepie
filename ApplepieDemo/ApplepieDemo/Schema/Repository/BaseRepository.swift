@@ -1,5 +1,5 @@
 //
-//  APBaseRepository.swift
+//  BaseRepository.swift
 //  Zijingcaizhi
 //
 //  Created by 山天大畜 on 2018/12/31.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
+import Applepie
 
-open class APBaseRepository {
-    
-    public init() {}
+open class BaseRepository: APBaseRepository {
 
 }
