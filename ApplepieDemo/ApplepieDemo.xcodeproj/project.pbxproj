@@ -103,6 +103,8 @@
 		7AF0D01121EC548B00D3E4C4 /* LumberjackLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBA21EC1DCD00D3E4C4 /* LumberjackLib.swift */; };
 		7AF0D01321EC5BCA00D3E4C4 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D01221EC5BCA00D3E4C4 /* DataViewController.swift */; };
 		7AF0D01B21EC776100D3E4C4 /* CrashFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D01A21EC776100D3E4C4 /* CrashFunction.m */; };
+		7AF0D01E21ED6F2F00D3E4C4 /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D01D21ED6F2F00D3E4C4 /* GlobalConfig.swift */; };
+		7AF0D02021ED707300D3E4C4 /* UMengLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D01F21ED707300D3E4C4 /* UMengLib.swift */; };
 		85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792096979078263CF25324BB /* Pods_ApplepieDemo.framework */; };
 		9151F49F299249E04F01A7EC /* Pods_Applepie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3042003C407A00925F2BD /* Pods_Applepie.framework */; };
 		AB6870C28A41E36769B10CEC /* Pods_ApplepieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */; };
@@ -268,6 +270,8 @@
 		7AF0D01921EC776000D3E4C4 /* ApplepieDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApplepieDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		7AF0D01A21EC776100D3E4C4 /* CrashFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashFunction.m; sourceTree = "<group>"; };
 		7AF0D01C21EC778D00D3E4C4 /* CrashFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashFunction.h; sourceTree = "<group>"; };
+		7AF0D01D21ED6F2F00D3E4C4 /* GlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
+		7AF0D01F21ED707300D3E4C4 /* UMengLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UMengLib.swift; sourceTree = "<group>"; };
 		7B6CFC958420334CE1203D45 /* Pods-Applepie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.release.xcconfig"; sourceTree = "<group>"; };
 		8BA408C5938CF5345BD2BB07 /* Pods_ApplepieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplepieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B72C1362BDCB41C2F643C /* Pods-Applepie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Applepie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Applepie/Pods-Applepie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -796,6 +800,7 @@
 		7AF0CFDC21EC238C00D3E4C4 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				7AF0D01D21ED6F2F00D3E4C4 /* GlobalConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -911,6 +916,7 @@
 			children = (
 				7AF0D00E21EC541900D3E4C4 /* DoraemonLib.swift */,
 				7AF0CFBA21EC1DCD00D3E4C4 /* LumberjackLib.swift */,
+				7AF0D01F21ED707300D3E4C4 /* UMengLib.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -992,6 +998,7 @@
 				7A02DEC22182EE5D00B41DB6 /* Resources */,
 				7A02DF092182F11600B41DB6 /* Embed Frameworks */,
 				6A49642874FFDE10FDF8EB24 /* [CP] Embed Pods Frameworks */,
+				4964B965A22814E228335D8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1012,6 +1019,7 @@
 				7A02DED52182EE5D00B41DB6 /* Frameworks */,
 				7A02DED62182EE5D00B41DB6 /* Resources */,
 				EBBC9DCE5E8291762C765402 /* [CP] Embed Pods Frameworks */,
+				933E87A2D1158D27EB17024A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1051,6 +1059,7 @@
 				7A02DEF42182F11600B41DB6 /* Frameworks */,
 				7A02DEF52182F11600B41DB6 /* Resources */,
 				D2CF4C7723F9AD0CEBB491E4 /* [CP] Embed Pods Frameworks */,
+				4E51E7CED06D57BFCE899C38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1176,6 +1185,54 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4964B965A22814E228335D8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-resources.sh",
+				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E51E7CED06D57BFCE899C38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieTests/Pods-ApplepieTests-resources.sh",
+				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieTests/Pods-ApplepieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6A49642874FFDE10FDF8EB24 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1247,6 +1304,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemo/Pods-ApplepieDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		933E87A2D1158D27EB17024A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests-resources.sh",
+				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplepieDemoTests/Pods-ApplepieDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2CF4C7723F9AD0CEBB491E4 /* [CP] Embed Pods Frameworks */ = {
@@ -1444,9 +1525,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF0CFEC21EC23C300D3E4C4 /* BaseWebViewController.swift in Sources */,
+				7AF0D02021ED707300D3E4C4 /* UMengLib.swift in Sources */,
 				7A02DECA2182EE5D00B41DB6 /* ViewController.swift in Sources */,
 				7AF0CFF221EC242800D3E4C4 /* Router.swift in Sources */,
 				7AF0CFF721EC260400D3E4C4 /* UIComponentViewController.swift in Sources */,
+				7AF0D01E21ED6F2F00D3E4C4 /* GlobalConfig.swift in Sources */,
 				7AF0CFE821EC23C300D3E4C4 /* BaseListViewController.swift in Sources */,
 				7AF0D00321EC2F1A00D3E4C4 /* MenuListRepository.swift in Sources */,
 				7AF0CFE721EC23C300D3E4C4 /* BaseViewModel.swift in Sources */,

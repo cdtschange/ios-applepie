@@ -19,8 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         LumberjackLib.setup()
         DoraemonLib.setup()
+        UMengLib.setup()
         
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let result = UMengLib.handleOpen(url, options: options)
+        return result
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
