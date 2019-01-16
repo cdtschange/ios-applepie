@@ -63,6 +63,9 @@
 		7A80DE8D21EF05A7003C3D8F /* DateExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80DE8C21EF05A7003C3D8F /* DateExTests.swift */; };
 		7A80DE9021EF074C003C3D8F /* APValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80DE8F21EF074C003C3D8F /* APValidatorTests.swift */; };
 		7A80DE9321EF08DF003C3D8F /* SwiftReflectionToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80DE9221EF08DF003C3D8F /* SwiftReflectionToolTests.swift */; };
+		7A80DE9521EF15AB003C3D8F /* Applepie.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A80DE9421EF15AB003C3D8F /* Applepie.bundle */; };
+		7A80DE9721EF1603003C3D8F /* Bundle+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80DE9621EF1603003C3D8F /* Bundle+Resource.swift */; };
+		7A80DE9921EF1757003C3D8F /* BundleResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80DE9821EF1757003C3D8F /* BundleResourceTests.swift */; };
 		7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8482D921BF4AF600CFC910 /* APLocationTests.swift */; };
 		7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733C21ABBE1100E79893 /* APGCD.swift */; };
 		7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733F21AC403E00E79893 /* APGCDTests.swift */; };
@@ -89,8 +92,6 @@
 		7AF0CFC721EC1DCD00D3E4C4 /* APBaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB721EC1DCC00D3E4C4 /* APBaseListViewController.swift */; };
 		7AF0CFC821EC1DCD00D3E4C4 /* APBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB821EC1DCC00D3E4C4 /* APBaseViewModel.swift */; };
 		7AF0CFC921EC1DCD00D3E4C4 /* APSendCodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFB921EC1DCD00D3E4C4 /* APSendCodeButton.swift */; };
-		7AF0CFCC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */; };
-		7AF0CFCD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */; };
 		7AF0CFCE21EC1DCD00D3E4C4 /* APBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBE21EC1DCD00D3E4C4 /* APBaseViewController.swift */; };
 		7AF0CFCF21EC1DCD00D3E4C4 /* APValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFBF21EC1DCD00D3E4C4 /* APValidator.swift */; };
 		7AF0CFD021EC1DCD00D3E4C4 /* APWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0CFC021EC1DCD00D3E4C4 /* APWKWebView.swift */; };
@@ -235,6 +236,9 @@
 		7A80DE8C21EF05A7003C3D8F /* DateExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExTests.swift; sourceTree = "<group>"; };
 		7A80DE8F21EF074C003C3D8F /* APValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APValidatorTests.swift; sourceTree = "<group>"; };
 		7A80DE9221EF08DF003C3D8F /* SwiftReflectionToolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftReflectionToolTests.swift; sourceTree = "<group>"; };
+		7A80DE9421EF15AB003C3D8F /* Applepie.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Applepie.bundle; sourceTree = "<group>"; };
+		7A80DE9621EF1603003C3D8F /* Bundle+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Resource.swift"; sourceTree = "<group>"; };
+		7A80DE9821EF1757003C3D8F /* BundleResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleResourceTests.swift; sourceTree = "<group>"; };
 		7A8482D921BF4AF600CFC910 /* APLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLocationTests.swift; sourceTree = "<group>"; };
 		7A97733C21ABBE1100E79893 /* APGCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCD.swift; sourceTree = "<group>"; };
 		7A97733F21AC403E00E79893 /* APGCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCDTests.swift; sourceTree = "<group>"; };
@@ -266,8 +270,6 @@
 		7AF0CFB821EC1DCC00D3E4C4 /* APBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewModel.swift; sourceTree = "<group>"; };
 		7AF0CFB921EC1DCD00D3E4C4 /* APSendCodeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APSendCodeButton.swift; sourceTree = "<group>"; };
 		7AF0CFBA21EC1DCD00D3E4C4 /* LumberjackLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LumberjackLib.swift; sourceTree = "<group>"; };
-		7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ap_arrow_right@2x.png"; sourceTree = "<group>"; };
-		7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ap_arrow_left@2x.png"; sourceTree = "<group>"; };
 		7AF0CFBE21EC1DCD00D3E4C4 /* APBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewController.swift; sourceTree = "<group>"; };
 		7AF0CFBF21EC1DCD00D3E4C4 /* APValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APValidator.swift; sourceTree = "<group>"; };
 		7AF0CFC021EC1DCD00D3E4C4 /* APWKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APWKWebView.swift; sourceTree = "<group>"; };
@@ -461,8 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				7AF0CFC021EC1DCD00D3E4C4 /* APWKWebView.swift */,
-				7AF0CFBD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png */,
-				7AF0CFBC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -615,6 +615,7 @@
 				7A80DE8821EEFF40003C3D8F /* UIColorHexTests.swift */,
 				7A80DE8A21EF045E003C3D8F /* UIColorExTests.swift */,
 				7A80DE8C21EF05A7003C3D8F /* DateExTests.swift */,
+				7A80DE9821EF1757003C3D8F /* BundleResourceTests.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -673,6 +674,7 @@
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
 			isa = PBXGroup;
 			children = (
+				7A80DE9421EF15AB003C3D8F /* Applepie.bundle */,
 				7AD9A0222182FE2C007BAD59 /* UI */,
 				7AD9A0252182FE2C007BAD59 /* Extension */,
 				7AD9A0272182FE2C007BAD59 /* Data */,
@@ -723,6 +725,7 @@
 				7A2DBB882189885E0011A730 /* Operator.swift */,
 				7A2DBB8021897E660011A730 /* String+Ex.swift */,
 				7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */,
+				7A80DE9621EF1603003C3D8F /* Bundle+Resource.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1237,8 +1240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AF0CFCD21EC1DCD00D3E4C4 /* ap_arrow_left@2x.png in Resources */,
-				7AF0CFCC21EC1DCD00D3E4C4 /* ap_arrow_right@2x.png in Resources */,
+				7A80DE9521EF15AB003C3D8F /* Applepie.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1685,6 +1687,7 @@
 				7AF0CFC721EC1DCD00D3E4C4 /* APBaseListViewController.swift in Sources */,
 				7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
+				7A80DE9721EF1603003C3D8F /* Bundle+Resource.swift in Sources */,
 				7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1696,6 +1699,7 @@
 				7A80DE7B21EED4DB003C3D8F /* APBaseViewModelTests.swift in Sources */,
 				7AC5D13821942914006ABC48 /* APNetIndicatorClientTests.swift in Sources */,
 				7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */,
+				7A80DE9921EF1757003C3D8F /* BundleResourceTests.swift in Sources */,
 				7A80DE8921EEFF40003C3D8F /* UIColorHexTests.swift in Sources */,
 				7A34D59321BA0A080041E5D5 /* APKeychainTests.swift in Sources */,
 				7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */,
