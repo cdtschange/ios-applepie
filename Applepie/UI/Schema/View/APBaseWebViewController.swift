@@ -63,11 +63,11 @@ open class APBaseWebViewController: APBaseViewController, UIScrollViewDelegate, 
         self.view.addSubview(bottomView)
         
         let btnLeft = UIButton(type: .custom)
-        btnLeft.setImage(Bundle.apImage(named: "ap_arrow_left"), for: .normal)
+        btnLeft.setImage(Bundle.apImage(named: "ap_arrow_left@2x"), for: .normal)
         btnLeft.addTarget(self, action: #selector(APBaseWebViewController.click_bar_left(_:)), for: .touchUpInside)
         bottomView.addSubview(btnLeft)
         let btnRight = UIButton(type: .custom)
-        btnRight.setImage(Bundle.apImage(named: "ap_arrow_right"), for: .normal)
+        btnRight.setImage(Bundle.apImage(named: "ap_arrow_right@2x"), for: .normal)
         btnRight.addTarget(self, action: #selector(APBaseWebViewController.click_bar_right(_:)), for: .touchUpInside)
         bottomView.addSubview(btnRight)
         bottomView.clipsToBounds = true
