@@ -26,8 +26,10 @@ class APBaseListViewModelTests: BaseTestCase {
         let viewModel = APBaseListViewModel()
         assert(viewModel.dataArray.count == 0)
         viewModel.appendDataArray([1, 2, 3])
+        viewModel.dataIndex += 1
         assert(viewModel.dataArray.count == 3)
         viewModel.appendDataArray([4, 5])
+        viewModel.dataIndex += 1
         assert(viewModel.dataArray.count == 5)
         
         viewModel.dataIndex = 0
