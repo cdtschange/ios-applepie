@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Applepie"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "Applepie for swift."
 
   # This description is used to generate tags and improve search results.
@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
-  # s.resources = "Applepie/**/*.{xib, png, jpg, xcdatamodeld, xcdatamodel}"
+  s.resources = "Applepie/**/*.{xib, png, jpg, xcdatamodeld, xcdatamodel}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -150,5 +150,7 @@ Pod::Spec.new do |s|
   s.dependency "SwiftyUserDefaults", "~> 4.0.0-alpha.1"
   s.dependency "WebViewJavascriptBridge", "~> 6.0.0"
   s.dependency "SwiftLocation", "~> 3.2.3"
-
+  s.dependency "MBProgressHUD", "~> 1.1.0"
+  s.dependency "SnapKit", "~> 4.2.0"
+  s.dependency "MJRefresh", "~> 3.1.0"
 end
