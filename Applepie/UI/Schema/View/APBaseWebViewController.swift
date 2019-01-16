@@ -138,7 +138,7 @@ open class APBaseWebViewController: APBaseViewController, UIScrollViewDelegate, 
         self.title = updateTitle
     }
     private var bottomNavigationBarShowed = false
-    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if bottomNavigationBarEnable {
             if webView.canGoBack && !bottomNavigationBarShowed {
                 bottomNavigationBarShowed = true

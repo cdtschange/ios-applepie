@@ -237,8 +237,11 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
             }
         }
         urlString = webView.url?.absoluteString
-        delegate?.webView?(webView, decidePolicyFor: navigationResponse, decisionHandler: decisionHandler)
-        decisionHandler(.allow)
+        if let _ = delegate?.webView?(webView, decidePolicyFor: navigationResponse, decisionHandler: decisionHandler) {
+            
+        } else {
+            decisionHandler(.allow)
+        }
     }
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         var ret = true
@@ -287,8 +290,11 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
         if (navigationAction.targetFrame == nil) { //新窗口打不开的bug
             webView.load(navigationAction.request)
         }
-        delegate?.webView?(webView, decidePolicyFor: navigationAction, decisionHandler: decisionHandler)
-        decisionHandler(ret ? .allow : .cancel)
+        if let _ = delegate?.webView?(webView, decidePolicyFor: navigationAction, decisionHandler: decisionHandler) {
+            
+        } else {
+            decisionHandler(ret ? .allow : .cancel)
+        }
     }
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         delegate?.webView?(webView, didStartProvisionalNavigation: navigation)

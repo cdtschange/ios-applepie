@@ -26,7 +26,6 @@ open class APBaseListViewModel: APBaseViewModel {
             } else {
                 dataArray = dataArray + data
             }
-            dataIndex += UInt(data.count)
         } else {
             if dataIndex == 0 {
                 dataArray = []

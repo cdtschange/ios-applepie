@@ -91,6 +91,8 @@ open class APBaseListViewController:
         listViewModel.fetchData().map { [weak self] data -> (Any) in
             self?.didFetchListData(data)
             return data
+            }.ensure { [weak self] in
+                self?.listViewModel.dataIndex = UInt(self?.listViewModel.dataArray.count ?? 0)
             }.catch { [weak self] error in
                 self?.didFetchListDataFailed(error: error)
         }
