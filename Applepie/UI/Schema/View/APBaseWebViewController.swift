@@ -134,7 +134,7 @@ open class APBaseWebViewController: APBaseViewController, UIScrollViewDelegate, 
         }
     }
     
-    public func webView(_ webView: WKWebView, updateTitle: String?) {
+    open func webView(_ webView: WKWebView, updateTitle: String?) {
         self.title = updateTitle
     }
     private var bottomNavigationBarShowed = false

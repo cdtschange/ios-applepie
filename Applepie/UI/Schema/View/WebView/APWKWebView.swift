@@ -14,10 +14,10 @@ import SnapKit
 import MJRefresh
 
 public protocol APWKWebViewDelegate: UIWebViewDelegate, WKNavigationDelegate {
-    public func webView(_ webView: WKWebView, updateTitle: String?) -> Void
+    func webView(_ webView: WKWebView, updateTitle: String?) -> Void
 }
 public extension APWKWebViewDelegate {
-    public func webView(_ webView: WKWebView, updateTitle: String?) -> Void {}
+    func webView(_ webView: WKWebView, updateTitle: String?) -> Void {}
 }
 
 open class APWKWebView: WKWebView, WKNavigationDelegate {
