@@ -9,7 +9,7 @@
 import Foundation
 
 /// Swift 反射工具类：运用 KVC 动态地给类的成员变量赋值
-class SwiftReflectionTool: NSObject {
+public class SwiftReflectionTool: NSObject {
     // MARK: - 私有成员变量
     fileprivate static let valueTypesMap: Dictionary<String, Any> =
         [ "c" : Int8.self,
@@ -93,9 +93,9 @@ class SwiftReflectionTool: NSObject {
                 filteredList.append(tmp)
             })
             print("================= 赋值开始 =================")
-            for (key, value) in paramsDict {
+            for (key, valueOrigin) in paramsDict {
                 // 取出key对应的类型
-                let value = "\(value)"
+                let value = "\(valueOrigin)"
                 let type = getType(key: key, typeDictList: filteredList)
                 if InnerConst.BOOL == type {
                     let toValue = value.ap.toBool ?? false
@@ -112,8 +112,12 @@ class SwiftReflectionTool: NSObject {
                     let toValue = value.ap.toFloat ?? 0
                     obj.setValue(toValue, forKey: key)
                 } else if InnerConst.DATE == type {
-                    let toValue = Date(fromString: value, format: "yyyyMMdd")
-                    obj.setValue(toValue, forKey: key)
+                    if let toValue = valueOrigin as? Date {
+                        obj.setValue(toValue, forKey: key)
+                    } else {
+                        let toValue = Date(fromString: value, format: "yyyy-MM-dd HH:mm:ss")
+                        obj.setValue(toValue, forKey: key)
+                    }
                 } else if InnerConst.NULL == type {
                     print("[\(obj)]没有[\(key)]参数")
                 }
@@ -122,7 +126,7 @@ class SwiftReflectionTool: NSObject {
             complete()
         }
     }
-    // MARK: 字典中的vlaue转成能赋值的类型
+    // MARK: 字典中的value转成能赋值的类型
     ///
     /// - parameter paramsDict:         参数字典
     /// - parameter obj:                待赋值的对象

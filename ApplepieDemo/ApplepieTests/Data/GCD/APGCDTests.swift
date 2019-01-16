@@ -94,20 +94,26 @@ class APGCDTests: BaseTestCase {
             .concurrent {
                 assert(Thread.current != Thread.main)
                 number += 1
+                print("testConcurrent:1 num:\(number)")
             }.concurrent {
                 assert(Thread.current != Thread.main)
                 number += 2
+                print("testConcurrent:2 num:\(number)")
             }.concurrentBarrier {
                 assert(Thread.current != Thread.main)
                 number += 3
+                print("testConcurrent:3 num:\(number)")
             }.concurrentBarrier {
                 assert(Thread.current != Thread.main)
                 number += 4
+                print("testConcurrent:4 num:\(number)")
             }.concurrent {
                 assert(Thread.current != Thread.main)
                 number += 5
+                print("testConcurrent:5 num:\(number)")
             }.concurrentDone {
                 assert(Thread.current == Thread.main)
+                print("testConcurrent:done num:\(number)")
                 assert(number == 15)
                 expectation.fulfill()
         }

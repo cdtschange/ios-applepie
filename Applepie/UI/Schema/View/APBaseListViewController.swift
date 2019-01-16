@@ -193,8 +193,8 @@ open class APBaseListViewController:
         if self.listViewModel.dataIndex == 0 {
             self.listView?.mj_header?.endRefreshing()
         } else {
-            if self.listView?.mj_footer.state == .refreshing {
-                self.listView?.mj_footer.endRefreshing()
+            if self.listView?.mj_footer?.state == .refreshing {
+                self.listView?.mj_footer?.endRefreshing()
             }
         }
     }

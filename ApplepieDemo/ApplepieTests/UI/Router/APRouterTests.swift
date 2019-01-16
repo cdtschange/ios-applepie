@@ -39,7 +39,7 @@ class APRouterTests: BaseTestCase {
         firstly {
             assert(root != nil)
             assert(APRouter.route(toName: "None", animation: false, pop: true) == false)
-            assert(APRouter.route(toName: "toNext", animation: false, pop: true) == true)
+            assert(APRouter.route(toName: "routeToLogin", animation: false, pop: true) == true)
             assert(NSStringFromClass(UIViewController.topMostViewController()!.classForCoder) == "ApplepieDemo.ViewController")
             assert(APRouter.routeBack(animation: false) == true)
             return after(.milliseconds(delayTime))

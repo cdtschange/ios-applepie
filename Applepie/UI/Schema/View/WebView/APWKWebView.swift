@@ -32,27 +32,10 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
     open var requestHeader: [String: String]?
     open var userAgent: String? {
         get {
-            if #available(iOS 9.0, *) {
-                return self.customUserAgent
-            } else {
-                var ua: String?
-                let semaphore =  DispatchSemaphore(value: 0)
-                self.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
-                    ua = result as? String
-                    semaphore.signal()
-                })
-                semaphore.wait()
-                return ua
-            }
+            return self.customUserAgent
         }
         set(value) {
-            if #available(iOS 9.0, *) {
-                self.customUserAgent = value
-            } else {
-                self.evaluateJavaScript("navigator.userAgent") { (result, error) in
-                    UserDefaults.standard.register(defaults: ["UserAgent": value ?? ""])
-                }
-            }
+            self.customUserAgent = value
         }
     }
     

@@ -12,7 +12,7 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadData()
         // Do any additional setup after loading the view.
     }
     

@@ -134,7 +134,7 @@
         <!--Home-->
         <scene sceneID="sow-1K-H5O">
             <objects>
-                <viewController id="kX3-wa-4z5" sceneMemberID="viewController">
+                <viewController restorationIdentifier="HomeViewController" storyboardIdentifier="HomeViewController" id="kX3-wa-4z5" customClass="HomeViewController" customModule="ApplepieDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iAT-0y-17x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,10 +142,28 @@
                         <viewLayoutGuide key="safeArea" id="RcP-Ua-bgo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="7No-Qp-i0h"/>
+                    <connections>
+                        <segue destination="r1O-FE-Z4i" kind="presentation" identifier="routeToLogin" id="0Nb-th-JXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbb-Bp-Tw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008.8" y="-481.70914542728639"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="S2t-gU-cRn">
+            <objects>
+                <viewController id="r1O-FE-Z4i" customClass="ViewController" customModule="ApplepieDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tqF-i0-KiL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8a2-kp-Uvi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPd-Km-YUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2744" y="-482"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="P4c-uB-mxi">

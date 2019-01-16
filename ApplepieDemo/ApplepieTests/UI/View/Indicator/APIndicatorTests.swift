@@ -8,6 +8,7 @@
 
 import XCTest
 import Applepie
+import PromiseKit
 
 class APIndicatorTests: BaseTestCase {
 
@@ -24,8 +25,10 @@ class APIndicatorTests: BaseTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         // single indicator
-        assert(UIApplication.shared.indicatorCount == 0)
+        
         let indicator = APIndicator()
+
+        assert(UIApplication.shared.indicatorCount == 0)
         assert(indicator.showing == false)
         indicator.show(inView: nil, text: nil, detailText: nil, animated: true)
         assert(indicator.showing == true)
@@ -54,6 +57,29 @@ class APIndicatorTests: BaseTestCase {
         assert(indicator2.showing == false)
         assert(UIApplication.shared.indicatorCount == 0)
         
+        let expectation = XCTestExpectation(description: "Complete")
+
+        let view = UIView()
+        let indicator3 = APIndicator()
+        firstly {
+            Promise { sink in
+                indicator3.showTip(inView: view, text: "text", detailText: "detail", animated: false, hideAfter: 0)
+                sink.fulfill()
+            }
+            }.then {
+                return after(.seconds(1))
+            }.ensure {
+                indicator3.showTip(inView: nil, text: "text", detailText: "detail", animated: false, hideAfter: 0)
+                indicator3.show(inView: view, text: "text", detailText: "detail", animated: false)
+            }.done { data in
+                indicator3.hide(inView: view, animated: false)
+                expectation.fulfill()
+            }.catch { error in
+                assertionFailure()
+                expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 10)
     }
 
 }

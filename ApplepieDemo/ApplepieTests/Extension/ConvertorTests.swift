@@ -35,6 +35,19 @@ class ConvertorTests: BaseTestCase {
         assert(c.ap.toString == String(c))
         c = false
         assert(c.ap.toString == String(c))
+        
+        var str: String = "1"
+        assert(str.ap.toInt == 1)
+        str = "1.0"
+        assert(str.ap.toDouble == 1.0)
+        assert(str.ap.toFloat == 1.0)
+        assert(str.ap.toBool == nil)
+        str = "true"
+        assert(str.ap.toBool == true)
+        str = "false"
+        assert(str.ap.toBool == false)
+        str = " h e y "
+        assert(str.ap.trim() == "h e y")
     }
 
 

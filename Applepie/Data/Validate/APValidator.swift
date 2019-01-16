@@ -9,7 +9,7 @@
 import UIKit
 import PromiseKit
 
-class APValidator: NSObject {
+public class APValidator: NSObject {
 
     public class func validate(conditions: [(condition: Bool, message: String)]) -> Promise<Void> {
         return validate(conditions: conditions.map { ($0, APStatusCode.validateFailed.rawValue, $1) })

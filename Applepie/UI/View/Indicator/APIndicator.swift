@@ -26,6 +26,7 @@ public class APIndicator: APIndicatorProtocol {
     public func showTip(inView view: UIView?, text: String?, detailText: String?, animated: Bool, hideAfter: Int) {
         DispatchQueue.main.async {
             guard view != nil else { return }
+            MBProgressHUD.hide(for: view!, animated: false)
             let hud = MBProgressHUD.showAdded(to: view!, animated: animated)
             hud.mode = .text
             if let text = text {

@@ -49,13 +49,7 @@ open class APBaseWebViewController: APBaseViewController, UIScrollViewDelegate, 
     open var injectScript:String = ""
     
     private func createWebView() -> APWKWebView {
-        let wkContentVc = WKUserContentController()
-        let cookieScript = WKUserScript(source: injectScript, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: true)
-        wkContentVc.addUserScript(cookieScript)
-        let config = WKWebViewConfiguration()
-        config.userContentController = wkContentVc
-        
-        let _webView = APWKWebView(frame: CGRect.zero, configuration: config)
+        let _webView = APWKWebView(frame: CGRect.zero, injectScript: injectScript)
         //声明scrollView的位置 添加下面代码
         if #available(iOS 11.0, *) {
             _webView.scrollView.contentInsetAdjustmentBehavior = .never

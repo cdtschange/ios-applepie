@@ -8,7 +8,7 @@
 
 import UIKit
 
-class APSendCodeButton: UIButton {
+public class APSendCodeButton: UIButton {
     private var timer: Timer?
     private var stopTime: Double = 0
     
@@ -50,7 +50,7 @@ class APSendCodeButton: UIButton {
         let now = Date().timeIntervalSince1970.advanced(by: 0)
         if now > stopTime {
             stop()
-            setTitle(timeupTitle, for: UIControl.State())
+            setTitle(timeupTitle, for: .normal)
         } else {
             showRemainSecond()
         }

@@ -83,8 +83,8 @@ open class APBaseViewController: UIViewController, APRouterProtocol {
         (indicator as? APIndicator)?.showTip(inView: view, text: tip, detailText: nil, animated: true, hideAfter: 2)
     }
     open var showIndicatorPromise: Promise<Void> {
-        return Promise { sink in
-            showIndicator()
+        return Promise { [unowned self] sink in
+            self.showIndicator()
             sink.fulfill(())
         }
     }

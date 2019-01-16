@@ -10,7 +10,7 @@ import UIKit
 import CocoaLumberjack
 
 public struct LumberjackLib {
-    public static func setup(level: DDLogLevel = DDLogLevel.debug) {
+    public static func setup(level: DDLogLevel = DDLogLevel.verbose) {
         defaultDebugLevel = level
         DDLog.add(DDTTYLogger.sharedInstance)
         //        DDLog.add(DDASLLogger.sharedInstance)
