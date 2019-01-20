@@ -71,16 +71,16 @@ open class APBaseViewController: UIViewController, APRouterProtocol {
     open func hideIndicator() {
         indicator?.hide(inView: view, animated: true)
     }
-    open func showTip(_ error: Error) {
+    open func showTip(_ error: Error, completion: @escaping () -> Void = {}) {
         switch error {
         case let error as APError:
-            showTip(error.message)
+            showTip(error.message, completion: completion)
         default:
-            showTip("未知错误")
+            showTip("未知错误", completion: completion)
         }
     }
-    open func showTip(_ tip: String) {
-        (indicator as? APIndicator)?.showTip(inView: view, text: tip, detailText: nil, animated: true, hideAfter: 2)
+    open func showTip(_ tip: String, completion: @escaping () -> Void = {}) {
+        (indicator as? APIndicator)?.showTip(inView: view, text: tip, detailText: nil, animated: true, hideAfter: 2, completion: completion)
     }
     open var showIndicatorPromise: Promise<Void> {
         return Promise { [unowned self] sink in

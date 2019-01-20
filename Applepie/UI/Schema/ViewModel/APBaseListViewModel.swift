@@ -14,8 +14,8 @@ import PromiseKit
 open class APBaseListViewModel: APBaseViewModel {
 
     public var dataIndex: UInt = 0
-    public let listLoadNumber: UInt = 20
-    public let listMaxNumber: UInt = UInt.max
+    open var listLoadNumber: UInt = 20
+    open var listMaxNumber: UInt = UInt.max
     public var dataArray: [Any] = []
     
     

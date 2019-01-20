@@ -23,7 +23,7 @@ public class APIndicator: APIndicatorProtocol {
     
     public init() {}
     
-    public func showTip(inView view: UIView?, text: String?, detailText: String?, animated: Bool, hideAfter: Int) {
+    public func showTip(inView view: UIView?, text: String?, detailText: String?, animated: Bool, hideAfter: Int, completion: @escaping () -> Void = {}) {
         DispatchQueue.main.async {
             guard view != nil else { return }
             MBProgressHUD.hide(for: view!, animated: false)
@@ -37,6 +37,7 @@ public class APIndicator: APIndicatorProtocol {
             }
             after(.seconds(hideAfter)).done {
                 hud.hide(animated: animated)
+                completion()
             }
         }
     }

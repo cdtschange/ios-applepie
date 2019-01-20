@@ -43,8 +43,6 @@ Applepie is a convenient sdk for ios project.
 ## Installation
 
 ### CocoaPods
-
-#### Swift 4.0 - Swift 4.2
 ```ruby
 pod 'Applepie'
 ```
