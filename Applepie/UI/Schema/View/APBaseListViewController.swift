@@ -11,7 +11,7 @@ import MJRefresh
 import CocoaLumberjack
 import PromiseKit
 
-public enum ListViewType {
+public enum ListViewType: String {
     case none
     case refreshOnly
     case loadMoreOnly

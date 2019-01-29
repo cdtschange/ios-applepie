@@ -17,6 +17,7 @@ class MenuListRepository: BaseRepository {
             return Promise { sink in
                 sink.fulfill(
                     [
+                        MenuModel(title: "List View", detail: "", url: "MenuListViewController", params: ["type": MenuType.listView.rawValue, "title": "List View"], callback: nil),
                         MenuModel(title: "Web View", detail: "", url: "MenuListViewController", params: ["type": MenuType.webView.rawValue, "title": "Web View"], callback: nil)
                     ]
                 )
@@ -26,6 +27,7 @@ class MenuListRepository: BaseRepository {
                 sink.fulfill(
                     [
                         MenuModel(title: "Crash", detail: "", url: "MenuListViewController", params: ["type": MenuType.crash.rawValue, "title": "Crash"], callback: nil)
+                        
                     ]
                 )
             }
@@ -66,12 +68,29 @@ class MenuListRepository: BaseRepository {
                     ]
                 )
             }
+        case .listView:
+            return Promise { sink in
+                sink.fulfill(
+                    [
+                        MenuModel(title: "None Refresh List View", detail: "List View without refresh header or load more footer", url: "ListTypeViewController", params: ["title": "None Refresh List View", "type": "none"], callback: nil),
+                        MenuModel(title: "Refresh Only List View", detail: "List View with only refresh header", url: "ListTypeViewController", params: ["title": "Refresh Only List View", "type": "refreshOnly"], callback: nil),
+                        MenuModel(title: "Load More Only List View", detail: "List View with load more footer", url: "ListTypeViewController", params: ["title": "Load More Only List View", "type": "loadMoreOnly"], callback: nil),
+                        MenuModel(title: "Refersh & Load More List View", detail: "List View with both refresh header and load more footer", url: "ListTypeViewController", params: ["title": "Refersh & Load More List View", "type": "both"], callback: nil)
+                    ]
+                )
+            }
         case .webView:
             return Promise { sink in
                 sink.fulfill(
                     [
                         MenuModel(title: "Normal Web View Controller", detail: "Visit a website with a BaseWebViewController", url: "", params: [:]) {
                             APRouter.route(toUrl: "https://www.baidu.com")
+                        },
+                        MenuModel(title: "Web View Load From Html data", detail: "Load Html data in WebViewController", url: "", params: [:]) {
+                            APRouter.route(toName: "SimpleWebViewController")
+                        },
+                        MenuModel(title: "Web View For Bridge", detail: "Custom Bridge for navtive & js call each other", url: "", params: [:]) {
+                            APRouter.route(toName: "WebBridgeViewController")
                         }
                     ]
                 )
@@ -83,7 +102,9 @@ class MenuListRepository: BaseRepository {
 }
 
 enum MenuType: String {
-    case none, uiComponent, data, scrollView, webView, crash
+    case none, uiComponent, data,
+    listView, webView,
+    crash
 }
 struct MenuModel {
     var title: String

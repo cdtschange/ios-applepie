@@ -11,6 +11,11 @@ import Applepie
 
 class BaseWebViewController: APBaseWebViewController {
 
+    var _indicator = APIndicator()
+    open override var indicator: APIndicatorProtocol? {
+        return _indicator
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

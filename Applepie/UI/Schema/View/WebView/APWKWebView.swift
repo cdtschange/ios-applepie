@@ -268,7 +268,7 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
                 }
                 ret = false
             }
-        } else if urlStr?.hasPrefix("http") == false && urlStr?.hasPrefix("https") == false { // 2.0 判断是不是打开其他app，例如支付宝
+        } else if urlStr?.hasPrefix("http") == false && urlStr?.hasPrefix("https") == false && urlStr?.hasPrefix("about:") == false { // 2.0 判断是不是打开其他app，例如支付宝
             if let url = navigationAction.request.url {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
