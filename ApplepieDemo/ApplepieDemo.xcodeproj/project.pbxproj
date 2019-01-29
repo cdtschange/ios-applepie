@@ -81,6 +81,7 @@
 		7AC5D13A21942941006ABC48 /* TestNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D13921942941006ABC48 /* TestNetApi.swift */; };
 		7AC936A321B7A0E40022EAC4 /* APPNetApiPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC936A221B7A0E40022EAC4 /* APPNetApiPromiseTests.swift */; };
 		7ACE591C218947AE0002F73C /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE591B218947AE0002F73C /* APError.swift */; };
+		7AD42D1F2200254600AD8645 /* NSAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D1E2200254600AD8645 /* NSAttributedString+Ex.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -256,6 +257,7 @@
 		7AC5D13921942941006ABC48 /* TestNetApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetApi.swift; sourceTree = "<group>"; };
 		7AC936A221B7A0E40022EAC4 /* APPNetApiPromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPNetApiPromiseTests.swift; sourceTree = "<group>"; };
 		7ACE591B218947AE0002F73C /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
+		7AD42D1E2200254600AD8645 /* NSAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ex.swift"; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 				7AF0CFDA21EC204B00D3E4C4 /* Date+Ex.swift */,
 				7A2DBB882189885E0011A730 /* Operator.swift */,
 				7A2DBB8021897E660011A730 /* String+Ex.swift */,
+				7AD42D1E2200254600AD8645 /* NSAttributedString+Ex.swift */,
 				7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */,
 				7A80DE9621EF1603003C3D8F /* Bundle+Resource.swift */,
 			);
@@ -984,17 +987,17 @@
 		7AF0D00621EC4CC500D3E4C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				7AF0D00721EC4CD500D3E4C4 /* NavigationBar */,
+				7AF0D00721EC4CD500D3E4C4 /* WebView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		7AF0D00721EC4CD500D3E4C4 /* NavigationBar */ = {
+		7AF0D00721EC4CD500D3E4C4 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
 				7AF0D00821EC4CE300D3E4C4 /* View */,
 			);
-			path = NavigationBar;
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		7AF0D00821EC4CE300D3E4C4 /* View */ = {
@@ -1686,6 +1689,7 @@
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
 				7AF0CFC721EC1DCD00D3E4C4 /* APBaseListViewController.swift in Sources */,
 				7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */,
+				7AD42D1F2200254600AD8645 /* NSAttributedString+Ex.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
 				7A80DE9721EF1603003C3D8F /* Bundle+Resource.swift in Sources */,
 				7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */,

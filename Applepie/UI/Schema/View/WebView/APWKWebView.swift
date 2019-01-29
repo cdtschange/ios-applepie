@@ -12,6 +12,7 @@ import WebViewJavascriptBridge
 import CocoaLumberjack
 import SnapKit
 import MJRefresh
+import PromiseKit
 
 public protocol APWKWebViewDelegate: UIWebViewDelegate, WKNavigationDelegate {
     func webView(_ webView: WKWebView, updateTitle: String?) -> Void
@@ -20,13 +21,16 @@ public extension APWKWebViewDelegate {
     func webView(_ webView: WKWebView, updateTitle: String?) -> Void {}
 }
 
+public struct APWKWebViewConstant {
+    static var webViewOffset: [String: CGFloat] = [:]
+}
+
 open class APWKWebView: WKWebView, WKNavigationDelegate {
     
     struct InnerConst {
         static let WebViewBackgroundColor : UIColor = UIColor.clear
         static let keyPathForProgress : String = "estimatedProgress"
         static let keyPathForTitle : String = "title"
-        static var webViewOffset: [String: CGFloat] = [:]
     }
     
     open var requestHeader: [String: String]?
@@ -39,7 +43,7 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
         }
     }
     
-    open var delegate: APWKWebViewDelegate?
+    open weak var delegate: APWKWebViewDelegate?
     open var urlString: String?
     open var shouldAllowRedirectToUrlInView: Bool = true
     open var userSelectEnable = true
@@ -310,8 +314,11 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
             self.evaluateJavaScript("document.documentElement.style.webkitTouchCallout='none';") {_,_ in}
         }
         if rememberOffset {
-            if let url = urlString, let offset = InnerConst.webViewOffset[url] {
-                webView.scrollView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
+            if let url = urlString, let offset = APWKWebViewConstant.webViewOffset[url] {
+                DDLogInfo("[APWKWebView] Load \(offset) for \(url)")
+                after(.milliseconds(400)).done {
+                    webView.scrollView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
+                }
             }
         }
         delegate?.webView?(webView, didFinish: navigation)
@@ -322,7 +329,8 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
     
     public func recordWebView(offset: CGFloat) {
         guard urlString != nil else { return }
-        InnerConst.webViewOffset[urlString!] = offset
+        DDLogInfo("[APWKWebView] Record \(offset) for \(urlString ?? "")")
+        APWKWebViewConstant.webViewOffset[urlString!] = offset
     }
     
     private class func splitFirstName(_ name: String) -> (String?, String?) {

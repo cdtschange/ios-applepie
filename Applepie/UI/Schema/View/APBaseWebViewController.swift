@@ -17,7 +17,7 @@ open class APBaseWebViewController: APBaseViewController, UIScrollViewDelegate, 
     open var webViewBackgroundColor : UIColor = UIColor.clear
     open var pannelTitleColor : UIColor = UIColor.gray
     open var backgroundTitleColor : UIColor = UIColor.darkGray
-    open var bottomNavigationBarHeight : CGFloat = 50.0
+    open var bottomNavigationBarHeight : CGFloat = 60.0
     open var bottomNavigationBarButtonOffset : CGFloat = 60.0
     open var bottomNavigationBarButtonHeight : CGFloat = 40.0
     open var bottomNavigationBarButtonWidth : CGFloat = 40.0
@@ -95,11 +95,13 @@ open class APBaseWebViewController: APBaseViewController, UIScrollViewDelegate, 
         }
         btnLeft.snp.makeConstraints { (make) in
             make.centerX.equalTo(bottomView.snp.centerX).offset(-bottomNavigationBarButtonOffset)
+            make.centerY.equalTo(bottomView.snp.centerY)
             make.height.equalTo(bottomNavigationBarButtonHeight)
             make.width.equalTo(bottomNavigationBarButtonWidth)
         }
         btnRight.snp.makeConstraints { (make) in
             make.centerX.equalTo(bottomView.snp.centerX).offset(bottomNavigationBarButtonOffset)
+            make.centerY.equalTo(bottomView.snp.centerY)
             make.height.equalTo(bottomNavigationBarButtonHeight)
             make.width.equalTo(bottomNavigationBarButtonWidth)
         }

@@ -61,10 +61,10 @@ class DataViewController: BaseListViewController {
     override func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         if let model = object as? MenuModel {
             if model.url.hasPrefix("http") == true {
-                APRouter.route(toUrl: model.url, params: model.params)
+                APRouter.route(toUrl: model.url, params: model.params + APRouter.paramsForTabBarRoute)
                 return
             } else {
-                APRouter.route(toName: model.url, params: model.params)
+                APRouter.route(toName: model.url, params: model.params + APRouter.paramsForTabBarRoute)
                 return
             }
         }

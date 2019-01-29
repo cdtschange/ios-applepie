@@ -17,7 +17,7 @@ class MenuListRepository: BaseRepository {
             return Promise { sink in
                 sink.fulfill(
                     [
-                        MenuModel(title: "Navigation Bar", detail: "", url: "MenuListViewController", params: ["type": MenuType.navigationBar.rawValue, "title": "Navigation Bar"], callback: nil)
+                        MenuModel(title: "Web View", detail: "", url: "MenuListViewController", params: ["type": MenuType.webView.rawValue, "title": "Web View"], callback: nil)
                     ]
                 )
             }
@@ -66,11 +66,13 @@ class MenuListRepository: BaseRepository {
                     ]
                 )
             }
-        case .navigationBar:
+        case .webView:
             return Promise { sink in
                 sink.fulfill(
                     [
-                        MenuModel(title: "Color Gradual Change", detail: "Change color of navigation bar when scrolling", url: "NavigatinBarColorScrollViewController", params: [:], callback: nil)
+                        MenuModel(title: "Normal Web View Controller", detail: "Visit a website with a BaseWebViewController", url: "", params: [:]) {
+                            APRouter.route(toUrl: "https://www.baidu.com")
+                        }
                     ]
                 )
             }
@@ -81,7 +83,7 @@ class MenuListRepository: BaseRepository {
 }
 
 enum MenuType: String {
-    case none, uiComponent, data, scrollView, navigationBar, crash
+    case none, uiComponent, data, scrollView, webView, crash
 }
 struct MenuModel {
     var title: String

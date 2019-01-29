@@ -59,6 +59,7 @@ extension Dictionary: ApplepieCompatible { }
 extension Array: ApplepieCompatible { }
 extension Image: ApplepieCompatible { }
 extension String: ApplepieCompatible { }
+extension NSAttributedString: ApplepieCompatible { }
 extension Data: ApplepieCompatible { }
 extension UIViewController: ApplepieCompatible { }
 extension UIApplication: ApplepieCompatible { }
