@@ -30,6 +30,7 @@ class MenuListRepository: BaseRepository {
                         MenuModel(title: "Network", detail: "", url: "Network.NetworkViewController", params: ["title": "Network"], callback: nil),
                         MenuModel(title: "Cache", detail: "", url: "MenuListViewController", params: ["type": MenuType.cache.rawValue, "title": "Cache"], callback: nil),
                         MenuModel(title: "Device Info", detail: "", url: "DeviceInfoViewController", params: ["title": "Device Info"], callback: nil),
+                        MenuModel(title: "Location", detail: "", url: "LocationViewController", params: ["title": "Location"], callback: nil),
                         MenuModel(title: "Crash", detail: "", url: "MenuListViewController", params: ["type": MenuType.crash.rawValue, "title": "Crash"], callback: nil)
                         
                     ]

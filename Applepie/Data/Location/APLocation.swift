@@ -10,6 +10,7 @@ import Foundation
 import SwiftLocation
 import PromiseKit
 import CoreLocation
+import CocoaLumberjack
 
 public struct APLocation {
     // Getting Current Location (one shot)
@@ -51,6 +52,7 @@ public struct APLocation {
     }
     // force the request to complete early, like a manual timeout. It will execute the block (valid only for location requests)
     public static func stop() {
+        DDLogInfo("[APLocaiton] Stop")
         return Locator.completeAllLocationRequests()
     }
     // Subscribing to continuous location updates

@@ -1,5 +1,5 @@
 //
-//  DeviceInfoViewController.swift
+//  LocationViewController.swift
 //  ApplepieDemo
 //
 //  Created by 毛蔚 on 2019/1/30.
@@ -9,16 +9,17 @@
 import UIKit
 import Applepie
 import PromiseKit
+import CoreLocation
 
-class DeviceInfoViewController: BaseListViewController {
-
+class LocationViewController: BaseListViewController {
+    
     struct InnerConst {
-        static let CellIdentifier = "DeviceInfoTableViewCell"
+        static let CellIdentifier = "LocationTableViewCell"
     }
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var _viewModel = DeviceInfoViewModel()
+    private var _viewModel = LocationViewModel()
     override var viewModel: APBaseViewModel? {
         return _viewModel
     }
@@ -40,12 +41,30 @@ class DeviceInfoViewController: BaseListViewController {
         tableView.tableFooterView = UIView()
     }
     
+    override func setupBinding() {
+        super.setupBinding()
+        _viewModel.continuesLocation.producer.startWithValues {[weak self] location in
+            if (self?._viewModel.dataArray.count ?? 0) > 0 {
+                _ = self?._viewModel.fetchData().done { _ in 
+                    self?.tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .fade)
+                }
+            }
+        }
+    }
+    
     override func loadData() {
         super.loadData()
         fetchData()
-        _ = _viewModel.fetchNetwork().done { [weak self] _ in
+        _ = _viewModel.fetchGPSLocation().done { [weak self] _ in
+            self?.fetchData()
+            _ = self?._viewModel.fetchAddress().done { [weak self] _ in
+                self?.fetchData()
+            }
+        }
+        _ = _viewModel.fetchIPLocation().done { [weak self] _ in
             self?.fetchData()
         }
+        _viewModel.fetchContinuesLocation()
     }
     
     override func getCell(with tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell? {
@@ -56,13 +75,17 @@ class DeviceInfoViewController: BaseListViewController {
         return cell
     }
     override func fillCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
-        if let model = object as? DeviceInfoModel {
+        if let model = object as? LocationModel {
             cell.textLabel?.text = model.title
+            if let location = model.detail as? CLLocation {
+                cell.detailTextLabel?.text = "(\(location.coordinate.latitude), \(location.coordinate.longitude))"
+                return
+            }
             cell.detailTextLabel?.text = "\(model.detail ?? "")"
         }
     }
     override func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
-        if let model = object as? DeviceInfoModel, let tip = model.detail as? String {
+        if let model = object as? LocationModel, let tip = model.detail as? String {
             (indicator as? APIndicator)?.showTip(inView: view, text: nil, detailText: tip, animated: true, hideAfter: 2, completion: {})
         }
     }

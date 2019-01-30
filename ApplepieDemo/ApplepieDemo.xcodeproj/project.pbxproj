@@ -111,6 +111,10 @@
 		7AD42DB422018EE400AD8645 /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42DB222018EE400AD8645 /* DeviceInfoViewController.xib */; };
 		7AD42DB622018EF500AD8645 /* DeviceInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DB522018EF500AD8645 /* DeviceInfoViewModel.swift */; };
 		7AD42DB822018F0900AD8645 /* DeviceInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DB722018F0900AD8645 /* DeviceInfoRepository.swift */; };
+		7AD42DBE2201954B00AD8645 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DBD2201954B00AD8645 /* LocationRepository.swift */; };
+		7AD42DC0220195AA00AD8645 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DBF220195AA00AD8645 /* LocationViewModel.swift */; };
+		7AD42DC3220195BD00AD8645 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DC1220195BD00AD8645 /* LocationViewController.swift */; };
+		7AD42DC4220195BD00AD8645 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42DC2220195BD00AD8645 /* LocationViewController.xib */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -315,6 +319,10 @@
 		7AD42DB222018EE400AD8645 /* DeviceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoViewController.xib; sourceTree = "<group>"; };
 		7AD42DB522018EF500AD8645 /* DeviceInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewModel.swift; sourceTree = "<group>"; };
 		7AD42DB722018F0900AD8645 /* DeviceInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoRepository.swift; sourceTree = "<group>"; };
+		7AD42DBD2201954B00AD8645 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		7AD42DBF220195AA00AD8645 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		7AD42DC1220195BD00AD8645 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		7AD42DC2220195BD00AD8645 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -925,6 +933,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7AD42DB92201950400AD8645 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DBC2201952000AD8645 /* View */,
+				7AD42DBB2201951B00AD8645 /* ViewModel */,
+				7AD42DBA2201951600AD8645 /* Repository */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		7AD42DBA2201951600AD8645 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DBD2201954B00AD8645 /* LocationRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7AD42DBB2201951B00AD8645 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DBF220195AA00AD8645 /* LocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AD42DBC2201952000AD8645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DC1220195BD00AD8645 /* LocationViewController.swift */,
+				7AD42DC2220195BD00AD8645 /* LocationViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
 			isa = PBXGroup;
 			children = (
@@ -1281,6 +1324,7 @@
 				7AD42D7D220148EF00AD8645 /* Network */,
 				7AD42D9122017D7F00AD8645 /* Cache */,
 				7AD42DAB22018E9700AD8645 /* Device */,
+				7AD42DB92201950400AD8645 /* Location */,
 				7AF0D01721EC773600D3E4C4 /* Crash */,
 			);
 			path = Data;
@@ -1493,6 +1537,7 @@
 				7AD42D4B220032AB00AD8645 /* webview_bridge.html in Resources */,
 				7AD42DB422018EE400AD8645 /* DeviceInfoViewController.xib in Resources */,
 				7AF0CFEB21EC23C300D3E4C4 /* BaseWebViewController.xib in Resources */,
+				7AD42DC4220195BD00AD8645 /* LocationViewController.xib in Resources */,
 				7AD42D8A22014B3F00AD8645 /* Network.storyboard in Resources */,
 				7AD42D4F220033C800AD8645 /* WebBridgeViewController.xib in Resources */,
 				7AD42D90220167AB00AD8645 /* rainbow.jpg in Resources */,
@@ -1900,6 +1945,8 @@
 				7AD42D8C22014B9700AD8645 /* NetworkDetailViewController.swift in Sources */,
 				7AD42D4A2200324D00AD8645 /* SimpleWebViewController.swift in Sources */,
 				7AD42D7822004F0600AD8645 /* IndicatorRepository.swift in Sources */,
+				7AD42DBE2201954B00AD8645 /* LocationRepository.swift in Sources */,
+				7AD42DC3220195BD00AD8645 /* LocationViewController.swift in Sources */,
 				7AF0D01E21ED6F2F00D3E4C4 /* GlobalConfig.swift in Sources */,
 				7AF0CFE821EC23C300D3E4C4 /* BaseListViewController.swift in Sources */,
 				7AF0D00321EC2F1A00D3E4C4 /* MenuListRepository.swift in Sources */,
@@ -1914,6 +1961,7 @@
 				7AF0D01021EC548800D3E4C4 /* DoraemonLib.swift in Sources */,
 				7AF0CFE621EC23C300D3E4C4 /* BaseRepository.swift in Sources */,
 				7AD42D8F2201554200AD8645 /* NetworkApi.swift in Sources */,
+				7AD42DC0220195AA00AD8645 /* LocationViewModel.swift in Sources */,
 				7AD42D862201492B00AD8645 /* NetworkViewModel.swift in Sources */,
 				7AF0D01321EC5BCA00D3E4C4 /* DataViewController.swift in Sources */,
 				7AF0CFFF21EC2EF400D3E4C4 /* MenuListViewController.swift in Sources */,
