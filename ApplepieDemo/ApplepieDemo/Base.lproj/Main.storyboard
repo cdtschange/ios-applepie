@@ -201,7 +201,7 @@
         <scene sceneID="bC4-PM-KGr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UY4-Ow-t7f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="l8l-GE-WDk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="l8l-GE-WDk"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="yI8-GC-Hid">
@@ -221,7 +221,7 @@
         <scene sceneID="TJz-1b-en1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DFJ-xa-gP0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="UI" id="H76-in-fjt"/>
+                    <tabBarItem key="tabBarItem" title="UI" image="layers" id="H76-in-fjt"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="OSS-HQ-bQ1">
@@ -302,7 +302,7 @@
         <scene sceneID="MRx-7E-fLd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J2r-Wm-dwV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Data" id="GPe-F5-iXC"/>
+                    <tabBarItem key="tabBarItem" title="Data" image="literature" id="GPe-F5-iXC"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fov-34-SKG">
@@ -321,5 +321,8 @@
     </scenes>
     <resources>
         <image name="applepie" width="340.5" height="340.5"/>
+        <image name="home" width="30" height="30"/>
+        <image name="layers" width="30" height="30"/>
+        <image name="literature" width="30" height="30"/>
     </resources>
 </document>
