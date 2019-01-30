@@ -42,4 +42,12 @@ public extension Applepie where Base == String {
         attributedString.addAttribute(.paragraphStyle, value: style, range: NSMakeRange(0, attributedString.length))
         return attributedString
     }
+    
+    public func calculateHeight(withWidth width: CGFloat) -> CGFloat {
+        let options: NSStringDrawingOptions = [NSStringDrawingOptions.usesLineFragmentOrigin, NSStringDrawingOptions.usesFontLeading]
+        let size = base.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude),
+                                     options: options,
+                                     context: nil)
+        return size.height
+    }
 }

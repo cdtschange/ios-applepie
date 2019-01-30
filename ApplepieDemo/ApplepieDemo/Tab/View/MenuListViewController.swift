@@ -71,6 +71,10 @@ class MenuListViewController: BaseListViewController {
                 APRouter.route(toUrl: model.url, params: model.params)
                 return
             } else {
+                if model.url.contains(".") {
+                    APRouter.route(toName: String(model.url.split(separator: ".").last!), params: model.params, storyboardName: String(model.url.split(separator: ".").first!))
+                    return
+                }
                 APRouter.route(toName: model.url, params: model.params)
                 return
             }

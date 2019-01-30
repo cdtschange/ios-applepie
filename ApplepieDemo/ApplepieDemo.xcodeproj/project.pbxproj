@@ -81,7 +81,6 @@
 		7AC5D13A21942941006ABC48 /* TestNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5D13921942941006ABC48 /* TestNetApi.swift */; };
 		7AC936A321B7A0E40022EAC4 /* APPNetApiPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC936A221B7A0E40022EAC4 /* APPNetApiPromiseTests.swift */; };
 		7ACE591C218947AE0002F73C /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE591B218947AE0002F73C /* APError.swift */; };
-		7AD42D1F2200254600AD8645 /* NSAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D1E2200254600AD8645 /* NSAttributedString+Ex.swift */; };
 		7AD42D2422002F0300AD8645 /* WebBridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D2322002F0300AD8645 /* WebBridgeViewController.swift */; };
 		7AD42D2622002FF500AD8645 /* webview_simple.html in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42D2522002FF500AD8645 /* webview_simple.html */; };
 		7AD42D4A2200324D00AD8645 /* SimpleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D492200324D00AD8645 /* SimpleWebViewController.swift */; };
@@ -97,6 +96,13 @@
 		7AD42D7622004EF800AD8645 /* IndicatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D7522004EF800AD8645 /* IndicatorViewModel.swift */; };
 		7AD42D7822004F0600AD8645 /* IndicatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D7722004F0600AD8645 /* IndicatorRepository.swift */; };
 		7AD42D7A220138F700AD8645 /* APRepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D79220138F700AD8645 /* APRepeatingTimer.swift */; };
+		7AD42D832201491D00AD8645 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D812201491D00AD8645 /* NetworkViewController.swift */; };
+		7AD42D862201492B00AD8645 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D852201492B00AD8645 /* NetworkViewModel.swift */; };
+		7AD42D882201493A00AD8645 /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D872201493A00AD8645 /* NetworkRepository.swift */; };
+		7AD42D8A22014B3F00AD8645 /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42D8922014B3F00AD8645 /* Network.storyboard */; };
+		7AD42D8C22014B9700AD8645 /* NetworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D8B22014B9700AD8645 /* NetworkDetailViewController.swift */; };
+		7AD42D8F2201554200AD8645 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D8E2201554200AD8645 /* NetworkApi.swift */; };
+		7AD42D90220167AB00AD8645 /* rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A0E2717219563A3001FE212 /* rainbow.jpg */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -272,7 +278,6 @@
 		7AC5D13921942941006ABC48 /* TestNetApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetApi.swift; sourceTree = "<group>"; };
 		7AC936A221B7A0E40022EAC4 /* APPNetApiPromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPNetApiPromiseTests.swift; sourceTree = "<group>"; };
 		7ACE591B218947AE0002F73C /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
-		7AD42D1E2200254600AD8645 /* NSAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ex.swift"; sourceTree = "<group>"; };
 		7AD42D2122002C4C00AD8645 /* webview_bridge.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = webview_bridge.html; sourceTree = "<group>"; };
 		7AD42D2322002F0300AD8645 /* WebBridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBridgeViewController.swift; sourceTree = "<group>"; };
 		7AD42D2522002FF500AD8645 /* webview_simple.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = webview_simple.html; sourceTree = "<group>"; };
@@ -288,6 +293,12 @@
 		7AD42D7522004EF800AD8645 /* IndicatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewModel.swift; sourceTree = "<group>"; };
 		7AD42D7722004F0600AD8645 /* IndicatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorRepository.swift; sourceTree = "<group>"; };
 		7AD42D79220138F700AD8645 /* APRepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRepeatingTimer.swift; sourceTree = "<group>"; };
+		7AD42D812201491D00AD8645 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		7AD42D852201492B00AD8645 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
+		7AD42D872201493A00AD8645 /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
+		7AD42D8922014B3F00AD8645 /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
+		7AD42D8B22014B9700AD8645 /* NetworkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDetailViewController.swift; sourceTree = "<group>"; };
+		7AD42D8E2201554200AD8645 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -783,6 +794,51 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		7AD42D7D220148EF00AD8645 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D8D220154FB00AD8645 /* Data */,
+				7AD42D80220148FF00AD8645 /* View */,
+				7AD42D7F220148FA00AD8645 /* ViewModel */,
+				7AD42D7E220148F400AD8645 /* Repository */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7AD42D7E220148F400AD8645 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D872201493A00AD8645 /* NetworkRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7AD42D7F220148FA00AD8645 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D852201492B00AD8645 /* NetworkViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AD42D80220148FF00AD8645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D812201491D00AD8645 /* NetworkViewController.swift */,
+				7AD42D8B22014B9700AD8645 /* NetworkDetailViewController.swift */,
+				7AD42D8922014B3F00AD8645 /* Network.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AD42D8D220154FB00AD8645 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D8E2201554200AD8645 /* NetworkApi.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,7 +892,6 @@
 				7AF0CFDA21EC204B00D3E4C4 /* Date+Ex.swift */,
 				7A2DBB882189885E0011A730 /* Operator.swift */,
 				7A2DBB8021897E660011A730 /* String+Ex.swift */,
-				7AD42D1E2200254600AD8645 /* NSAttributedString+Ex.swift */,
 				7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */,
 				7A80DE9621EF1603003C3D8F /* Bundle+Resource.swift */,
 			);
@@ -1137,6 +1192,7 @@
 		7AF0D01421EC655700D3E4C4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7AD42D7D220148EF00AD8645 /* Network */,
 				7AF0D01721EC773600D3E4C4 /* Crash */,
 			);
 			path = Data;
@@ -1347,7 +1403,9 @@
 				7AD42D4D2200339400AD8645 /* SimpleWebViewController.xib in Resources */,
 				7AD42D4B220032AB00AD8645 /* webview_bridge.html in Resources */,
 				7AF0CFEB21EC23C300D3E4C4 /* BaseWebViewController.xib in Resources */,
+				7AD42D8A22014B3F00AD8645 /* Network.storyboard in Resources */,
 				7AD42D4F220033C800AD8645 /* WebBridgeViewController.xib in Resources */,
+				7AD42D90220167AB00AD8645 /* rainbow.jpg in Resources */,
 				7A0BE50021C254C2000748D5 /* ViewControllerNib.xib in Resources */,
 				7A02DEE92182EECA00B41DB6 /* Podfile in Resources */,
 				7A02DECD2182EE5D00B41DB6 /* Main.storyboard in Resources */,
@@ -1749,18 +1807,22 @@
 				7AD42D7622004EF800AD8645 /* IndicatorViewModel.swift in Sources */,
 				7AF0CFF221EC242800D3E4C4 /* Router.swift in Sources */,
 				7AF0CFF721EC260400D3E4C4 /* UIComponentViewController.swift in Sources */,
+				7AD42D8C22014B9700AD8645 /* NetworkDetailViewController.swift in Sources */,
 				7AD42D4A2200324D00AD8645 /* SimpleWebViewController.swift in Sources */,
 				7AD42D7822004F0600AD8645 /* IndicatorRepository.swift in Sources */,
 				7AF0D01E21ED6F2F00D3E4C4 /* GlobalConfig.swift in Sources */,
 				7AF0CFE821EC23C300D3E4C4 /* BaseListViewController.swift in Sources */,
 				7AF0D00321EC2F1A00D3E4C4 /* MenuListRepository.swift in Sources */,
 				7AD42D6A22003E2700AD8645 /* ListTypeViewModel.swift in Sources */,
+				7AD42D832201491D00AD8645 /* NetworkViewController.swift in Sources */,
 				7AF0CFE721EC23C300D3E4C4 /* BaseViewModel.swift in Sources */,
 				7AD42D6522003D8100AD8645 /* ListTypeViewController.swift in Sources */,
 				7A0BE50221C2598D000748D5 /* ViewControllerNib.swift in Sources */,
 				7AD42D7122004E7400AD8645 /* IndicatorViewController.swift in Sources */,
 				7AF0D01021EC548800D3E4C4 /* DoraemonLib.swift in Sources */,
 				7AF0CFE621EC23C300D3E4C4 /* BaseRepository.swift in Sources */,
+				7AD42D8F2201554200AD8645 /* NetworkApi.swift in Sources */,
+				7AD42D862201492B00AD8645 /* NetworkViewModel.swift in Sources */,
 				7AF0D01321EC5BCA00D3E4C4 /* DataViewController.swift in Sources */,
 				7AF0CFFF21EC2EF400D3E4C4 /* MenuListViewController.swift in Sources */,
 				7AF0CFEA21EC23C300D3E4C4 /* BaseListViewModel.swift in Sources */,
@@ -1768,6 +1830,7 @@
 				7AD42D2422002F0300AD8645 /* WebBridgeViewController.swift in Sources */,
 				7AF0CFE921EC23C300D3E4C4 /* BaseViewController.swift in Sources */,
 				7AF0D01B21EC776100D3E4C4 /* CrashFunction.m in Sources */,
+				7AD42D882201493A00AD8645 /* NetworkRepository.swift in Sources */,
 				7A02DEC82182EE5D00B41DB6 /* AppDelegate.swift in Sources */,
 				7AF0CFF921EC261300D3E4C4 /* HomeViewController.swift in Sources */,
 				7AF0D00121EC2F0600D3E4C4 /* MenuListViewModel.swift in Sources */,
@@ -1821,7 +1884,6 @@
 				7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */,
 				7AF0CFC721EC1DCD00D3E4C4 /* APBaseListViewController.swift in Sources */,
 				7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */,
-				7AD42D1F2200254600AD8645 /* NSAttributedString+Ex.swift in Sources */,
 				7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */,
 				7A80DE9721EF1603003C3D8F /* Bundle+Resource.swift in Sources */,
 				7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */,

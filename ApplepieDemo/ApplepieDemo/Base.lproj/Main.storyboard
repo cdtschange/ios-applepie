@@ -138,7 +138,20 @@
                     <view key="view" contentMode="scaleToFill" id="iAT-0y-17x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applepie" translatesAutoresizingMaskIntoConstraints="NO" id="l6O-pl-HN7">
+                                <rect key="frame" x="87.5" y="177" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="FRD-24-2Gf"/>
+                                    <constraint firstAttribute="width" secondItem="l6O-pl-HN7" secondAttribute="height" multiplier="1:1" id="SXj-6y-YkB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l6O-pl-HN7" firstAttribute="centerY" secondItem="RcP-Ua-bgo" secondAttribute="centerY" id="0du-cx-lHP"/>
+                            <constraint firstItem="l6O-pl-HN7" firstAttribute="centerX" secondItem="RcP-Ua-bgo" secondAttribute="centerX" id="IXS-kT-LLm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RcP-Ua-bgo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="7No-Qp-i0h"/>
@@ -306,4 +319,7 @@
             <point key="canvasLocation" x="1069.5999999999999" y="885.60719640179911"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="applepie" width="340.5" height="340.5"/>
+    </resources>
 </document>
