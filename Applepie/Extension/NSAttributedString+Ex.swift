@@ -2,7 +2,7 @@
 //  NSAttributedString+Ex.swift
 //  Applepie
 //
-//  Created by 毛蔚 on 2019/1/29.
+//  Created by 山天大畜 on 2019/1/29.
 //  Copyright © 2019 山天大畜. All rights reserved.
 //
 

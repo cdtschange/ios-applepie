@@ -1,5 +1,5 @@
 //
-//  ListTypeViewModel.swift
+//  IndicatorViewModel.swift
 //  ApplepieDemo
 //
 //  Created by 山天大畜 on 2019/1/29.
@@ -7,18 +7,18 @@
 //
 
 import UIKit
-import Applepie
 import PromiseKit
+import Applepie
 
-class ListTypeViewModel: BaseListViewModel {
+class IndicatorViewModel: BaseListViewModel {
 
-    private var _repository = ListTypeRepository()
+    private var _repository = IndicatorRepository()
     override var repository: APBaseRepository? {
         return _repository
     }
     
     override func fetchData() -> Promise<Any> {
-        return _repository.fetchData(index: Int(dataIndex * listLoadNumber), size: Int(listLoadNumber)).map { [weak self] data in
+        return _repository.fetchData().map { [weak self] data in
             self?.appendDataArray(data)
             return data
         }

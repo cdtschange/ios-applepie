@@ -92,6 +92,11 @@
 		7AD42D6622003D8100AD8645 /* ListTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42D6422003D8100AD8645 /* ListTypeViewController.xib */; };
 		7AD42D6A22003E2700AD8645 /* ListTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D6922003E2700AD8645 /* ListTypeViewModel.swift */; };
 		7AD42D6C22003E3900AD8645 /* ListTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D6B22003E3900AD8645 /* ListTypeRepository.swift */; };
+		7AD42D7122004E7400AD8645 /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D6F22004E7400AD8645 /* IndicatorViewController.swift */; };
+		7AD42D7222004E7400AD8645 /* IndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42D7022004E7400AD8645 /* IndicatorViewController.xib */; };
+		7AD42D7622004EF800AD8645 /* IndicatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D7522004EF800AD8645 /* IndicatorViewModel.swift */; };
+		7AD42D7822004F0600AD8645 /* IndicatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D7722004F0600AD8645 /* IndicatorRepository.swift */; };
+		7AD42D7A220138F700AD8645 /* APRepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D79220138F700AD8645 /* APRepeatingTimer.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -278,6 +283,11 @@
 		7AD42D6422003D8100AD8645 /* ListTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTypeViewController.xib; sourceTree = "<group>"; };
 		7AD42D6922003E2700AD8645 /* ListTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTypeViewModel.swift; sourceTree = "<group>"; };
 		7AD42D6B22003E3900AD8645 /* ListTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTypeRepository.swift; sourceTree = "<group>"; };
+		7AD42D6F22004E7400AD8645 /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
+		7AD42D7022004E7400AD8645 /* IndicatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndicatorViewController.xib; sourceTree = "<group>"; };
+		7AD42D7522004EF800AD8645 /* IndicatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewModel.swift; sourceTree = "<group>"; };
+		7AD42D7722004F0600AD8645 /* IndicatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorRepository.swift; sourceTree = "<group>"; };
+		7AD42D79220138F700AD8645 /* APRepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRepeatingTimer.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -613,6 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				7A97733C21ABBE1100E79893 /* APGCD.swift */,
+				7AD42D79220138F700AD8645 /* APRepeatingTimer.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -735,6 +746,41 @@
 				7AD42D6B22003E3900AD8645 /* ListTypeRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		7AD42D6D22004E5000AD8645 /* IndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D6E22004E5900AD8645 /* View */,
+				7AD42D7422004EE300AD8645 /* ViewModel */,
+				7AD42D7322004EDD00AD8645 /* Repository */,
+			);
+			path = IndicatorView;
+			sourceTree = "<group>";
+		};
+		7AD42D6E22004E5900AD8645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D6F22004E7400AD8645 /* IndicatorViewController.swift */,
+				7AD42D7022004E7400AD8645 /* IndicatorViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AD42D7322004EDD00AD8645 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D7722004F0600AD8645 /* IndicatorRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7AD42D7422004EE300AD8645 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42D7522004EF800AD8645 /* IndicatorViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
@@ -1052,6 +1098,7 @@
 		7AF0D00621EC4CC500D3E4C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7AD42D6D22004E5000AD8645 /* IndicatorView */,
 				7AD42D6122003D4000AD8645 /* ListView */,
 				7AF0D00721EC4CD500D3E4C4 /* WebView */,
 			);
@@ -1296,6 +1343,7 @@
 				7A02DECF2182EE5D00B41DB6 /* Assets.xcassets in Resources */,
 				7AD42D2622002FF500AD8645 /* webview_simple.html in Resources */,
 				7AD42D6622003D8100AD8645 /* ListTypeViewController.xib in Resources */,
+				7AD42D7222004E7400AD8645 /* IndicatorViewController.xib in Resources */,
 				7AD42D4D2200339400AD8645 /* SimpleWebViewController.xib in Resources */,
 				7AD42D4B220032AB00AD8645 /* webview_bridge.html in Resources */,
 				7AF0CFEB21EC23C300D3E4C4 /* BaseWebViewController.xib in Resources */,
@@ -1698,9 +1746,11 @@
 				7AD42D6C22003E3900AD8645 /* ListTypeRepository.swift in Sources */,
 				7AF0D02021ED707300D3E4C4 /* UMengLib.swift in Sources */,
 				7A02DECA2182EE5D00B41DB6 /* ViewController.swift in Sources */,
+				7AD42D7622004EF800AD8645 /* IndicatorViewModel.swift in Sources */,
 				7AF0CFF221EC242800D3E4C4 /* Router.swift in Sources */,
 				7AF0CFF721EC260400D3E4C4 /* UIComponentViewController.swift in Sources */,
 				7AD42D4A2200324D00AD8645 /* SimpleWebViewController.swift in Sources */,
+				7AD42D7822004F0600AD8645 /* IndicatorRepository.swift in Sources */,
 				7AF0D01E21ED6F2F00D3E4C4 /* GlobalConfig.swift in Sources */,
 				7AF0CFE821EC23C300D3E4C4 /* BaseListViewController.swift in Sources */,
 				7AF0D00321EC2F1A00D3E4C4 /* MenuListRepository.swift in Sources */,
@@ -1708,6 +1758,7 @@
 				7AF0CFE721EC23C300D3E4C4 /* BaseViewModel.swift in Sources */,
 				7AD42D6522003D8100AD8645 /* ListTypeViewController.swift in Sources */,
 				7A0BE50221C2598D000748D5 /* ViewControllerNib.swift in Sources */,
+				7AD42D7122004E7400AD8645 /* IndicatorViewController.swift in Sources */,
 				7AF0D01021EC548800D3E4C4 /* DoraemonLib.swift in Sources */,
 				7AF0CFE621EC23C300D3E4C4 /* BaseRepository.swift in Sources */,
 				7AF0D01321EC5BCA00D3E4C4 /* DataViewController.swift in Sources */,
@@ -1757,6 +1808,7 @@
 				7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */,
 				7AF0D00521EC3E9700D3E4C4 /* UIColor+Ex.swift in Sources */,
 				7AD9A0472188083C007BAD59 /* APNetApi.swift in Sources */,
+				7AD42D7A220138F700AD8645 /* APRepeatingTimer.swift in Sources */,
 				7A34D58021B8CE530041E5D5 /* APPinCache.swift in Sources */,
 				7AF0CFCF21EC1DCD00D3E4C4 /* APValidator.swift in Sources */,
 				7AF0CFDB21EC204B00D3E4C4 /* Date+Ex.swift in Sources */,

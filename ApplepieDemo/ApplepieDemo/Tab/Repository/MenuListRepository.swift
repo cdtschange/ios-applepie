@@ -18,7 +18,8 @@ class MenuListRepository: BaseRepository {
                 sink.fulfill(
                     [
                         MenuModel(title: "List View", detail: "", url: "MenuListViewController", params: ["type": MenuType.listView.rawValue, "title": "List View"], callback: nil),
-                        MenuModel(title: "Web View", detail: "", url: "MenuListViewController", params: ["type": MenuType.webView.rawValue, "title": "Web View"], callback: nil)
+                        MenuModel(title: "Web View", detail: "", url: "MenuListViewController", params: ["type": MenuType.webView.rawValue, "title": "Web View"], callback: nil),
+                        MenuModel(title: "Indicator View", detail: "", url: "IndicatorViewController", params: ["title": "Indicator View"], callback: nil)
                     ]
                 )
             }
