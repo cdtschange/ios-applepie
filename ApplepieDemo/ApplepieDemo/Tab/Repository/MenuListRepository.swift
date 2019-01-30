@@ -28,6 +28,7 @@ class MenuListRepository: BaseRepository {
                 sink.fulfill(
                     [
                         MenuModel(title: "Network", detail: "", url: "Network.NetworkViewController", params: ["title": "Network"], callback: nil),
+                        MenuModel(title: "Cache", detail: "", url: "MenuListViewController", params: ["type": MenuType.cache.rawValue, "title": "Cache"], callback: nil),
                         MenuModel(title: "Crash", detail: "", url: "MenuListViewController", params: ["type": MenuType.crash.rawValue, "title": "Crash"], callback: nil)
                         
                     ]
@@ -57,6 +58,16 @@ class MenuListRepository: BaseRepository {
                         MenuModel(title: "Web View For Bridge", detail: "Custom Bridge for navtive & js call each other", url: "", params: [:]) {
                             APRouter.route(toName: "WebBridgeViewController")
                         }
+                    ]
+                )
+            }
+        case .cache:
+            return Promise { sink in
+                sink.fulfill(
+                    [
+                        MenuModel(title: "Cache in disk", detail: "", url: "CacheViewController", params: ["title": "Cache in disk", "type": "disk"], callback: nil),
+                        MenuModel(title: "Cache in UserDefaults", detail: "", url: "CacheViewController", params: ["title": "Cache in UserDefaults", "type": "userDefaults"], callback: nil),
+                        MenuModel(title: "Cache in Keychain", detail: "", url: "CacheViewController", params: ["title": "Cache in Keychain", "type": "keychain"], callback: nil)
                     ]
                 )
             }
@@ -106,7 +117,7 @@ class MenuListRepository: BaseRepository {
 enum MenuType: String {
     case none, uiComponent, data,
     listView, webView,
-    crash
+    cache, crash
 }
 struct MenuModel {
     var title: String

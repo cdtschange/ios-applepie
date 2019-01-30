@@ -103,6 +103,10 @@
 		7AD42D8C22014B9700AD8645 /* NetworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D8B22014B9700AD8645 /* NetworkDetailViewController.swift */; };
 		7AD42D8F2201554200AD8645 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42D8E2201554200AD8645 /* NetworkApi.swift */; };
 		7AD42D90220167AB00AD8645 /* rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A0E2717219563A3001FE212 /* rainbow.jpg */; };
+		7AD42DA722017E4800AD8645 /* CacheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42DA122017E4700AD8645 /* CacheViewController.xib */; };
+		7AD42DA822017E4800AD8645 /* CacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DA222017E4700AD8645 /* CacheViewController.swift */; };
+		7AD42DA922017E4800AD8645 /* CacheViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DA422017E4800AD8645 /* CacheViewModel.swift */; };
+		7AD42DAA22017E4800AD8645 /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DA622017E4800AD8645 /* CacheRepository.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -299,6 +303,10 @@
 		7AD42D8922014B3F00AD8645 /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		7AD42D8B22014B9700AD8645 /* NetworkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDetailViewController.swift; sourceTree = "<group>"; };
 		7AD42D8E2201554200AD8645 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
+		7AD42DA122017E4700AD8645 /* CacheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CacheViewController.xib; sourceTree = "<group>"; };
+		7AD42DA222017E4700AD8645 /* CacheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheViewController.swift; sourceTree = "<group>"; };
+		7AD42DA422017E4800AD8645 /* CacheViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheViewModel.swift; sourceTree = "<group>"; };
+		7AD42DA622017E4800AD8645 /* CacheRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepository.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -839,6 +847,41 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		7AD42D9122017D7F00AD8645 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DA022017E4700AD8645 /* View */,
+				7AD42DA322017E4800AD8645 /* ViewModel */,
+				7AD42DA522017E4800AD8645 /* Repository */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		7AD42DA022017E4700AD8645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DA222017E4700AD8645 /* CacheViewController.swift */,
+				7AD42DA122017E4700AD8645 /* CacheViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AD42DA322017E4800AD8645 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DA422017E4800AD8645 /* CacheViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AD42DA522017E4800AD8645 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DA622017E4800AD8645 /* CacheRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
 			isa = PBXGroup;
 			children = (
@@ -1193,6 +1236,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD42D7D220148EF00AD8645 /* Network */,
+				7AD42D9122017D7F00AD8645 /* Cache */,
 				7AF0D01721EC773600D3E4C4 /* Crash */,
 			);
 			path = Data;
@@ -1398,6 +1442,7 @@
 				7A02DED22182EE5D00B41DB6 /* LaunchScreen.storyboard in Resources */,
 				7A02DECF2182EE5D00B41DB6 /* Assets.xcassets in Resources */,
 				7AD42D2622002FF500AD8645 /* webview_simple.html in Resources */,
+				7AD42DA722017E4800AD8645 /* CacheViewController.xib in Resources */,
 				7AD42D6622003D8100AD8645 /* ListTypeViewController.xib in Resources */,
 				7AD42D7222004E7400AD8645 /* IndicatorViewController.xib in Resources */,
 				7AD42D4D2200339400AD8645 /* SimpleWebViewController.xib in Resources */,
@@ -1830,9 +1875,12 @@
 				7AD42D2422002F0300AD8645 /* WebBridgeViewController.swift in Sources */,
 				7AF0CFE921EC23C300D3E4C4 /* BaseViewController.swift in Sources */,
 				7AF0D01B21EC776100D3E4C4 /* CrashFunction.m in Sources */,
+				7AD42DAA22017E4800AD8645 /* CacheRepository.swift in Sources */,
 				7AD42D882201493A00AD8645 /* NetworkRepository.swift in Sources */,
+				7AD42DA922017E4800AD8645 /* CacheViewModel.swift in Sources */,
 				7A02DEC82182EE5D00B41DB6 /* AppDelegate.swift in Sources */,
 				7AF0CFF921EC261300D3E4C4 /* HomeViewController.swift in Sources */,
+				7AD42DA822017E4800AD8645 /* CacheViewController.swift in Sources */,
 				7AF0D00121EC2F0600D3E4C4 /* MenuListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2116,7 +2164,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ApplepieDemo/ApplepieDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2138,7 +2186,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ApplepieDemo/ApplepieDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

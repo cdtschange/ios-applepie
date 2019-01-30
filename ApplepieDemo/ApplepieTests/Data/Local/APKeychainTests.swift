@@ -23,9 +23,12 @@ class APKeychainTests: BaseTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let key = "testKeychain"
-        let chain = APKeychain(identifier: "com.cdts.applepie")
+        let chain = APKeychain(identifier: "com.cdts.applepietest")
         assert(chain.string(forKey: key) == nil)
         chain.set(string: "abc", forKey: key)
+        assert(chain.string(forKey: key) == "abc")
+        chain.set(string: nil, forKey: key)
+        assert(chain.string(forKey: key) == nil)
         assert(chain.string(forKey: key) == "abc")
         chain.removeObject(forKey: key)
         assert(chain.string(forKey: key) == nil)

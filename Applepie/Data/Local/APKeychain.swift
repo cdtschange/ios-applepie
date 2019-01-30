@@ -27,7 +27,11 @@ public struct APKeychain {
         return valet.string(forKey: key)
     }
     @discardableResult
-    public func set(string: String, forKey key: String) -> Bool {
+    public func set(string: String?, forKey key: String) -> Bool {
+        guard let string = string else {
+            removeObject(forKey: key)
+            return true
+        }
         return valet.set(string: string, forKey: key)
     }
 }
