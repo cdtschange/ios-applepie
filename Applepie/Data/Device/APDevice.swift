@@ -14,7 +14,7 @@ import DeviceKit
 import Alamofire
 import PromiseKit
 
-public enum APNetWorkType {
+public enum APNetWorkType: String {
     case none // 没有网络
     case cell2G // 2G
     case cell3G // 3G

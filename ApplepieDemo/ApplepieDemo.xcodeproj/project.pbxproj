@@ -107,6 +107,10 @@
 		7AD42DA822017E4800AD8645 /* CacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DA222017E4700AD8645 /* CacheViewController.swift */; };
 		7AD42DA922017E4800AD8645 /* CacheViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DA422017E4800AD8645 /* CacheViewModel.swift */; };
 		7AD42DAA22017E4800AD8645 /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DA622017E4800AD8645 /* CacheRepository.swift */; };
+		7AD42DB322018EE400AD8645 /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DB122018EE400AD8645 /* DeviceInfoViewController.swift */; };
+		7AD42DB422018EE400AD8645 /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42DB222018EE400AD8645 /* DeviceInfoViewController.xib */; };
+		7AD42DB622018EF500AD8645 /* DeviceInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DB522018EF500AD8645 /* DeviceInfoViewModel.swift */; };
+		7AD42DB822018F0900AD8645 /* DeviceInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DB722018F0900AD8645 /* DeviceInfoRepository.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -307,6 +311,10 @@
 		7AD42DA222017E4700AD8645 /* CacheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheViewController.swift; sourceTree = "<group>"; };
 		7AD42DA422017E4800AD8645 /* CacheViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheViewModel.swift; sourceTree = "<group>"; };
 		7AD42DA622017E4800AD8645 /* CacheRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepository.swift; sourceTree = "<group>"; };
+		7AD42DB122018EE400AD8645 /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
+		7AD42DB222018EE400AD8645 /* DeviceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoViewController.xib; sourceTree = "<group>"; };
+		7AD42DB522018EF500AD8645 /* DeviceInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewModel.swift; sourceTree = "<group>"; };
+		7AD42DB722018F0900AD8645 /* DeviceInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoRepository.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -882,6 +890,41 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		7AD42DAB22018E9700AD8645 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DAE22018EB600AD8645 /* View */,
+				7AD42DAD22018EB100AD8645 /* ViewModel */,
+				7AD42DAC22018EAA00AD8645 /* Repository */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		7AD42DAC22018EAA00AD8645 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DB722018F0900AD8645 /* DeviceInfoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7AD42DAD22018EB100AD8645 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DB522018EF500AD8645 /* DeviceInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AD42DAE22018EB600AD8645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AD42DB122018EE400AD8645 /* DeviceInfoViewController.swift */,
+				7AD42DB222018EE400AD8645 /* DeviceInfoViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7AD9A0212182FE2C007BAD59 /* Applepie */ = {
 			isa = PBXGroup;
 			children = (
@@ -1237,6 +1280,7 @@
 			children = (
 				7AD42D7D220148EF00AD8645 /* Network */,
 				7AD42D9122017D7F00AD8645 /* Cache */,
+				7AD42DAB22018E9700AD8645 /* Device */,
 				7AF0D01721EC773600D3E4C4 /* Crash */,
 			);
 			path = Data;
@@ -1447,6 +1491,7 @@
 				7AD42D7222004E7400AD8645 /* IndicatorViewController.xib in Resources */,
 				7AD42D4D2200339400AD8645 /* SimpleWebViewController.xib in Resources */,
 				7AD42D4B220032AB00AD8645 /* webview_bridge.html in Resources */,
+				7AD42DB422018EE400AD8645 /* DeviceInfoViewController.xib in Resources */,
 				7AF0CFEB21EC23C300D3E4C4 /* BaseWebViewController.xib in Resources */,
 				7AD42D8A22014B3F00AD8645 /* Network.storyboard in Resources */,
 				7AD42D4F220033C800AD8645 /* WebBridgeViewController.xib in Resources */,
@@ -1862,7 +1907,9 @@
 				7AD42D832201491D00AD8645 /* NetworkViewController.swift in Sources */,
 				7AF0CFE721EC23C300D3E4C4 /* BaseViewModel.swift in Sources */,
 				7AD42D6522003D8100AD8645 /* ListTypeViewController.swift in Sources */,
+				7AD42DB822018F0900AD8645 /* DeviceInfoRepository.swift in Sources */,
 				7A0BE50221C2598D000748D5 /* ViewControllerNib.swift in Sources */,
+				7AD42DB322018EE400AD8645 /* DeviceInfoViewController.swift in Sources */,
 				7AD42D7122004E7400AD8645 /* IndicatorViewController.swift in Sources */,
 				7AF0D01021EC548800D3E4C4 /* DoraemonLib.swift in Sources */,
 				7AF0CFE621EC23C300D3E4C4 /* BaseRepository.swift in Sources */,
@@ -1880,6 +1927,7 @@
 				7AD42DA922017E4800AD8645 /* CacheViewModel.swift in Sources */,
 				7A02DEC82182EE5D00B41DB6 /* AppDelegate.swift in Sources */,
 				7AF0CFF921EC261300D3E4C4 /* HomeViewController.swift in Sources */,
+				7AD42DB622018EF500AD8645 /* DeviceInfoViewModel.swift in Sources */,
 				7AD42DA822017E4800AD8645 /* CacheViewController.swift in Sources */,
 				7AF0D00121EC2F0600D3E4C4 /* MenuListViewModel.swift in Sources */,
 			);
