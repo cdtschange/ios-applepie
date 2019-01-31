@@ -135,9 +135,8 @@ public extension UIColor {
         
         if (includeAlpha) {
             return String(format: "#%02X%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255), Int(a * 255))
-        } else {
-            return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
         }
+        return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
     }
     
     //    open override var description: String {

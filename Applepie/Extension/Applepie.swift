@@ -60,6 +60,7 @@ extension Array: ApplepieCompatible { }
 extension Image: ApplepieCompatible { }
 extension String: ApplepieCompatible { }
 extension NSAttributedString: ApplepieCompatible { }
+extension Date: ApplepieCompatible { }
 extension Data: ApplepieCompatible { }
 extension UIViewController: ApplepieCompatible { }
 extension UIApplication: ApplepieCompatible { }

@@ -118,8 +118,6 @@ public class APIndicator: APIndicatorProtocol {
             let increase = Int64((progress - progressObject.fractionCompleted) * 100)
             progressObject.becomeCurrent(withPendingUnitCount: increase)
             progressObject.resignCurrent()
-        } else {
-            self.hud?.progress = Float(progress)
         }
         if let text = text {
             self.hud?.label.text = text
@@ -127,6 +125,9 @@ public class APIndicator: APIndicatorProtocol {
         if let detailText = detailText {
             self.hud?.detailsLabel.text = detailText
         }
+    }
+    public func cancelProgress() {
+        hud?.progressObject?.cancel()
     }
     
     deinit{

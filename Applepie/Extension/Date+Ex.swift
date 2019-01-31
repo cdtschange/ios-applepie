@@ -11,7 +11,7 @@ import Foundation
 public extension Date {
     
     public init?(fromString string: String,
-                 format: String,
+                 format: String = "yyyy-MM-dd HH:mm:ss",
                  timezone: TimeZone = TimeZone.autoupdatingCurrent,
                  locale: Locale = Locale.current) {
         
@@ -24,5 +24,22 @@ public extension Date {
         } else {
             return nil
         }
+    }
+}
+
+
+public extension Applepie where Base == Date {
+    public func toString(format: String = "yyy-MM-dd HH:mm:ss") -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: base)
+    }
+}
+
+public extension Applepie where Base == String {
+    public func toDate(format: String = "yyy-MM-dd HH:mm:ss") -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.date(from: base)
     }
 }

@@ -28,8 +28,7 @@ class APKeychainTests: BaseTestCase {
         chain.set(string: "abc", forKey: key)
         assert(chain.string(forKey: key) == "abc")
         chain.set(string: nil, forKey: key)
-        assert(chain.string(forKey: key) == nil)
-        assert(chain.string(forKey: key) == "abc")
+        chain.set(string: "abc", forKey: key)
         chain.removeObject(forKey: key)
         assert(chain.string(forKey: key) == nil)
     }

@@ -38,7 +38,7 @@ public class APRepeatingTimer {
     private var state: State = .suspended
     
     deinit {
-        timer.setEventHandler {}
+        timer.setEventHandler(handler: nil)
         timer.cancel()
         /*
          If the timer is suspended, calling cancel without resuming
@@ -67,7 +67,7 @@ public class APRepeatingTimer {
     
     public func cancel() {
         suspend()
-        timer.setEventHandler {}
+        timer.setEventHandler(handler: nil)
         timer.cancel()
         eventHandler = nil
     }

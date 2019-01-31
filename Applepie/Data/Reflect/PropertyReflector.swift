@@ -130,7 +130,7 @@ public class SwiftReflectionTool: NSObject {
     ///
     /// - parameter paramsDict:         参数字典
     /// - parameter obj:                待赋值的对象
-    open class func transformParams(_ paramsDict:[String:Any]?, for obj: NSObject) -> [String:Any]? {
+    open class func transformParams(_ paramsDict:[String: Any]?, for obj: NSObject) -> [String: Any]? {
         var canSetDict:[String:Any]? = nil
         if let paramsDict = paramsDict {
             let clazz: NSObject.Type = type(of: obj)
@@ -141,9 +141,9 @@ public class SwiftReflectionTool: NSObject {
                 filteredList.append(tmp)
             })
             canSetDict = [:]
-            for (key, value) in paramsDict {
+            for (key, valueOrigin) in paramsDict {
                 // 取出key对应的类型
-                let value = "\(value)"
+                let value = "\(valueOrigin)"
                 let type = getType(key: key, typeDictList: filteredList)
                 if InnerConst.BOOL == type {
                     let toValue = value.ap.toBool ?? false
@@ -160,8 +160,12 @@ public class SwiftReflectionTool: NSObject {
                     let toValue = value.ap.toFloat ?? 0
                     canSetDict?[key] = toValue
                 } else if InnerConst.DATE == type {
-                    let toValue = Date(fromString: value, format: "yyyyMMdd")
-                    canSetDict?[key] = toValue
+                    if let toValue = valueOrigin as? Date {
+                        canSetDict?[key] = toValue
+                    } else {
+                        let toValue = Date(fromString: value, format: "yyyy-MM-dd HH:mm:ss")
+                        canSetDict?[key] = toValue
+                    }
                 } else if InnerConst.NULL == type {
                     print("[\(obj)]没有[\(key)]参数")
                 }

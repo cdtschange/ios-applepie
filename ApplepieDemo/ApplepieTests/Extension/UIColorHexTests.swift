@@ -35,14 +35,10 @@ class UIColorHexTests: BaseTestCase {
         assert(UIColor.white.hexString(includeAlpha: true) == "#FFFFFFFF")
         assert(UIColor.white.hexString(includeAlpha: false) == "#FFFFFF")
         assert(UIColor.white.colorComponents() == (1.0, 1.0, 1.0, 1.0))
+        
+        assert((try? UIColor(rgba_throws: "abcd")) == nil)
+        assert((try? UIColor(rgba_throws: "#xyz")) == nil)
 
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

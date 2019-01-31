@@ -36,13 +36,32 @@ class APRouterTests: BaseTestCase {
         let root = UIViewController.topMostViewController()
         var v2: ViewController2?
         let delayTime = 600
+
         firstly {
             assert(root != nil)
-            assert(APRouter.route(toName: "None", animation: false, pop: true) == false)
-            assert(APRouter.route(toName: "routeToLogin", animation: false, pop: true) == true)
-            assert(NSStringFromClass(UIViewController.topMostViewController()!.classForCoder) == "ApplepieDemo.ViewController")
-            assert(APRouter.routeBack(animation: false) == true)
-            return after(.milliseconds(delayTime))
+            root?.tabBarController?.selectedIndex = 1
+            return after(.seconds(1))
+            }.then { () -> Guarantee<Void> in
+                root?.tabBarController?.selectedIndex = 0
+                return after(.milliseconds(delayTime))
+            }.then { () -> Guarantee<Void> in
+                APRouter.route(toName: "ListTypeViewController", params: ["type": "both"], animation: false, pop: false)
+                return after(.seconds(2))
+            }.then { () -> Guarantee<Void> in
+                APRouter.routeBack()
+                return after(.milliseconds(delayTime))
+            }.then { () -> Guarantee<Void> in
+                APRouter.route(toName: "BaseWebViewController", params: ["url": "https://www.baidu.com"], storyboardName: nil, animation: false, pop: false)
+                return after(.seconds(2))
+            }.then { () -> Guarantee<Void> in
+                APRouter.routeBack()
+                return after(.milliseconds(delayTime))
+            }.then { () -> Guarantee<Void> in
+                assert(APRouter.route(toName: "None", animation: false, pop: true) == false)
+                assert(APRouter.route(toName: "routeToLogin", animation: false, pop: true) == true)
+                assert(NSStringFromClass(UIViewController.topMostViewController()!.classForCoder) == "ApplepieDemo.ViewController")
+                assert(APRouter.routeBack(animation: false) == true)
+                return after(.milliseconds(delayTime))
             }.then { () -> Guarantee<Void> in
                 assert(UIViewController.topMostViewController() == root)
                 let nav = UINavigationController(rootViewController: ViewController1())
@@ -138,12 +157,14 @@ class APRouterTests: BaseTestCase {
                 assert(APRouter.routeBack(skip: 5, animation: false) == false)
                 assert(APRouter.routeToRoot(animation: false) == true)
                 return after(.milliseconds(delayTime))
-            }.done { _ in
+            }.then { () -> Guarantee<Void> in
                 assert(NSStringFromClass(UIViewController.topMostViewController()!.classForCoder) == "ViewController1")
                 assert(APRouter.routeBack(animation: false) == true)
+                return after(.milliseconds(delayTime))
+            }.done { _ in
                 expectation.fulfill()
             }
-        wait(for: [expectation], timeout: 25)
+        wait(for: [expectation], timeout: 30)
 
     }
 

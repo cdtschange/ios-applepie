@@ -115,6 +115,7 @@
 		7AD42DC0220195AA00AD8645 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DBF220195AA00AD8645 /* LocationViewModel.swift */; };
 		7AD42DC3220195BD00AD8645 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DC1220195BD00AD8645 /* LocationViewController.swift */; };
 		7AD42DC4220195BD00AD8645 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD42DC2220195BD00AD8645 /* LocationViewController.xib */; };
+		7AD42DC62201B1A400AD8645 /* APRepeatingTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD42DC52201B1A400AD8645 /* APRepeatingTimerTests.swift */; };
 		7AD9A0322182FE2D007BAD59 /* Applepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0262182FE2C007BAD59 /* Applepie.swift */; };
 		7AD9A0332182FE2D007BAD59 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */; };
 		7AD9A0342182FE2D007BAD59 /* Data+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */; };
@@ -323,6 +324,7 @@
 		7AD42DBF220195AA00AD8645 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		7AD42DC1220195BD00AD8645 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		7AD42DC2220195BD00AD8645 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		7AD42DC52201B1A400AD8645 /* APRepeatingTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRepeatingTimerTests.swift; sourceTree = "<group>"; };
 		7AD9A0262182FE2C007BAD59 /* Applepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applepie.swift; sourceTree = "<group>"; };
 		7AD9A0302182FE2C007BAD59 /* String+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		7AD9A0312182FE2C007BAD59 /* Data+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Crypto.swift"; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				7A97733F21AC403E00E79893 /* APGCDTests.swift */,
+				7AD42DC52201B1A400AD8645 /* APRepeatingTimerTests.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -2048,6 +2051,7 @@
 				7A80DE8D21EF05A7003C3D8F /* DateExTests.swift in Sources */,
 				7ABF7BFE21C0DD8C00049632 /* APBiometricsTests.swift in Sources */,
 				7A0BE4FC21C24558000748D5 /* UIViewControllerExTests.swift in Sources */,
+				7AD42DC62201B1A400AD8645 /* APRepeatingTimerTests.swift in Sources */,
 				7A34D58521B8D40A0041E5D5 /* APPinCacheTests.swift in Sources */,
 				7A0E272021958A42001FE212 /* APNetApiOtherTests.swift in Sources */,
 				7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */,

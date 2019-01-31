@@ -63,16 +63,60 @@ class APIndicatorTests: BaseTestCase {
         let indicator3 = APIndicator()
         firstly {
             Promise { sink in
-                indicator3.showTip(inView: view, text: "text", detailText: "detail", animated: false, hideAfter: 0)
+                indicator3.showTip(inView: view, text: "text", detailText: "detail", image: UIImage(), offset: CGPoint.zero, animated: false, hideAfter: 0)
                 sink.fulfill()
             }
             }.then {
                 return after(.seconds(1))
             }.ensure {
-                indicator3.showTip(inView: nil, text: "text", detailText: "detail", animated: false, hideAfter: 0)
+                indicator3.showTip(inView: nil, text: "text", detailText: "detail", animated: false, hideAfter: 0) {}
                 indicator3.show(inView: view, text: "text", detailText: "detail", animated: false)
+            }.then {
+                return after(.seconds(1))
+            }.ensure {
+                indicator3.hide(inView: view, animated: false)
+            }.then {
+                return after(.seconds(1))
             }.done { data in
                 indicator3.hide(inView: view, animated: false)
+                expectation.fulfill()
+            }.catch { error in
+                assertionFailure()
+                expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 10)
+    }
+
+    func testProgressIndicator() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // single indicator
+        
+        let indicator = APIndicator()
+        
+        let expectation = XCTestExpectation(description: "Complete")
+        
+        let view = UIView()
+        firstly {
+            Promise { sink in
+                indicator.showProgress(inView: nil, text: nil, detailText: nil, cancelable: false, cancelTitle: nil, cancelHandler: nil, type: .determinate, animated: false)
+                indicator.showProgress(inView: view, text: "text", detailText: "detail", cancelable: true, cancelTitle: "Cancel", cancelHandler: {}, type: .determinate, animated: false)
+                sink.fulfill()
+            }
+            }.then {
+                return after(.seconds(1))
+            }.ensure {
+                indicator.changeProgress(inView: view, text: "test2", detailText: "detail2", 0.1, animated: false)
+            }.then {
+                return after(.seconds(1))
+            }.ensure {
+                indicator.cancelProgress()
+            }.then {
+                return after(.seconds(1))
+            }.done { data in
+                indicator.showProgress(inView: view, text: "text", detailText: "detail", cancelable: true, cancelTitle: nil, cancelHandler: {}, type: .determinate, animated: false)
                 expectation.fulfill()
             }.catch { error in
                 assertionFailure()
