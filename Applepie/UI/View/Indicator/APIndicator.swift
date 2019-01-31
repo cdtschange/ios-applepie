@@ -113,12 +113,15 @@ public class APIndicator: APIndicatorProtocol {
             self?.hud = hud
         }
     }
-    public func changeProgress(inView view: UIView?, text: String?, detailText: String?, _ progress: Double, animated: Bool) {
+    public func changeProgress(inView view: UIView?, text: String?, detailText: String?, progress: Double, animated: Bool) {
         if let progressObject = self.hud?.progressObject {
             let increase = Int64((progress - progressObject.fractionCompleted) * 100)
             progressObject.becomeCurrent(withPendingUnitCount: increase)
             progressObject.resignCurrent()
+        } else {
+            self.hud?.progress = Float(progress)
         }
+
         if let text = text {
             self.hud?.label.text = text
         }

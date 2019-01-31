@@ -85,7 +85,7 @@ class IndicatorViewController: BaseListViewController {
                     timer.suspend()
                     return
                 }
-                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress.ap.toDouble / 100.0, animated: true)
+                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress: progress.ap.toDouble / 100.0, animated: true)
             }
             timer.resume()
         case 4:
@@ -99,7 +99,7 @@ class IndicatorViewController: BaseListViewController {
                     timer.cancel()
                     return
                 }
-                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress.ap.toDouble / 100.0, animated: true)
+                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress: progress.ap.toDouble / 100.0, animated: true)
             }
             timer.resume()
         case 5:
@@ -113,7 +113,7 @@ class IndicatorViewController: BaseListViewController {
                     timer.cancel()
                     return
                 }
-                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress.ap.toDouble / 100.0, animated: true)
+                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress: progress.ap.toDouble / 100.0, animated: true)
             }
             timer.resume()
         case 6:
@@ -130,7 +130,7 @@ class IndicatorViewController: BaseListViewController {
                     self?.hideIndicator()
                     return
                 }
-                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress.ap.toDouble / 100.0, animated: true)
+                (self?.indicator as? APIndicator)?.changeProgress(inView: self?.view, text: nil, detailText: "Parsing data\n(\(progress)/100)", progress: progress.ap.toDouble / 100.0, animated: true)
             }
             timer?.resume()
         case 7:

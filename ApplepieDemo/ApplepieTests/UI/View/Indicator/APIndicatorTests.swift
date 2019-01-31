@@ -99,29 +99,27 @@ class APIndicatorTests: BaseTestCase {
         let expectation = XCTestExpectation(description: "Complete")
         
         let view = UIView()
-        firstly {
-            Promise { sink in
-                indicator.showProgress(inView: nil, text: nil, detailText: nil, cancelable: false, cancelTitle: nil, cancelHandler: nil, type: .determinate, animated: false)
-                indicator.showProgress(inView: view, text: "text", detailText: "detail", cancelable: true, cancelTitle: "Cancel", cancelHandler: {}, type: .determinate, animated: false)
-                sink.fulfill()
-            }
-            }.then {
+        let text2 = "test2"
+        let detail2 = "detail2"
+        
+        indicator.showProgress(inView: nil, text: nil, detailText: nil, cancelable: false, cancelTitle: nil, cancelHandler: nil, type: .determinate, animated: false)
+        after(.seconds(1)).then { () -> Guarantee<Void> in
+                indicator.changeProgress(inView: view, text: text2, detailText: detail2, progress: 0.1, animated: false)
                 return after(.seconds(1))
-            }.ensure {
-                indicator.changeProgress(inView: view, text: "test2", detailText: "detail2", 0.1, animated: false)
-            }.then {
-                return after(.seconds(1))
-            }.ensure {
+            }.then { () -> Guarantee<Void> in
                 indicator.cancelProgress()
-            }.then {
+                indicator.showProgress(inView: view, text: "text", detailText: "detail", cancelable: true, cancelTitle: "Cancel", cancelHandler: {}, type: .determinate, animated: false)
+                return after(.seconds(1))
+            }.then { () -> Guarantee<Void> in
+                indicator.changeProgress(inView: view, text: text2, detailText: detail2, progress: 0.1, animated: false)
+                return after(.seconds(1))
+            }.then { () -> Guarantee<Void> in
+                indicator.cancelProgress()
                 return after(.seconds(1))
             }.done { data in
                 indicator.showProgress(inView: view, text: "text", detailText: "detail", cancelable: true, cancelTitle: nil, cancelHandler: {}, type: .determinate, animated: false)
                 expectation.fulfill()
-            }.catch { error in
-                assertionFailure()
-                expectation.fulfill()
-        }
+            }
         
         wait(for: [expectation], timeout: 10)
     }

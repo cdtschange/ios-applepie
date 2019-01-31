@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Applepie"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "Applepie for swift."
 
   # This description is used to generate tags and improve search results.
