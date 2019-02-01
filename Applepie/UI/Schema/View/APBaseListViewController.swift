@@ -52,8 +52,8 @@ open class APBaseListViewController:
     open func willFetchListData() {
     }
     open func didFetchListData(_ data: Any) {
-        guard let data = data as? [Any] else { return }
         endListRefresh()
+        guard let data = data as? [Any] else { return }
         if listViewType == .refreshOnly ||
             listViewType == .none {
             reloadListView()
@@ -83,6 +83,7 @@ open class APBaseListViewController:
         reloadListView()
     }
     open func didFetchListDataFailed(error: Error) {
+        endListRefresh()
         showTip(error)
     }
     
