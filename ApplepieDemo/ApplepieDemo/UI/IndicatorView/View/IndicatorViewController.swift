@@ -138,7 +138,7 @@ class IndicatorViewController: BaseListViewController {
         case 8:
             (indicator as? APIndicator)?.showTip(inView: view, text: "This is a bottom message", detailText: nil, image: nil, offset: CGPoint(x: 0, y: Int.max), animated: true, hideAfter: 2)
         case 9:
-            (indicator as? APIndicator)?.showTip(inView: view, text: "This is a bottom message", detailText: nil, image: UIImage(named: "icon_indicator_checkmark"), offset: nil, animated: true, hideAfter: 2)
+            (indicator as? APIndicator)?.showTip(inView: view, text: "This is a custom message", detailText: nil, image: UIImage(named: "icon_indicator_checkmark"), offset: nil, animated: true, hideAfter: 2)
         default:
             break
         }
