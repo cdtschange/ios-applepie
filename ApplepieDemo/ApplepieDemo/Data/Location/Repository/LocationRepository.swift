@@ -62,6 +62,9 @@ class LocationRepository: BaseRepository {
         return APLocation.transferToPlace(location: currentLocation!).map { [weak self] placemarks in
             if let place = placemarks?.first?.addressDictionary {
                 self?.address = "\((place["FormattedAddressLines"] as? [String])?.joined(separator: ", ") ?? "")"
+                if let postalCode = placemarks?.first?.postalCode {
+                    self?.address = "\(String(describing: self!.address)) \(postalCode)"
+                }
             }
             return self?.address
         }

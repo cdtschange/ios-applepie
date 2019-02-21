@@ -43,7 +43,7 @@ class MenuListRepository: BaseRepository {
                         MenuModel(title: "None Refresh List View", detail: "List View without refresh header or load more footer", url: "ListTypeViewController", params: ["title": "None Refresh List View", "type": "none"], callback: nil),
                         MenuModel(title: "Refresh Only List View", detail: "List View with only refresh header", url: "ListTypeViewController", params: ["title": "Refresh Only List View", "type": "refreshOnly"], callback: nil),
                         MenuModel(title: "Load More Only List View", detail: "List View with load more footer", url: "ListTypeViewController", params: ["title": "Load More Only List View", "type": "loadMoreOnly"], callback: nil),
-                        MenuModel(title: "Refersh & Load More List View", detail: "List View with both refresh header and load more footer", url: "ListTypeViewController", params: ["title": "Refersh & Load More List View", "type": "both"], callback: nil)
+                        MenuModel(title: "Refresh & Load More List View", detail: "List View with both refresh header and load more footer", url: "ListTypeViewController", params: ["title": "Refresh & Load More List View", "type": "both"], callback: nil)
                     ]
                 )
             }
