@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Applepie where Base == UIViewController {
-    public var topMostViewController: UIViewController {
+    var topMostViewController: UIViewController {
         
         if let presented = base.presentedViewController {
             return presented.ap.topMostViewController
@@ -26,7 +26,7 @@ public extension Applepie where Base == UIViewController {
         return base
     }
     
-    public func canPerformSegue(withIdentifier identifier: String) -> Bool {
+    func canPerformSegue(withIdentifier identifier: String) -> Bool {
         let segueTemplates: AnyObject = base.value(forKey: "storyboardSegueTemplates") as AnyObject
         guard !(segueTemplates is NSNull) else {
             return false
@@ -37,7 +37,7 @@ public extension Applepie where Base == UIViewController {
     }
     
     //获得去除Module后的类名
-    public var simpleClassName: String {
+    var simpleClassName: String {
         get {
             let bundleName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
             let className = NSStringFromClass(base.classForCoder)
@@ -50,13 +50,13 @@ public extension Applepie where Base == UIViewController {
         }
     }
     
-    public func containsViewControllerInNavigation(_ name: String) -> Bool {
+    func containsViewControllerInNavigation(_ name: String) -> Bool {
         return (base.navigationController?.viewControllers.filter { $0.ap.simpleClassName == name }.count ?? 0) > 0
     }
 }
 
 public extension UIViewController {
-    public static func topMostViewController() -> UIViewController? {
+    static func topMostViewController() -> UIViewController? {
         return UIApplication.shared.keyWindow?.rootViewController?.ap.topMostViewController
     }
     
@@ -86,7 +86,7 @@ public extension UIViewController {
         }
         return nil
     }
-    public static func instanceViewController(_ name: String, storyboardName: String? = nil) -> UIViewController? {
+    static func instanceViewController(_ name: String, storyboardName: String? = nil) -> UIViewController? {
         if let vc = instanceViewControllerInStoryboard(name, storyboardName: storyboardName) {
             return vc
         }

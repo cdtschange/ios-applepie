@@ -85,24 +85,24 @@ public protocol APNetApi: class, APResponseHandler, APNetIndicatorProtocol {
 
 public extension APNetApi {
     
-    public func adapt(_ result: Alamofire.Result<Any>) -> Alamofire.Result<Any> {
+    func adapt(_ result: Alamofire.Result<Any>) -> Alamofire.Result<Any> {
         return result
     }
-    public func adapt(_ result: Alamofire.Result<Data>) -> Alamofire.Result<Data> {
+    func adapt(_ result: Alamofire.Result<Data>) -> Alamofire.Result<Data> {
         return result
     }
-    public func adapt(_ result: Alamofire.Result<String>) -> Alamofire.Result<String> {
+    func adapt(_ result: Alamofire.Result<String>) -> Alamofire.Result<String> {
         return result
     }
-    public func fill(data: Any) {
+    func fill(data: Any) {
         if let map = data as? [String: Any] {
             fill(map: map)
         } else if let array = data as? [Any] {
             fill(array: array)
         }
     }
-    public func fill(map: [String : Any]) {}
-    public func fill(array: [Any]) {}
+    func fill(map: [String : Any]) {}
+    func fill(array: [Any]) {}
 }
 
 public extension APNetApi {
@@ -117,18 +117,18 @@ public extension APNetApi {
 }
 
 public extension APNetApi {
-    public func setIndicator(_ indicator: APIndicatorProtocol?, view: UIView?, text: String?) -> Self {
+    func setIndicator(_ indicator: APIndicatorProtocol?, view: UIView?, text: String?) -> Self {
         APNetIndicatorClient.add(api: self, indicator: indicator, view: view, text: text)
         return self
     }
 }
 
 public extension APNetApiUploadMultipartProtocol {
-    public func beginMultipartFormData(formData: MultipartFormData) {}
-    public func adaptMultipartFormDataResult(result: SessionManager.MultipartFormDataEncodingResult) -> SessionManager.MultipartFormDataEncodingResult {
+    func beginMultipartFormData(formData: MultipartFormData) {}
+    func adaptMultipartFormDataResult(result: SessionManager.MultipartFormDataEncodingResult) -> SessionManager.MultipartFormDataEncodingResult {
         return result
     }
-    public func didFinishUploadMultipartRequest() {}
+    func didFinishUploadMultipartRequest() {}
 }
 
 public extension APNetApi {

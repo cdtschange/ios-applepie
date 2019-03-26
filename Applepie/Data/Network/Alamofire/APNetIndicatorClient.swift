@@ -55,7 +55,7 @@ public class APNetIndicatorClient {
 }
 
 public extension APIndicatorProtocol {
-    public func registerNotification(identifier: String) {
+    func registerNotification(identifier: String) {
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
         notificationCenter.addObserver(forName: Notification.Name.Task.DidResume, object: nil, queue: nil) { (notify) in

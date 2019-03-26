@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Applepie where Base == Dictionary<String, Any> {
-    public var queryString: String {
+    var queryString: String {
         let parameterArray = base.map { (key, value) -> String in
             let pKey = key.ap.addingPercentEncodingForUrlQueryValue()
             var stringValue = ""
@@ -29,7 +29,7 @@ public extension Applepie where Base == Dictionary<String, Any> {
 }
 
 public extension Applepie where Base == String {
-    public var queryDictionary: [String: String] {
+    var queryDictionary: [String: String] {
         var queryStrings = [String: String]()
         for pair in base.components(separatedBy: "&") {
             let key = pair.components(separatedBy: "=")[0]

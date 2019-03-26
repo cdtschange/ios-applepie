@@ -12,14 +12,14 @@ public class APBundle: NSObject {}
 
 public extension Bundle {
     
-    public static func apImage(named: String) -> UIImage? {
+    static func apImage(named: String) -> UIImage? {
         if let path = Bundle.apBundle()?.path(forResource: named, ofType: "png") {
             return UIImage(contentsOfFile: path)
         }
         return nil
     }
     
-    public static func apBundle() -> Bundle? {
+    static func apBundle() -> Bundle? {
         if let path = Bundle(for: APBundle.self).path(forResource: "Applepie", ofType: "bundle") {
             return Bundle(path: path)
         }

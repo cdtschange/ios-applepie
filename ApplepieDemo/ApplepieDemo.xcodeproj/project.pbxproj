@@ -18,6 +18,11 @@
 		7A02DF012182F11600B41DB6 /* Applepie.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A02DEF12182F11500B41DB6 /* Applepie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A02DF042182F11600B41DB6 /* Applepie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02DEEF2182F11500B41DB6 /* Applepie.framework */; };
 		7A02DF052182F11600B41DB6 /* Applepie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A02DEEF2182F11500B41DB6 /* Applepie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A048CBF223F7CEC00BF1DA5 /* DetectFromImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A048CBD223F7CEC00BF1DA5 /* DetectFromImageViewController.swift */; };
+		7A048CC0223F7CEC00BF1DA5 /* DetectFromImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A048CBE223F7CEC00BF1DA5 /* DetectFromImageViewController.xib */; };
+		7A048CC2223F8D3600BF1DA5 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7A048CC1223F8D3500BF1DA5 /* ObjectDetector.mlmodel */; };
+		7A048CC5223F8DB100BF1DA5 /* RecognizFromCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A048CC3223F8DB100BF1DA5 /* RecognizFromCameraViewController.swift */; };
+		7A048CC6223F8DB100BF1DA5 /* RecognizFromCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A048CC4223F8DB100BF1DA5 /* RecognizFromCameraViewController.xib */; };
 		7A0BE4F821C1F8F2000748D5 /* NSObject+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE4F721C1F8F2000748D5 /* NSObject+Ex.swift */; };
 		7A0BE4FA21C1FE4B000748D5 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */; };
 		7A0BE4FC21C24558000748D5 /* UIViewControllerExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BE4FB21C24558000748D5 /* UIViewControllerExTests.swift */; };
@@ -69,6 +74,7 @@
 		7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8482D921BF4AF600CFC910 /* APLocationTests.swift */; };
 		7A97733D21ABBE1100E79893 /* APGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733C21ABBE1100E79893 /* APGCD.swift */; };
 		7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733F21AC403E00E79893 /* APGCDTests.swift */; };
+		7AB5574F2223E99B00DCF393 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB5574E2223E99A00DCF393 /* UserNotifications.framework */; };
 		7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7121918A9500D41919 /* DictionaryExTests.swift */; };
 		7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7321918D4D00D41919 /* StringExTests.swift */; };
 		7ABF7BFB21C0AC6800049632 /* APBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */; };
@@ -227,6 +233,11 @@
 		7A02DEF22182F11500B41DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A02DEF72182F11600B41DB6 /* ApplepieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplepieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A02DF002182F11600B41DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A048CBD223F7CEC00BF1DA5 /* DetectFromImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectFromImageViewController.swift; sourceTree = "<group>"; };
+		7A048CBE223F7CEC00BF1DA5 /* DetectFromImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetectFromImageViewController.xib; sourceTree = "<group>"; };
+		7A048CC1223F8D3500BF1DA5 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		7A048CC3223F8DB100BF1DA5 /* RecognizFromCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizFromCameraViewController.swift; sourceTree = "<group>"; };
+		7A048CC4223F8DB100BF1DA5 /* RecognizFromCameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecognizFromCameraViewController.xib; sourceTree = "<group>"; };
 		7A0BE4F721C1F8F2000748D5 /* NSObject+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ex.swift"; sourceTree = "<group>"; };
 		7A0BE4F921C1FE4B000748D5 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
 		7A0BE4FB21C24558000748D5 /* UIViewControllerExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExTests.swift; sourceTree = "<group>"; };
@@ -278,6 +289,7 @@
 		7A97733C21ABBE1100E79893 /* APGCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCD.swift; sourceTree = "<group>"; };
 		7A97733F21AC403E00E79893 /* APGCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCDTests.swift; sourceTree = "<group>"; };
 		7AA0CF6021D8DFC000A59EE7 /* Applepie.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = Applepie.podspec; path = ../../Applepie.podspec; sourceTree = "<group>"; };
+		7AB5574E2223E99A00DCF393 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		7AB71B7121918A9500D41919 /* DictionaryExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExTests.swift; sourceTree = "<group>"; };
 		7AB71B7321918D4D00D41919 /* StringExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExTests.swift; sourceTree = "<group>"; };
 		7ABF7BFA21C0AC6800049632 /* APBiometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBiometrics.swift; sourceTree = "<group>"; };
@@ -379,6 +391,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB5574F2223E99B00DCF393 /* UserNotifications.framework in Frameworks */,
 				7A02DF042182F11600B41DB6 /* Applepie.framework in Frameworks */,
 				85788A33A709BE12825431A0 /* Pods_ApplepieDemo.framework in Frameworks */,
 			);
@@ -499,6 +512,42 @@
 				7A02DF002182F11600B41DB6 /* Info.plist */,
 			);
 			path = ApplepieTests;
+			sourceTree = "<group>";
+		};
+		7A048CB9223F7CBF00BF1DA5 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				7A048CBC223F7CCE00BF1DA5 /* Repository */,
+				7A048CBB223F7CC900BF1DA5 /* ViewModel */,
+				7A048CBA223F7CC500BF1DA5 /* View */,
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
+		7A048CBA223F7CC500BF1DA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A048CBD223F7CEC00BF1DA5 /* DetectFromImageViewController.swift */,
+				7A048CBE223F7CEC00BF1DA5 /* DetectFromImageViewController.xib */,
+				7A048CC3223F8DB100BF1DA5 /* RecognizFromCameraViewController.swift */,
+				7A048CC4223F8DB100BF1DA5 /* RecognizFromCameraViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A048CBB223F7CC900BF1DA5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7A048CBC223F7CCE00BF1DA5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7A048CC1223F8D3500BF1DA5 /* ObjectDetector.mlmodel */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		7A0BE50321C25ED6000748D5 /* Router */ = {
@@ -1324,6 +1373,7 @@
 		7AF0D01421EC655700D3E4C4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7A048CB9223F7CBF00BF1DA5 /* CoreML */,
 				7AD42D7D220148EF00AD8645 /* Network */,
 				7AD42D9122017D7F00AD8645 /* Cache */,
 				7AD42DAB22018E9700AD8645 /* Device */,
@@ -1353,6 +1403,7 @@
 		E1D2FA8A5B27EF1DDA9C292F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AB5574E2223E99A00DCF393 /* UserNotifications.framework */,
 				7AD9A0432186E8C3007BAD59 /* Pods_ApplepieDemo.framework */,
 				7AD9A0412186E7C6007BAD59 /* CryptoSwift.framework */,
 				792096979078263CF25324BB /* Pods_ApplepieDemo.framework */,
@@ -1489,6 +1540,11 @@
 					7A02DEC32182EE5D00B41DB6 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					7A02DED72182EE5D00B41DB6 = {
 						CreatedOnToolsVersion = 10.0;
@@ -1537,7 +1593,9 @@
 				7AD42D6622003D8100AD8645 /* ListTypeViewController.xib in Resources */,
 				7AD42D7222004E7400AD8645 /* IndicatorViewController.xib in Resources */,
 				7AD42D4D2200339400AD8645 /* SimpleWebViewController.xib in Resources */,
+				7A048CC0223F7CEC00BF1DA5 /* DetectFromImageViewController.xib in Resources */,
 				7AD42D4B220032AB00AD8645 /* webview_bridge.html in Resources */,
+				7A048CC6223F8DB100BF1DA5 /* RecognizFromCameraViewController.xib in Resources */,
 				7AD42DB422018EE400AD8645 /* DeviceInfoViewController.xib in Resources */,
 				7AF0CFEB21EC23C300D3E4C4 /* BaseWebViewController.xib in Resources */,
 				7AD42DC4220195BD00AD8645 /* LocationViewController.xib in Resources */,
@@ -1939,6 +1997,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF0CFEC21EC23C300D3E4C4 /* BaseWebViewController.swift in Sources */,
+				7A048CBF223F7CEC00BF1DA5 /* DetectFromImageViewController.swift in Sources */,
 				7AD42D6C22003E3900AD8645 /* ListTypeRepository.swift in Sources */,
 				7AF0D02021ED707300D3E4C4 /* UMengLib.swift in Sources */,
 				7A02DECA2182EE5D00B41DB6 /* ViewController.swift in Sources */,
@@ -1946,6 +2005,7 @@
 				7AF0CFF221EC242800D3E4C4 /* Router.swift in Sources */,
 				7AF0CFF721EC260400D3E4C4 /* UIComponentViewController.swift in Sources */,
 				7AD42D8C22014B9700AD8645 /* NetworkDetailViewController.swift in Sources */,
+				7A048CC2223F8D3600BF1DA5 /* ObjectDetector.mlmodel in Sources */,
 				7AD42D4A2200324D00AD8645 /* SimpleWebViewController.swift in Sources */,
 				7AD42D7822004F0600AD8645 /* IndicatorRepository.swift in Sources */,
 				7AD42DBE2201954B00AD8645 /* LocationRepository.swift in Sources */,
@@ -1974,6 +2034,7 @@
 				7AF0CFE921EC23C300D3E4C4 /* BaseViewController.swift in Sources */,
 				7AF0D01B21EC776100D3E4C4 /* CrashFunction.m in Sources */,
 				7AD42DAA22017E4800AD8645 /* CacheRepository.swift in Sources */,
+				7A048CC5223F8DB100BF1DA5 /* RecognizFromCameraViewController.swift in Sources */,
 				7AD42D882201493A00AD8645 /* NetworkRepository.swift in Sources */,
 				7AD42DA922017E4800AD8645 /* CacheViewModel.swift in Sources */,
 				7A02DEC82182EE5D00B41DB6 /* AppDelegate.swift in Sources */,
@@ -2263,7 +2324,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ApplepieDemo/ApplepieDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2285,7 +2346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cdts.ApplepieDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ApplepieDemo/ApplepieDemo-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

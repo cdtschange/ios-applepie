@@ -4,45 +4,45 @@ import CryptoSwift
 
 public extension Applepie where Base == String {
     
-    public func md5() -> String {
+    func md5() -> String {
         return base.md5()
     }
-    public func sha1() -> String {
+    func sha1() -> String {
         return base.sha1()
     }
-    public func sha224() -> String {
+    func sha224() -> String {
         return base.sha224()
     }
-    public func sha256() -> String {
+    func sha256() -> String {
         return base.sha256()
     }
-    public func sha384() -> String {
+    func sha384() -> String {
         return base.sha384()
     }
-    public func sha512() -> String {
+    func sha512() -> String {
         return base.sha512()
     }
-    public func aesEncrypt(key: String, iv: String) -> String? {
+    func aesEncrypt(key: String, iv: String) -> String? {
         if let aes = try? AES(key: key, iv: iv) {
             return (try? aes.encrypt([UInt8](base.data(using: .utf8)!)))?.toBase64()
         }
         return nil
     }
-    public func aesDecrypt(key: String, iv: String) -> String? {
+    func aesDecrypt(key: String, iv: String) -> String? {
         if let aes = try? AES(key: key, iv: iv), let decrypted = try? aes.decrypt(Array(base64: base)) {
             return String(bytes: Data(decrypted).bytes, encoding: .utf8)
         }
         return nil
     }
     
-    public func urlEncode() -> String? {
+    func urlEncode() -> String? {
         return base.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)?
             .replacingOccurrences(of: "&", with: "%26")
             .replacingOccurrences(of: "+", with: "%2B")
             .replacingOccurrences(of: "=", with: "%3D")
     }
     
-    public func urlDecode() -> String? {
+    func urlDecode() -> String? {
         return base.removingPercentEncoding
     }
     

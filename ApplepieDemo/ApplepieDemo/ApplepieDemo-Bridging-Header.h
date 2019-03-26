@@ -5,6 +5,7 @@
 #import <UMCommon/UMConfigure.h>
 #import <UMShare/UMShare.h>
 #import <UShareUI/UShareUI.h>
+#import <UMAnalytics/MobClick.h>
 #import <UMCommonLog/UMCommonLogHeaders.h>
 
 #import "CrashFunction.h"

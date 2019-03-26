@@ -14,7 +14,7 @@ public extension UIApplication {
         static var indicatorCountAssociatedKey = "indicatorCount"
     }
     
-    public var indicatorCount : Int {
+    var indicatorCount : Int {
         get {
             guard let number = objc_getAssociatedObject(self, &UIApplicationConstant.indicatorCountAssociatedKey) as? NSNumber else {
                 return 0
@@ -34,7 +34,7 @@ public extension Applepie where Base == UIApplication {
         static var queueName = "com.applepie.LockQueue"
     }
     
-    public func setNetworkActivityIndicator(show: Bool) {
+    func setNetworkActivityIndicator(show: Bool) {
         let lockQueue = DispatchQueue(label: UIApplicationConstant.queueName, attributes: [])
         
         lockQueue.sync {

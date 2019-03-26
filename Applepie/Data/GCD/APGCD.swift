@@ -146,7 +146,7 @@ public struct APGCD {
 
 public extension Array {
     /// 并发遍历
-    public func concurrentForeach(_ code: (Element) -> ()) {
+    func concurrentForeach(_ code: (Element) -> ()) {
         DispatchQueue.concurrentPerform(iterations: self.count) { (i) in
             code(self[i])
         }

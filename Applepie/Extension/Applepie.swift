@@ -46,7 +46,7 @@ public protocol ApplepieCompatible {
 }
 
 public extension ApplepieCompatible {
-    public var ap: Applepie<Self> {
+    var ap: Applepie<Self> {
         return Applepie(self)
     }
 }

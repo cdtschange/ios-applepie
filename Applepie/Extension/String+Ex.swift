@@ -10,25 +10,25 @@ import Foundation
 
 public extension Applepie where Base == String {
     
-    public func addingPercentEncodingForUrlQueryValue() -> String {
+    func addingPercentEncodingForUrlQueryValue() -> String {
         let allowedCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
         return base.addingPercentEncoding(withAllowedCharacters: allowedCharacters)!
     }
     
     // Localized
-    public var localized: String {
+    var localized: String {
         return NSLocalizedString(base, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }
     
-    public func localized(withComment: String) -> String {
+    func localized(withComment: String) -> String {
         return NSLocalizedString(base, tableName: nil, bundle: Bundle.main, value: "", comment: withComment)
     }
     
-    public func localized(tableName: String) -> String{
+    func localized(tableName: String) -> String{
         return NSLocalizedString(base, tableName: tableName, bundle: Bundle.main, value: "", comment: "")
     }
     
-    public func attributedString(withFont font: UIFont, lineSpacing: CGFloat, alignment: NSTextAlignment? = nil, textColor: UIColor? = nil) -> NSMutableAttributedString {
+    func attributedString(withFont font: UIFont, lineSpacing: CGFloat, alignment: NSTextAlignment? = nil, textColor: UIColor? = nil) -> NSMutableAttributedString {
         guard base.count > 0 else { return NSMutableAttributedString() }
         
         var attributes:[NSAttributedString.Key : Any] = [.font: font]
@@ -43,7 +43,7 @@ public extension Applepie where Base == String {
         return attributedString
     }
     
-    public func calculateHeight(withWidth width: CGFloat) -> CGFloat {
+    func calculateHeight(withWidth width: CGFloat) -> CGFloat {
         let options: NSStringDrawingOptions = [NSStringDrawingOptions.usesLineFragmentOrigin, NSStringDrawingOptions.usesFontLeading]
         let size = base.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude),
                                      options: options,
