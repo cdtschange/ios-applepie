@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Applepie"
-  s.version      = "0.2.2"
+  s.version      = "2.0.0"
   s.summary      = "Applepie for swift."
 
   # This description is used to generate tags and improve search results.
@@ -68,12 +68,12 @@ Pod::Spec.new do |s|
   # s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
-  s.ios.deployment_target = "9.0"
+  s.ios.deployment_target = "13.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
-  s.swift_version = "4.2"
+  s.swift_version = "5.1"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -93,7 +93,9 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Applepie/**/*.{h,m,swift,xcdatamodeld}"
+  s.source_files  = "Applepie/Classes/**/*"
+  s.resource = "Applepie/Resources/*"
+  
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -109,7 +111,6 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
-  s.resource = "Applepie/Applepie.bundle"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -137,20 +138,20 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   
-  s.dependency "CocoaLumberjack/Swift", "~> 3.4.2"
-  s.dependency "ReactiveCocoa", "~> 8.0.2"
-  s.dependency "PromiseKit", "~> 6.7.0"
-  s.dependency "Alamofire", "~> 4.7.3"
-  s.dependency "Kingfisher", "~> 4.10.1"
+  s.dependency "CocoaLumberjack/Swift", "~> 3.6.1"
+  s.dependency "ReactiveCocoa", "~> 10.2.0"
+  s.dependency "PromiseKit", "~> 6.13.0"
+  s.dependency "Alamofire", "~> 5.1.0"
+  s.dependency "Kingfisher", "~> 5.13.4"
   s.dependency "AsyncSwift", "~> 2.0.4"
-  s.dependency "CryptoSwift", "~> 0.13.0"
-  s.dependency "PINCache", "~> 3.0.1-beta.7"
-  s.dependency "Valet", "~> 3.2.2"
-  s.dependency "DeviceKit", "~> 1.10.0"
-  s.dependency "SwiftyUserDefaults", "~> 4.0.0-alpha.1"
-  s.dependency "WebViewJavascriptBridge", "~> 6.0.0"
-  s.dependency "SwiftLocation", "~> 3.2.3"
-  s.dependency "MBProgressHUD", "~> 1.1.0"
-  s.dependency "SnapKit", "~> 4.2.0"
-  s.dependency "MJRefresh", "~> 3.1.0"
+  s.dependency "CryptoSwift", "~> 1.3.1"
+  s.dependency "PINCache", "~> 3.0.1-beta.8"
+  s.dependency "Valet", "~> 3.2.8"
+  s.dependency "DeviceKit", "~> 3.2.0"
+  s.dependency "SwiftyUserDefaults", "~> 5.0.0"
+  s.dependency "WebViewJavascriptBridge", "~> 6.0.3"
+  s.dependency "SwiftLocation", "~> 4.2.0"
+  s.dependency "MBProgressHUD", "~> 1.2.0"
+  s.dependency "SnapKit", "~> 5.0.1"
+  s.dependency "MJRefresh", "~> 3.4.1"
 end

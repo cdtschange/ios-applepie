@@ -14,6 +14,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         loadData()
         // Do any additional setup after loading the view.
+        
     }
     
 
