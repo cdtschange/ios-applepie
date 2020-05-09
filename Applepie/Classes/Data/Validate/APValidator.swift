@@ -22,7 +22,7 @@ public class APValidator: NSObject {
             }
         }
         return Promise { sink in
-            sink.fulfill()
+            sink.fulfill(())
         }
     }
 }

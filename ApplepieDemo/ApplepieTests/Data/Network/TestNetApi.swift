@@ -79,10 +79,10 @@ class TestDataNetApi: TestNetApi {
 class TestUploadNetApi: TestNetApi, APNetApiUploadProtocol {
     var dataUrl: URL?
 }
-class TestUploadMultipartNetApi: TestNetApi, APNetApiUploadMultipartProtocol {
+class TestUploadMultipartNetApi: TestNetApi, APNetApiUploadMultipart {
     var files: [APUploadMultipartFile]? = nil
 }
-class TestUploadMultipartForExceptionNetApi: TestNetApi, APNetApiUploadMultipartProtocol {
+class TestUploadMultipartForExceptionNetApi: TestNetApi, APNetApiUploadMultipart {
     var files: [APUploadMultipartFile]? = nil
     
     func beginMultipartFormData(formData: MultipartFormData) {}

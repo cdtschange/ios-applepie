@@ -15,7 +15,7 @@ import Alamofire
 import PromiseKit
 
 public enum APNetWorkType: String {
-    case none // 没有网络
+    case none
     case cell2G // 2G
     case cell3G // 3G
     case cell4G // 4G
@@ -90,23 +90,23 @@ public struct APDevice {
     }
     
     /// The name identifying the device (e.g. "Dennis' iPhone").
-    public static var name: String {
+    public static var name: String? {
         return currentDevice.name
     }
     /// The name of the operating system running on the device represented by the receiver (e.g. "iOS" or "tvOS").
-    public static var systemName: String {
+    public static var systemName: String? {
         return currentDevice.systemName
     }
     /// The current version of the operating system (e.g. 8.4 or 9.2).
-    public static var systemVersion: String {
+    public static var systemVersion: String? {
         return currentDevice.systemVersion
     }
     /// The model of the device (e.g. "iPhone" or "iPod Touch").
-    public static var model: String {
+    public static var model: String? {
         return currentDevice.model
     }
     /// The model of the device as a localized string.
-    public static var localizedModel: String {
+    public static var localizedModel: String? {
         return currentDevice.localizedModel
     }
     /// PPI (Pixels per Inch) on the current device's screen (if applicable). When the device is not applicable this property returns nil.
@@ -122,16 +122,16 @@ public struct APDevice {
         return currentDevice.screenBrightness
     }
     /// The user enabled Low Power mode
-    public static var lowPowerMode: Bool {
-        return currentDevice.batteryState.lowPowerMode
+    public static var lowPowerMode: Bool? {
+        return currentDevice.batteryState?.lowPowerMode
     }
     /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
-    public static var batteryLevel: Int {
+    public static var batteryLevel: Int? {
         return currentDevice.batteryLevel
     }
     /// The device is plugged into power and the battery is less than 100% charged.
     public static var isBatteryCharging: Bool {
-        return currentDevice.batteryState == .charging(batteryLevel)
+        return currentDevice.batteryState == .charging(batteryLevel ?? 0)
     }
     /// Landscape: The device is in Landscape Orientation
     public static var orientationLandscape: Bool {
@@ -262,21 +262,15 @@ public struct APDevice {
             return .none
         case .reachable(.ethernetOrWiFi):
             return .wifi
-        case .reachable(.wwan):
+        case .reachable(.cellular):
             return APNetWorkType.from(technology: mainCurrentRadioAccessTechnology ?? "")
         case .unknown:
             return .unknown
         }
     }
-    
-    
     public static var timeZone: String? {
         return TimeZone.current.abbreviation()
     }
-    
-    
-    
-    
     /// A textual representation of the device.
     public static var description: String {
         return currentDevice.description

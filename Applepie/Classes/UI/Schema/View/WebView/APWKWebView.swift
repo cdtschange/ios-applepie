@@ -13,6 +13,7 @@ import CocoaLumberjack
 import SnapKit
 import MJRefresh
 import PromiseKit
+import Async
 
 public protocol APWKWebViewDelegate: UIWebViewDelegate, WKNavigationDelegate {
     func webView(_ webView: WKWebView, updateTitle: String?) -> Void
@@ -164,14 +165,14 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
     
     open func webViewWithRefreshingBlock(_ refreshingBlock: @escaping MJRefreshComponentRefreshingBlock) -> MJRefreshHeader{
         let header = MJRefreshNormalHeader(refreshingBlock:refreshingBlock);
-        header?.activityIndicatorViewStyle = .gray
-        header?.labelLeftInset = 0
-        header?.setTitle("", for: .idle)
-        header?.setTitle("", for: .pulling)
-        header?.setTitle("", for: .refreshing)
-        header?.lastUpdatedTimeLabel.text = ""
-        header?.lastUpdatedTimeText = { _ in return "" }
-        return header!
+        header.activityIndicatorViewStyle = .gray
+        header.labelLeftInset = 0
+        header.setTitle("", for: .idle)
+        header.setTitle("", for: .pulling)
+        header.setTitle("", for: .refreshing)
+        header.lastUpdatedTimeLabel?.text = ""
+        header.lastUpdatedTimeText = { _ in return "" }
+        return header
     }
     
     open func willLoadRequest(_ request: URLRequest) -> URLRequest {
@@ -300,12 +301,15 @@ open class APWKWebView: WKWebView, WKNavigationDelegate {
             decisionHandler(ret ? .allow : .cancel)
         }
     }
+    
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         delegate?.webView?(webView, didStartProvisionalNavigation: navigation)
     }
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if let header = self.scrollView.mj_header {
-            header.endRefreshing()//结束下拉刷新
+        if let header = self.scrollView.mj_header, header.isRefreshing {
+            Async.main(after: 1) {
+                header.endRefreshing()//结束下拉刷新
+            }
         }
         if !userSelectEnable {
             self.evaluateJavaScript("document.documentElement.style.webkitUserSelect='none';") {_,_ in}

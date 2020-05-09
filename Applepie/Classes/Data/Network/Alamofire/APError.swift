@@ -23,7 +23,7 @@ open class APError : NSError {
     public var statusCode: Int = 0
     public var message: String = ""
     public var originalMessage: String = ""
-    open var defaultMessage = "网络异常"
+    open var defaultMessage = "Unkown Error"
     
     public init(statusCode: Int, message: String) {
         self.statusCode = statusCode

@@ -17,47 +17,35 @@ public struct APNetClient {
     
     public static func getNetworkStatus() -> Guarantee<NetworkReachabilityManager.NetworkReachabilityStatus> {
         return Guarantee { sink in
-            reachability?.listener = { status in
+            reachability?.startListening(onUpdatePerforming: { status in
                 reachability?.stopListening()
-                sink(status)
-            }
-            reachability?.startListening()
+            })
         }
     }
     
-    public static var sessions: [String: SessionManager] = [:]
+    public static var sessions: [String: Session] = [:]
     
-    public static func getSessionManager(api: APNetApi) -> SessionManager {
+    public static func getSession(api: APNetApi) -> Session {
         if sessions.keys.contains(api.sessionIdentifier) {
-            let sm = sessions[api.sessionIdentifier]!
-            let handler = api.requestHandler
-            sm.adapter = handler
-            sm.retrier = handler
-            sm.startRequestsImmediately = false
-            return sm
+            return sessions[api.sessionIdentifier]!
         }
-        let sessionManager: SessionManager = {
+        let sessionManager: Session = {
             let configuration = URLSessionConfiguration.default
-            var headers: [String : Any] = SessionManager.defaultHTTPHeaders
+            var headers: [String: Any] = HTTPHeaders.default.dictionary as? [String: Any] ?? [:]
             if let baseHeader = api.baseHeaders {
                 headers += baseHeader
             }
             configuration.httpAdditionalHeaders = headers
             configuration.timeoutIntervalForResource = api.timeoutIntervalForResource
             configuration.timeoutIntervalForRequest = api.timeoutIntervalForRequest
-            let sm = SessionManager(configuration: configuration)
-            let handler = api.requestHandler
-            sm.adapter = handler
-            sm.retrier = handler
-            sm.startRequestsImmediately = false
-            return sm
+            return Session(configuration: configuration, startRequestsImmediately: false)
         }()
         sessions[api.sessionIdentifier] = sessionManager
         return sessionManager
     }
     
     public static func clearCookie() {
-        DDLogInfo("[AP][NetClient] 清除Cookie")
+        DDLogInfo("[AP][NetClient] Clear cookie")
         let cookieJar = HTTPCookieStorage.shared
         
         for cookie in cookieJar.cookies! {

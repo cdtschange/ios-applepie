@@ -13,11 +13,10 @@ import Applepie
 public struct DoraemonLib {
     public static func setup() {
         #if DEBUG
-        DoraemonManager.shareInstance()?.addH5DoorBlock { url in
-            guard url != nil else { return }
-            APRouter.route(toUrl: url!)
+        DoraemonManager.shareInstance().addH5DoorBlock { url in
+            APRouter.route(toUrl: url)
         }
-        DoraemonManager.shareInstance()?.install()
+        DoraemonManager.shareInstance().install()
         #endif
     }
 }

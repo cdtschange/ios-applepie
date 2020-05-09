@@ -8,6 +8,7 @@
 
 import Foundation
 import CocoaLumberjack
+import Alamofire
 
 public class APNetIndicatorClient {
     
@@ -58,31 +59,31 @@ public extension APIndicatorProtocol {
     func registerNotification(identifier: String) {
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
-        notificationCenter.addObserver(forName: Notification.Name.Task.DidResume, object: nil, queue: nil) { (notify) in
+        notificationCenter.addObserver(forName: Request.didResumeTaskNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator resume")
-            if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
+            if let task = notify.request?.task {
                 guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
                 model.indicator?.show(inView: model.view, text: model.text, detailText: nil, animated: true)
             }
         }
-        notificationCenter.addObserver(forName: Notification.Name.Task.DidSuspend, object: nil, queue: nil) { (notify) in
+        notificationCenter.addObserver(forName: Request.didSuspendTaskNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator suspend")
-            if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
+            if let task = notify.request?.task {
                 guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
                 model.indicator?.hide(inView: model.view, animated: true)
             }
         }
-        notificationCenter.addObserver(forName: Notification.Name.Task.DidCancel, object: nil, queue: nil) { (notify) in
+        notificationCenter.addObserver(forName: Request.didCancelTaskNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator cancel")
-            if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
+            if let task = notify.request?.task {
                 guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
                 model.indicator?.hide(inView: model.view, animated: true)
                 APNetIndicatorClient.remove(api: model.api)
             }
         }
-        notificationCenter.addObserver(forName: Notification.Name.Task.DidComplete, object: nil, queue: nil) { (notify) in
+        notificationCenter.addObserver(forName: Request.didCompleteTaskNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator complete")
-            if let task = notify.userInfo?[Notification.Key.Task] as? URLSessionTask {
+            if let task = notify.request?.task {
                 guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
                 model.indicator?.hide(inView: model.view, animated: true)
                 APNetIndicatorClient.remove(api: model.api)

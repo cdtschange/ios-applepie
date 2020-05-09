@@ -11,12 +11,14 @@ import CocoaLumberjack
 
 public struct LumberjackLib {
     public static func setup(level: DDLogLevel = DDLogLevel.verbose) {
-        defaultDebugLevel = level
-        DDLog.add(DDTTYLogger.sharedInstance)
-        //        DDLog.add(DDASLLogger.sharedInstance)
-        DDTTYLogger.sharedInstance.colorsEnabled = true
-        DDTTYLogger.sharedInstance.setForegroundColor(UIColor.blue, backgroundColor: nil, for: .info)
-        DDTTYLogger.sharedInstance.setForegroundColor(UIColor(rgba: "#008040"), backgroundColor: nil, for: .verbose)
+        dynamicLogLevel = level
+        if let logger = DDTTYLogger.sharedInstance {
+            DDLog.add(logger)
+            //        DDLog.add(DDASLLogger.sharedInstance)
+            logger.colorsEnabled = true
+            logger.setForegroundColor(UIColor.blue, backgroundColor: nil, for: .info)
+            logger.setForegroundColor(UIColor(rgba: "#008040"), backgroundColor: nil, for: .verbose)
+        }
         DDLogVerbose("Verbose")
         DDLogDebug("Debug")
         DDLogInfo("Info")
