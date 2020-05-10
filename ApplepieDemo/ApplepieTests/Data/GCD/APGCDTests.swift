@@ -211,14 +211,14 @@ class APGCDTests: BaseTestCase {
         wait(for: [expectation], timeout: 10)
     }
     
-    func testArrayConcurrentPerform() {
-        let data = [1, 2, 3]
-        var sum = 0
-        
-        data.concurrentForeach { (ele) in
-            usleep(100000) // 0.1s
-            sum += ele
-        }
-        assert(sum == 6)
-    }
+//    func testArrayConcurrentPerform() {
+//        let data = [1, 2, 3]
+//        var sum = 0
+//        
+//        data.concurrentForeach { (ele) in
+//            usleep(100000) // 0.1s
+//            sum += ele
+//        }
+//        assert(sum == 6)
+//    }
 }

@@ -31,7 +31,8 @@ class MenuListRepository: BaseRepository {
                         MenuModel(title: "Cache", detail: "", url: "MenuListViewController", params: ["type": MenuType.cache.rawValue, "title": "Cache"], callback: nil),
                         MenuModel(title: "Device Info", detail: "", url: "DeviceInfoViewController", params: ["title": "Device Info"], callback: nil),
                         MenuModel(title: "Location", detail: "", url: "LocationViewController", params: ["title": "Location"], callback: nil),
-                        MenuModel(title: "Crash", detail: "", url: "MenuListViewController", params: ["type": MenuType.crash.rawValue, "title": "Crash"], callback: nil)
+                        MenuModel(title: "Crash", detail: "", url: "MenuListViewController", params: ["type": MenuType.crash.rawValue, "title": "Crash"], callback: nil),
+                         MenuModel(title: "Core ML", detail: "", url: "MenuListViewController", params: ["type": MenuType.coreML.rawValue, "title": "Core ML"], callback: nil)
                         
                     ]
                 )
@@ -52,7 +53,7 @@ class MenuListRepository: BaseRepository {
                 sink.fulfill(
                     [
                         MenuModel(title: "Normal Web View Controller", detail: "Visit a website with a BaseWebViewController", url: "", params: [:]) {
-                            APRouter.route(toUrl: "https://www.baidu.com")
+                            APRouter.route(toUrl: "https://www.google.com")
                         },
                         MenuModel(title: "Web View Load From Html data", detail: "Load Html data in WebViewController", url: "", params: [:]) {
                             APRouter.route(toName: "SimpleWebViewController")
@@ -110,6 +111,17 @@ class MenuListRepository: BaseRepository {
                     ]
                 )
             }
+        case .coreML:
+            return Promise { sink in
+                var list = [MenuModel]()
+                if #available(iOS 11.0, *) {
+                    list.append(MenuModel(title: "Detect from image", detail: "Detecting object in still images", url: "DetectFromImageViewController", params: ["title": "Detect from image"], callback: nil))
+                }
+                if #available(iOS 12.0, *) {
+                    list.append(MenuModel(title: "Recognize from camera", detail: "Recognizing objects in live capture", url: "RecognizFromCameraViewController", params: ["title": "Recognize from camera"], callback: nil))
+                }
+                sink.fulfill(list)
+            }
         default:
             return Promise(error: APError(statusCode: APStatusCode.badRequest.rawValue, message: "MenuType Error"))
         }
@@ -119,7 +131,7 @@ class MenuListRepository: BaseRepository {
 enum MenuType: String {
     case none, uiComponent, data,
     listView, webView,
-    cache, crash
+    cache, crash, coreML
 }
 struct MenuModel {
     var title: String

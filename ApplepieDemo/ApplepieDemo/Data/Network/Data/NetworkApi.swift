@@ -44,18 +44,6 @@ open class NetworkApi: APNetApi {
     }
 }
 
-class NetworkApiHander: APRequestHandler {
-    var validate: DataRequest.Validation = { _, _, _ in
-        return DataRequest.ValidationResult.success
-    }
-    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-        return urlRequest
-    }
-    func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-        completion(false, 0.0)
-    }
-}
-
 
 class GetNetworkApi: NetworkApi {
     
@@ -118,7 +106,7 @@ class DeleteNetworkApi: NetworkApi {
     }
 }
 
-class UploadNetworkApi: NetworkApi, APNetApiUploadProtocol {
+class UploadNetworkApi: NetworkApi, APNetApiUpload {
     var dataUrl: URL?
     
     override var url: String {
@@ -135,7 +123,7 @@ class UploadNetworkApi: NetworkApi, APNetApiUploadProtocol {
     }
 }
 
-class MultipartUploadNetworkApi: NetworkApi, APNetApiUploadMultipartProtocol {
+class MultipartUploadNetworkApi: NetworkApi, APNetApiUploadMultipart {
     var files: [APUploadMultipartFile]?
     
     override var url: String {

@@ -11,7 +11,16 @@ import Applepie
 import Alamofire
 import ReactiveCocoa
 
+extension String {
+    /// User info dictionary key representing the `Request` associated with the notification.
+    fileprivate static let requestKey = "org.alamofire.notification.key.request"
+}
+
 class APNetIndicatorClientTests: BaseTestCase {
+    
+    func mockRequest() -> Request {
+        return Session().request(URLRequest(url: URL(string: "https://www.baidu.com")!))
+    }
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,16 +34,6 @@ class APNetIndicatorClientTests: BaseTestCase {
     class TestRequestHandler: APRequestHandler {
         
         weak var testApi: APNetApi!
-        
-        var validate: DataRequest.Validation = { _, _, _ in
-            return DataRequest.ValidationResult.success
-        }
-        func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-            return urlRequest
-        }
-        func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-            completion(false, 0.0)
-        }
     }
     
     func testNetIndicator() {
@@ -43,7 +42,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -60,7 +59,7 @@ class APNetIndicatorClientTests: BaseTestCase {
             assert(model!.indicator === indicator)
             assert(model!.view == view)
             assert(model!.text == text)
-            assert(model!.task != nil)
+            assert(model!.request != nil)
             assert(indicator.showing == true)
         }, failed: { error in
             assertionFailure()
@@ -71,7 +70,7 @@ class APNetIndicatorClientTests: BaseTestCase {
             let api2 = TestNetApi()
             api2.baseUrlString = Constant.urlString
             api2.baseHeaders = Constant.baseHeaders
-            api2.headers = Constant.headers
+            api2.headers = HTTPHeaders(Constant.headers)
             api2.baseParams = Constant.baseParams
             api2.url = "get"
             api2.params = Constant.params
@@ -88,7 +87,7 @@ class APNetIndicatorClientTests: BaseTestCase {
                 assert(model!.indicator === indicator2)
                 assert(model!.view == view2)
                 assert(model!.text == text2)
-                assert(model!.task != nil)
+                assert(model!.request != nil)
                 assert(indicator2.showing == true)
             }, failed: { error in
                 assertionFailure()
@@ -111,7 +110,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -145,7 +144,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -159,7 +158,7 @@ class APNetIndicatorClientTests: BaseTestCase {
             let model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
             assert(model != nil)
             assert(model!.indicator!.showing == true)
-            model!.task!.cancel()
+            model!.request!.cancel()
         }, failed: { error in
             assertionFailure()
             expectation.fulfill()
@@ -181,7 +180,7 @@ class APNetIndicatorClientTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -192,16 +191,16 @@ class APNetIndicatorClientTests: BaseTestCase {
         let view = UIView()
         let text = "Loading"
         
+        let request = mockRequest()
         _ = api.setIndicator(indicator, view: view, text: text)
-        let task = URLSessionTask()
-        APNetIndicatorClient.bind(api: api, task: task)
+        APNetIndicatorClient.bind(api: api, request: request)
         var model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model != nil)
-        NotificationCenter.default.post(name: Notification.Name.Task.DidResume, object: nil, userInfo: [Notification.Key.Task: task])
+        NotificationCenter.default.post(name: Request.didResumeNotification, object: nil, userInfo: [String.requestKey: request])
         model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model != nil)
         assert(model?.indicator?.showing == true)
-        NotificationCenter.default.post(name: Notification.Name.Task.DidCancel, object: nil, userInfo: [Notification.Key.Task: task])
+        NotificationCenter.default.post(name: Request.didCancelNotification, object: nil, userInfo: [String.requestKey: request])
         model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model == nil)
         
@@ -211,8 +210,8 @@ class APNetIndicatorClientTests: BaseTestCase {
         
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
-        api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.baseHeaders = Constant.baseHeaders as [String: Any]
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -223,24 +222,24 @@ class APNetIndicatorClientTests: BaseTestCase {
         let view = UIView()
         let text = "Loading"
         
+        let request = mockRequest()
         _ = api.setIndicator(indicator, view: view, text: text)
-        let task = URLSessionTask()
-        APNetIndicatorClient.bind(api: api, task: task)
+        APNetIndicatorClient.bind(api: api, request: request)
         var model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model != nil)
-        NotificationCenter.default.post(name: Notification.Name.Task.DidResume, object: nil, userInfo: [Notification.Key.Task: task])
+        NotificationCenter.default.post(name: Request.didResumeNotification, object: nil, userInfo: [String.requestKey: request])
         model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model != nil)
         assert(model?.indicator?.showing == true)
-        NotificationCenter.default.post(name: Notification.Name.Task.DidSuspend, object: nil, userInfo: [Notification.Key.Task: task])
+        NotificationCenter.default.post(name: Request.didSuspendNotification, object: nil, userInfo: [String.requestKey: request])
         model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model != nil)
         assert(model?.indicator?.showing == false)
-        NotificationCenter.default.post(name: Notification.Name.Task.DidResume, object: nil, userInfo: [Notification.Key.Task: task])
+        NotificationCenter.default.post(name: Request.didResumeNotification, object: nil, userInfo: [String.requestKey: request])
         model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model != nil)
         assert(model?.indicator?.showing == true)
-        NotificationCenter.default.post(name: Notification.Name.Task.DidComplete, object: nil, userInfo: [Notification.Key.Task: task])
+        NotificationCenter.default.post(name: Request.didCompleteTaskNotification, object: nil, userInfo: [String.requestKey: request])
         model = APNetIndicatorClient.getIndicatorModel(identifier: api.identifier)
         assert(model == nil)
     }

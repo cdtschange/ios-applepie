@@ -28,7 +28,7 @@ class APBaseListViewControllerTests: BaseTestCase {
         let expectation = XCTestExpectation(description: "Complete")
         Promise<Void> { sink in
             APRouter.route(toName: "DataViewController")
-            sink.fulfill()
+            sink.fulfill(())
             }.then {
                 return after(.seconds(1))
             }.done {

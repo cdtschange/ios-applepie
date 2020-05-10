@@ -8,6 +8,7 @@
 
 import UIKit
 import Applepie
+import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DoraemonLib.setup()
         UMengLib.setup()
         
+        APCrashHandler.shared.registerSignalHandler { (signal, exception, tracking) in
+            DDLogError(tracking)
+        }
         return true
     }
     

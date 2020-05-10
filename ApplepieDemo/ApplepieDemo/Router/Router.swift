@@ -11,10 +11,10 @@ import Applepie
 
 public extension APRouter {
     
-    public static var paramsForTabBarRoute: [String: Any] = ["hidesBottomBarWhenPushed": true]
+    static var paramsForTabBarRoute: [String: Any] = ["hidesBottomBarWhenPushed": true]
 
     @discardableResult
-    public static func route(toUrl url: String, params: [String: Any] = [:], animation: Bool = true, pop: Bool = false) -> Bool {
+    static func route(toUrl url: String, params: [String: Any] = [:], animation: Bool = true, pop: Bool = false) -> Bool {
         var newParams = params
         newParams["url"] = url
         return route(toName: "BaseWebViewController", params: newParams, storyboardName: nil, animation: animation, pop: pop)

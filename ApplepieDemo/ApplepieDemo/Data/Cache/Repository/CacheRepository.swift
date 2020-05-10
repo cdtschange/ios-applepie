@@ -8,7 +8,14 @@
 
 import UIKit
 import Applepie
+import SwiftyUserDefaults
 
+extension DefaultsKeys {
+    var userDefaultsString: DefaultsKey<String?> { .init("userDefaultsString") }
+    var userDefaultsInt: DefaultsKey<Int?> { .init("userDefaultsInt") }
+    var userDefaultsDouble: DefaultsKey<Double?> { .init("userDefaultsInt") }
+    var userDefaultsBool: DefaultsKey<Bool?> { .init("userDefaultsInt") }
+}
 class CacheRepository: BaseRepository {
     struct InnerConstant {
         static let keychainIdentifier = "com.cdts.applepiedemo"
@@ -48,34 +55,34 @@ class CacheRepository: BaseRepository {
     
     var userDefaultsString: String? {
         get {
-            return APUserDefaults.object(forKey: "ApplepieDemo.userDefaultsString") as? String
+            return Defaults[\.userDefaultsString]
         }
         set {
-            return APUserDefaults.setObject(newValue, forKey: "ApplepieDemo.userDefaultsString")
+            return Defaults[\.userDefaultsString] = newValue
         }
     }
     var userDefaultsInt: Int? {
         get {
-            return APUserDefaults.object(forKey: "ApplepieDemo.userDefaultsInt") as? Int
+            return Defaults[\.userDefaultsInt]
         }
         set {
-            return APUserDefaults.setObject(newValue, forKey: "ApplepieDemo.userDefaultsInt")
+            return Defaults[\.userDefaultsInt] = newValue
         }
     }
     var userDefaultsDouble: Double? {
         get {
-            return APUserDefaults.object(forKey: "ApplepieDemo.userDefaultsDouble") as? Double
+            return Defaults[\.userDefaultsDouble]
         }
         set {
-            return APUserDefaults.setObject(newValue, forKey: "ApplepieDemo.userDefaultsDouble")
+            return Defaults[\.userDefaultsDouble] = newValue
         }
     }
     var userDefaultsBool: Bool? {
         get {
-            return APUserDefaults.object(forKey: "ApplepieDemo.userDefaultsBool") as? Bool
+            return Defaults[\.userDefaultsBool]
         }
         set {
-            return APUserDefaults.setObject(newValue, forKey: "ApplepieDemo.userDefaultsBool")
+            return Defaults[\.userDefaultsBool] = newValue
         }
     }
     

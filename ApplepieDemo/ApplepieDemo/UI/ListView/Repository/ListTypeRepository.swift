@@ -12,7 +12,7 @@ import PromiseKit
 class ListTypeRepository: BaseRepository {
     func fetchData(index: Int, size: Int) -> Promise<[String]> {
         return Promise { sink in
-            sink.fulfill()
+            sink.fulfill(())
             }.then {
                 return after(.seconds(1))
             }.map { _ in

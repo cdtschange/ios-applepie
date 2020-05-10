@@ -22,8 +22,7 @@ class BundleResourceTests: BaseTestCase {
     func testBundle() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let image = Bundle.apImage(named: "ap_arrow_left@2x")
-        assert(image != nil)
-        assert(Bundle.apImage(named: "abc") == nil)
+        assert(APImages.arrowLeft.image != nil)
+        assert(APImages.arrowRight.image != nil)
     }
 }

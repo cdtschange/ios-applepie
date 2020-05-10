@@ -30,24 +30,18 @@ class APNetApiUploadTests: BaseTestCase {
             
             weak var testApi: APNetApi!
             
-            var validate: DataRequest.Validation = { _, _, _ in
-                return DataRequest.ValidationResult.success
-            }
             func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
                 assert(urlRequest.httpMethod == testApi.method.rawValue)
                 let url = try! testApi.baseUrlString.asURL().appendingPathComponent(testApi.url)
                 assert(urlRequest.url!.absoluteString.starts(with: url.absoluteString))
                 return urlRequest
             }
-            func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-                completion(false, 0.0)
-            }
         }
         
         let api = TestUploadNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.url = "post"
         api.method = .post
         api.dataUrl = url(forResource: "rainbow", withExtension: "jpg")
@@ -55,7 +49,7 @@ class APNetApiUploadTests: BaseTestCase {
         handler.testApi = api
         api.requestHandler = handler
         assert(APNetClient.runningApis().count == 0)
-        api.signal(format: .upload).on(started: {
+        api.signal().on(started: {
             assert(APNetClient.runningApis().count == 1)
             assert(APNetClient.runningApis().first! === api)
         }, failed: { error in
@@ -87,24 +81,18 @@ class APNetApiUploadTests: BaseTestCase {
             
             weak var testApi: APNetApi!
             
-            var validate: DataRequest.Validation = { _, _, _ in
-                return DataRequest.ValidationResult.success
-            }
             func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
                 assert(urlRequest.httpMethod == testApi.method.rawValue)
                 let url = try! testApi.baseUrlString.asURL().appendingPathComponent(testApi.url)
                 assert(urlRequest.url!.absoluteString.starts(with: url.absoluteString))
                 return urlRequest
             }
-            func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-                completion(false, 0.0)
-            }
         }
         
         let api = TestUploadMultipartNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "post"
         api.params = Constant.unicodeParams
@@ -117,7 +105,7 @@ class APNetApiUploadTests: BaseTestCase {
         handler.testApi = api
         api.requestHandler = handler
         assert(APNetClient.runningApis().count == 0)
-        api.signal(format: .multipartUpload).on(started: {
+        api.signal().on(started: {
             assert(APNetClient.runningApis().count == 1)
             assert(APNetClient.runningApis().first! === api)
         }, failed: { error in

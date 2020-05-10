@@ -10,6 +10,7 @@ import UIKit
 import Applepie
 import PromiseKit
 import CoreLocation
+import SwiftLocation
 
 class LocationViewController: BaseListViewController {
     
@@ -60,7 +61,9 @@ class LocationViewController: BaseListViewController {
             _ = self?._viewModel.fetchAddress().done { [weak self] _ in
                 self?.fetchData()
             }
-        }
+        }.catch({ error in
+            print(error)
+        })
         _ = _viewModel.fetchIPLocation().done { [weak self] _ in
             self?.fetchData()
         }
@@ -79,6 +82,9 @@ class LocationViewController: BaseListViewController {
             cell.textLabel?.text = model.title
             if let location = model.detail as? CLLocation {
                 cell.detailTextLabel?.text = "(\(location.coordinate.latitude), \(location.coordinate.longitude))"
+                return
+            } else if let place = model.detail as? IPPlace {
+                cell.detailTextLabel?.text = "(\(place.coordinates?.latitude ?? 0.0), \(place.coordinates?.longitude ?? 0.0))"
                 return
             }
             cell.detailTextLabel?.text = "\(model.detail ?? "")"

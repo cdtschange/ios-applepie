@@ -22,7 +22,14 @@ open class BaseViewController: APBaseViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MobClick.beginLogPageView(NSStringFromClass(self.classForCoder))
+    }
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        MobClick.endLogPageView(NSStringFromClass(self.classForCoder))
+    }
     /*
     // MARK: - Navigation
 
