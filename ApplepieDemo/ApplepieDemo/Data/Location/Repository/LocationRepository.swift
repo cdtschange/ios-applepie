@@ -12,6 +12,7 @@ import PromiseKit
 import CoreLocation
 import CocoaLumberjack
 import ReactiveSwift
+import SwiftLocation
 
 class LocationRepository: BaseRepository {
     
@@ -19,7 +20,7 @@ class LocationRepository: BaseRepository {
         return APLocation.currentLocation
     }
     var gpsLocation: CLLocation?
-    var ipLocation: CLLocation?
+    var ipLocation: IPPlace?
     var continuesLocation: MutableProperty<CLLocation?> = MutableProperty(nil)
     var address: String?
     
@@ -34,13 +35,13 @@ class LocationRepository: BaseRepository {
     }
     
     func fetchGPSLocation() -> Promise<CLLocation> {
-        return APLocation.currentPosition(timeout: .after(10)).map { [weak self] location in
+        return APLocation.currentPosition(timeout: 10).map { [weak self] location in
             self?.gpsLocation = location
             return location
         }
     }
-    func fetchIPLocation() -> Promise<CLLocation> {
-        return APLocation.currentPosition(usingIP: .ipApi).map { [weak self] location in
+    func fetchIPLocation() -> Promise<IPPlace> {
+        return APLocation.currentPosition(usingIP: .ipAPI).map { [weak self] location in
             self?.ipLocation = location
             return location
         }

@@ -85,7 +85,7 @@ class APDeviceTests: BaseTestCase {
         assert(APDevice.getNetworkType(fromStatus: .notReachable) == .none)
         assert(APDevice.getNetworkType(fromStatus: .unknown) == .unknown)
         assert(APDevice.getNetworkType(fromStatus: .reachable(.ethernetOrWiFi)) == .wifi)
-        print(APDevice.getNetworkType(fromStatus: .reachable(.wwan)))
+        print(APDevice.getNetworkType(fromStatus: .reachable(.cellular)))
         
         assert(APNetWorkType.from(technology: CTRadioAccessTechnologyEdge) == .cell2G)
         assert(APNetWorkType.from(technology: CTRadioAccessTechnologyGPRS) == .cell2G)

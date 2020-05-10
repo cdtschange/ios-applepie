@@ -64,7 +64,7 @@ class APIndicatorTests: BaseTestCase {
         firstly {
             Promise { sink in
                 indicator3.showTip(inView: view, text: "text", detailText: "detail", image: UIImage(), offset: CGPoint.zero, animated: false, hideAfter: 0)
-                sink.fulfill()
+                sink.fulfill(())
             }
             }.then {
                 return after(.seconds(1))

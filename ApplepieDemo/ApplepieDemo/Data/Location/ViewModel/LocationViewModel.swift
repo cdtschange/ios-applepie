@@ -11,6 +11,7 @@ import Applepie
 import PromiseKit
 import CoreLocation
 import ReactiveSwift
+import SwiftLocation
 
 class LocationViewModel: BaseListViewModel {
     private var _repository = LocationRepository()
@@ -33,7 +34,7 @@ class LocationViewModel: BaseListViewModel {
     func fetchGPSLocation() -> Promise<CLLocation> {
         return _repository.fetchGPSLocation()
     }
-    func fetchIPLocation() -> Promise<CLLocation> {
+    func fetchIPLocation() -> Promise<IPPlace> {
         return _repository.fetchIPLocation()
     }
     func fetchContinuesLocation() {

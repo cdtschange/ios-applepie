@@ -41,7 +41,7 @@ class APWKWebViewTests: BaseTestCase {
         let expectation = XCTestExpectation(description: "Complete")
         Promise<Void> { sink in
             webView.request(url: "https://www.baidu.com")
-            sink.fulfill()
+            sink.fulfill(())
             }.then { () -> Guarantee<Void> in
                 return after(.seconds(5))
             }.done { data in

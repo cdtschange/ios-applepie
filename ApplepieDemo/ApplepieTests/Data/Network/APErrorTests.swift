@@ -49,12 +49,6 @@ class APErrorTests: BaseTestCase {
         assert(testNSError.statusCode == code)
         assert(testNSError.message == nsError.description)
         
-        
-        let data = try! NSKeyedArchiver.archivedData(withRootObject: error, requiringSecureCoding: false)
-        let coder = try! NSKeyedUnarchiver(forReadingFrom: data)
-        let coderError = APError(coder: coder)
-        assert(coderError != nil)
-        
     }
     
     func testApiError() {
@@ -79,7 +73,7 @@ class APErrorTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -105,7 +99,7 @@ class APErrorTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -131,7 +125,7 @@ class APErrorTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -156,7 +150,7 @@ class APErrorTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -169,7 +163,7 @@ class APErrorTests: BaseTestCase {
         api.url = "post"
         api.method = .post
         api.requestHandler = TestRequestHandler()
-        api.signal(format: .multipartUpload).on(started: {
+        api.signal().on(started: {
         }, failed: { error in
             expectation.fulfill()
         }, completed: {

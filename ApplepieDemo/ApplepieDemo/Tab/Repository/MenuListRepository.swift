@@ -53,7 +53,7 @@ class MenuListRepository: BaseRepository {
                 sink.fulfill(
                     [
                         MenuModel(title: "Normal Web View Controller", detail: "Visit a website with a BaseWebViewController", url: "", params: [:]) {
-                            APRouter.route(toUrl: "https://www.baidu.com")
+                            APRouter.route(toUrl: "https://www.google.com")
                         },
                         MenuModel(title: "Web View Load From Html data", detail: "Load Html data in WebViewController", url: "", params: [:]) {
                             APRouter.route(toName: "SimpleWebViewController")

@@ -8,6 +8,13 @@
 
 import XCTest
 import Applepie
+import SwiftyUserDefaults
+
+extension DefaultsKeys {
+    var name: DefaultsKey<String?> { .init("TestUserDefaultsModel.name") }
+    var age: DefaultsKey<Int?> { .init("TestUserDefaultsModel.age") }
+    var money: DefaultsKey<Double?> { .init("TestUserDefaultsModel.money") }
+}
 
 class APUserDefaultsTests: BaseTestCase {
 
@@ -23,26 +30,26 @@ class APUserDefaultsTests: BaseTestCase {
     struct TestUserDefaultsModel {
         static var name: String? {
             get {
-                return APUserDefaults.object(forKey: "TestUserDefaultsModel.name") as? String
+                return Defaults[\.name]
             }
             set {
-                return APUserDefaults.setObject(newValue, forKey: "TestUserDefaultsModel.name")
+                return Defaults[\.name] = newValue
             }
         }
         static var age: Int? {
             get {
-                return APUserDefaults.object(forKey: "TestUserDefaultsModel.age") as? Int
+                return Defaults[\.age]
             }
             set {
-                return APUserDefaults.setObject(newValue, forKey: "TestUserDefaultsModel.age")
+                return Defaults[\.age] = newValue
             }
         }
         static var money: Double? {
             get {
-                return APUserDefaults.object(forKey: "TestUserDefaultsModel.money") as? Double
+                return Defaults[\.money]
             }
             set {
-                return APUserDefaults.setObject(newValue, forKey: "TestUserDefaultsModel.money")
+                return Defaults[\.money] = newValue
             }
         }
     }
@@ -50,15 +57,7 @@ class APUserDefaultsTests: BaseTestCase {
     func testCache() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        testSingle(key: "testKeyString", value: "test")
-        testSingle(key: "testKeyInt", value: 123)
-        testSingle(key: "testKeyBool", value: true)
-        testSingle(key: "testKeyDouble", value: 1.2)
-        testSingle(key: "testKeyList", value: ["a","b"])
-        testSingle(key: "testKeyListInt", value: [1,2,3])
-        testSingle(key: "testKeyDict", value: ["a": "a1", "b": "b1"])
-        
-        
+ 
         assert(TestUserDefaultsModel.name == nil)
         TestUserDefaultsModel.name = "abc"
         usleep(100000)
@@ -84,13 +83,4 @@ class APUserDefaultsTests: BaseTestCase {
         assert(TestUserDefaultsModel.money == nil)
     }
     
-    func testSingle<T: Equatable & Codable>(key: String, value: T) {
-        assert(APUserDefaults.object(forKey: key) == nil)
-        APUserDefaults.setObject(value, forKey: key)
-        usleep(100000)
-        assert((APUserDefaults.object(forKey: key) as! T) == value)
-        APUserDefaults.removeObject(forKey: key)
-        usleep(100000)
-        assert(APUserDefaults.object(forKey: key) == nil)
-    }
 }

@@ -22,9 +22,6 @@ class APPNetApiPromiseTests: BaseTestCase {
     }
 
     class TestRequestHandler: APRequestHandler {
-        var validate: DataRequest.Validation = { _, _, _ in
-            return DataRequest.ValidationResult.success
-        }
     }
     
     func testThen() {
@@ -37,7 +34,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -50,7 +47,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         firstly {
             Promise { sink in
                 indicator.show(inView: view, text: text, detailText: nil, animated: true)
-                sink.fulfill()
+                sink.fulfill(())
             }
             }.then {
                 api.promise(format: .json)
@@ -78,7 +75,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -87,7 +84,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api2 = TestNetApi()
         api2.baseUrlString = Constant.urlString
         api2.baseHeaders = Constant.baseHeaders
-        api2.headers = Constant.headers
+        api2.headers = HTTPHeaders(Constant.headers)
         api2.baseParams = Constant.baseParams
         api2.url = "get"
         api2.params = Constant.params
@@ -100,7 +97,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         firstly {
             Promise { sink in
                 indicator.show(inView: view, text: text, detailText: nil, animated: true)
-                sink.fulfill()
+                sink.fulfill(())
             }
             }.then(on: DispatchQueue(label: "", qos: .utility)) { () -> Promise<TestNetApi> in
                 assert(Thread.current.isMainThread == false)
@@ -137,7 +134,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -153,7 +150,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         firstly {
             Promise { sink in
                 indicator.show(inView: view, text: text, detailText: nil, animated: true)
-                sink.fulfill()
+                sink.fulfill(())
             }
             }.then {
                 when(fulfilled: api.promise(format: .json), api2.promise(format: .json))
@@ -180,7 +177,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -189,7 +186,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api2 = TestDataNetApi()
         api2.baseUrlString = Constant.imageUrlString
         api2.baseHeaders = Constant.baseHeaders
-        api2.headers = Constant.headers
+        api2.headers = HTTPHeaders(Constant.headers)
         api2.baseParams = Constant.baseParams
         api2.url = "u/883027"
         api2.params = Constant.params
@@ -202,7 +199,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         firstly {
             Promise { sink in
                 indicator.show(inView: view, text: text, detailText: nil, animated: true)
-                sink.fulfill()
+                sink.fulfill(())
             }
             }.then {
                 when(fulfilled: api.promise(format: .json), api2.promise(format: .data))
@@ -236,7 +233,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -252,7 +249,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         firstly {
             Promise { sink in
                 indicator.show(inView: view, text: text, detailText: nil, animated: true)
-                sink.fulfill()
+                sink.fulfill(())
             }
             }.then {
                 api.promise(format: .json)
@@ -278,7 +275,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -302,7 +299,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -326,7 +323,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -348,7 +345,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test error"))
             }
         }
@@ -356,7 +353,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         api.baseUrlString = Constant.urlString
         api.url = "get"
         api.requestHandler = TestRequestHandler()
-        api.promise(format: .upload).done { _ in
+        api.promise().done { _ in
             assertionFailure()
             expectation.fulfill()
             }.catch { error in
@@ -370,7 +367,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Complete")
         class TestRequestHandler: APRequestHandler {
-            var validate: DataRequest.Validation = { _, _, _ in
+            func validate(request: URLRequest?, response: HTTPURLResponse, data: Data?) -> DataRequest.ValidationResult {
                 return DataRequest.ValidationResult.failure(APError(statusCode: APStatusCode.badRequest.rawValue, message: "test cancel"))
             }
         }
@@ -383,7 +380,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         api.url = "post"
         api.method = .post
         api.requestHandler = TestRequestHandler()
-        api.promise(format: .multipartUpload).done { _ in
+        api.promise().done { _ in
             assertionFailure()
             expectation.fulfill()
             }.catch { error in
@@ -403,24 +400,18 @@ class APPNetApiPromiseTests: BaseTestCase {
             
             weak var testApi: APNetApi!
             
-            var validate: DataRequest.Validation = { _, _, _ in
-                return DataRequest.ValidationResult.success
-            }
             func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
                 assert(urlRequest.httpMethod == testApi.method.rawValue)
                 let url = try! testApi.baseUrlString.asURL().appendingPathComponent(testApi.url)
                 assert(urlRequest.url!.absoluteString.starts(with: url.absoluteString))
                 return urlRequest
             }
-            func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-                completion(false, 0.0)
-            }
         }
         
         let api = TestUploadNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.url = "post"
         api.method = .post
         api.dataUrl = url(forResource: "rainbow", withExtension: "jpg")
@@ -428,7 +419,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         handler.testApi = api
         api.requestHandler = handler
         
-        api.promise(format: .upload).done { _ in
+        api.promise().done { _ in
             assert(api.responseData != nil)
             expectation.fulfill()
             }.catch { error in
@@ -448,24 +439,18 @@ class APPNetApiPromiseTests: BaseTestCase {
             
             weak var testApi: APNetApi!
             
-            var validate: DataRequest.Validation = { _, _, _ in
-                return DataRequest.ValidationResult.success
-            }
             func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
                 assert(urlRequest.httpMethod == testApi.method.rawValue)
                 let url = try! testApi.baseUrlString.asURL().appendingPathComponent(testApi.url)
                 assert(urlRequest.url!.absoluteString.starts(with: url.absoluteString))
                 return urlRequest
             }
-            func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-                completion(false, 0.0)
-            }
         }
         
         let api = TestUploadMultipartNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "post"
         api.params = Constant.unicodeParams
@@ -478,7 +463,7 @@ class APPNetApiPromiseTests: BaseTestCase {
         handler.testApi = api
         api.requestHandler = handler
         
-        api.promise(format: .multipartUpload).done { _ in
+        api.promise().done { _ in
             assert(api.responseData != nil)
             expectation.fulfill()
             }.catch { error in

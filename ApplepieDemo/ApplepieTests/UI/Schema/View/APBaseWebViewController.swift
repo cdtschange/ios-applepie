@@ -28,7 +28,7 @@ class APBaseWebViewControllerTests: BaseTestCase {
         let expectation = XCTestExpectation(description: "Complete")
         Promise<Void> { sink in
             APRouter.route(toUrl: "https://www.baidu.com", name: "BaseWebViewController")
-            sink.fulfill()
+            sink.fulfill(())
             }.then {
                 return after(.seconds(5))
             }.done {
