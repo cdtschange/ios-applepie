@@ -30,16 +30,12 @@ class APNetApiResponseTests: BaseTestCase {
         class TestRequestHandler: APRequestHandler {
             
             weak var testApi: APNetApi!
-            
-            var validate: DataRequest.Validation = { _, _, _ in
-                return DataRequest.ValidationResult.success
-            }
         }
         
         let api = TestNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -78,9 +74,6 @@ class APNetApiResponseTests: BaseTestCase {
             
             weak var testApi: APNetApi!
             
-            var validate: DataRequest.Validation = { _, _, _ in
-                return DataRequest.ValidationResult.success
-            }
             func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
                 assert(urlRequest.httpMethod == testApi.method.rawValue)
                 let url = try! testApi.baseUrlString.asURL().appendingPathComponent(testApi.url)
@@ -88,15 +81,12 @@ class APNetApiResponseTests: BaseTestCase {
                 assert(urlRequest.url!.query!.ap.queryDictionary == (Constant.baseParams + Constant.params))
                 return urlRequest
             }
-            func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-                completion(false, 0.0)
-            }
         }
         
         let api = TestStringNetApi()
         api.baseUrlString = Constant.urlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "get"
         api.params = Constant.params
@@ -129,9 +119,6 @@ class APNetApiResponseTests: BaseTestCase {
             
             weak var testApi: APNetApi!
             
-            var validate: DataRequest.Validation = { _, _, _ in
-                return DataRequest.ValidationResult.success
-            }
             func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
                 assert(urlRequest.httpMethod == testApi.method.rawValue)
                 let url = try! testApi.baseUrlString.asURL().appendingPathComponent(testApi.url)
@@ -139,15 +126,12 @@ class APNetApiResponseTests: BaseTestCase {
                 assert(urlRequest.url!.query!.ap.queryDictionary == (Constant.baseParams + Constant.params))
                 return urlRequest
             }
-            func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-                completion(false, 0.0)
-            }
         }
         
         let api = TestDataNetApi()
         api.baseUrlString = Constant.imageUrlString
         api.baseHeaders = Constant.baseHeaders
-        api.headers = Constant.headers
+        api.headers = HTTPHeaders(Constant.headers)
         api.baseParams = Constant.baseParams
         api.url = "u/883027"
         api.params = Constant.params

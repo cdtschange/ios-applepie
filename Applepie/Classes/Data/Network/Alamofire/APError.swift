@@ -10,7 +10,7 @@ import Foundation
 
 public enum APStatusCode: Int {
     case `default` = 0
-    case canceled = -999
+    case canceled = 15
     case validateFailed = -99999
     case badRequest = 400
     case unAuthorized = 401

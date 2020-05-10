@@ -165,9 +165,7 @@ public extension APNetApi {
             }
             return session.request(requestUrl, method: self.method, parameters: requestParams, headers: self.headers, interceptor: self.requestHandler)
         }()
-        if let task = request.task {
-            APNetIndicatorClient.bind(api: self, task: task)
-        }
+        APNetIndicatorClient.bind(api: self, request: request)
         request.resume()
         if let validate = requestHandler?.validate {
             return request.validate(validate)
@@ -176,19 +174,31 @@ public extension APNetApi {
     }
     
     private func handleError(_ error: Error, request: URLRequest? = nil, response: HTTPURLResponse? = nil) -> (APError, Bool) {
-        let error = error as NSError
-        if let statusCode = APStatusCode(rawValue:error.code) {
+        if let error = error as? NSError, let statusCode = APStatusCode(rawValue:error.code) {
             switch(statusCode) {
             case .canceled:
-                DDLogWarn("[AP][NetApi] Request cancel: \(request!.url!.absoluteString)")
+                DDLogWarn("[AP][NetApi] Request cancel: \(request?.url?.absoluteString ?? "")")
                 let err = APError(statusCode: statusCode.rawValue, message: "Request cancel")
                 self.error = err
                 return (err, true)
             default:
                 break
             }
+        } else if let error = error as? AFError {
+            switch error {
+            case .responseValidationFailed(reason: .customValidationFailed(error: let error)):
+                if let error = error as? APError, let statusCode = APStatusCode(rawValue:error.code), statusCode == .canceled {
+                    DDLogWarn("[AP][NetApi] Request cancel: \(request?.url?.absoluteString ?? "")")
+                    let err = APError(statusCode: statusCode.rawValue, message: "Request cancel")
+                    self.error = err
+                    return (err, true)
+                }
+            default:
+                break
+            }
+            
         }
-        let err = error is APError ? error as! APError : APError(error: error)
+        let err = error is APError ? error as! APError : APError(error: error as NSError)
         err.response = response
         self.error = err
         DDLogError("[AP][NetApi] Request failed: \(request!.url!.absoluteString), error: \(err)")

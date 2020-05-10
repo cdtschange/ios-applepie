@@ -52,6 +52,7 @@
 		7A80DE9921EF1757003C3D8F /* BundleResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80DE9821EF1757003C3D8F /* BundleResourceTests.swift */; };
 		7A8482DA21BF4AF600CFC910 /* APLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8482D921BF4AF600CFC910 /* APLocationTests.swift */; };
 		7A97734021AC403E00E79893 /* APGCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97733F21AC403E00E79893 /* APGCDTests.swift */; };
+		7AACE13E2467E94F00DA9A35 /* ImageExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACE13D2467E94F00DA9A35 /* ImageExTests.swift */; };
 		7AB5574F2223E99B00DCF393 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB5574E2223E99A00DCF393 /* UserNotifications.framework */; };
 		7AB71B7221918A9500D41919 /* DictionaryExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7121918A9500D41919 /* DictionaryExTests.swift */; };
 		7AB71B7421918D4D00D41919 /* StringExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB71B7321918D4D00D41919 /* StringExTests.swift */; };
@@ -203,6 +204,7 @@
 		7A80DE9821EF1757003C3D8F /* BundleResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleResourceTests.swift; sourceTree = "<group>"; };
 		7A8482D921BF4AF600CFC910 /* APLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLocationTests.swift; sourceTree = "<group>"; };
 		7A97733F21AC403E00E79893 /* APGCDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APGCDTests.swift; sourceTree = "<group>"; };
+		7AACE13D2467E94F00DA9A35 /* ImageExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExTests.swift; sourceTree = "<group>"; };
 		7AB5574E2223E99A00DCF393 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		7AB71B7121918A9500D41919 /* DictionaryExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExTests.swift; sourceTree = "<group>"; };
 		7AB71B7321918D4D00D41919 /* StringExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExTests.swift; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				7A80DE8A21EF045E003C3D8F /* UIColorExTests.swift */,
 				7A80DE8C21EF05A7003C3D8F /* DateExTests.swift */,
 				7A80DE9821EF1757003C3D8F /* BundleResourceTests.swift */,
+				7AACE13D2467E94F00DA9A35 /* ImageExTests.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1385,6 +1388,7 @@
 				7A0E271E21957F48001FE212 /* APNetApiResponseTests.swift in Sources */,
 				7A80DE8321EEF8C5003C3D8F /* APBaseViewControllerTests.swift in Sources */,
 				7A80DE8B21EF045E003C3D8F /* UIColorExTests.swift in Sources */,
+				7AACE13E2467E94F00DA9A35 /* ImageExTests.swift in Sources */,
 				7A80DE8721EEFE5E003C3D8F /* APBaseWebViewController.swift in Sources */,
 				7AC5D13A21942941006ABC48 /* TestNetApi.swift in Sources */,
 				7A0E271B21956447001FE212 /* BaseTestCase.swift in Sources */,

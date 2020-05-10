@@ -17,7 +17,7 @@ public class APNetIndicatorClient {
         public weak var indicator: APIndicatorProtocol?
         public weak var view: UIView?
         public var text: String?
-        public var task: URLSessionTask?
+        public var request: Request?
     }
     
     public static var indicators: [String: IndicatorModel] = [:]
@@ -28,27 +28,31 @@ public class APNetIndicatorClient {
     public static func remove(indicator: APIndicatorProtocol) {
         let models = indicators.filter { (key, value) in value.indicator === indicator }
         for (_, value) in models {
-            if let task = value.task {
-                task.cancel()
-                DDLogVerbose("[AP][NetIndicator] Cancel task: \(task.taskIdentifier)")
+            if let request = value.request {
+                request.cancel()
+                DDLogVerbose("[AP][NetIndicator] Cancel request: \(request.id)")
             }
         }
     }
     
     public static func add(api: APNetApi, indicator: APIndicatorProtocol?, view: UIView?, text: String?) {
         DDLogDebug("[AP][NetIndicator][+][\(indicators.count)] \(api)")
-        indicators[api.identifier] = IndicatorModel(api: api, indicator: indicator, view: view, text: text, task: nil)
+        indicators[api.identifier] = IndicatorModel(api: api, indicator: indicator, view: view, text: text, request: nil)
     }
     public static func remove(api: APNetApi) {
-        if let _ = indicators.removeValue(forKey: api.identifier) {
+        if let model = indicators.removeValue(forKey: api.identifier) {
+            model.indicator?.hide(inView: model.view, animated: true)
             DDLogDebug("[AP][NetIndicator][-][\(indicators.count)] \(api)")
         }
     }
-    public static func bind(api: APNetApi, task: URLSessionTask) {
+    public static func bind(api: APNetApi, request: Request, show: Bool = true) {
         if var model = indicators[api.identifier] {
-            model.task = task
+            model.request = request
             indicators[api.identifier] = model
             model.indicator?.registerNotification(identifier: api.identifier)
+            if show {
+                model.indicator?.show(inView: model.view, text: model.text, detailText: nil, animated: true)
+            }
         }
     }
     
@@ -59,33 +63,31 @@ public extension APIndicatorProtocol {
     func registerNotification(identifier: String) {
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
-        notificationCenter.addObserver(forName: Request.didResumeTaskNotification, object: nil, queue: nil) { (notify) in
+        notificationCenter.addObserver(forName: Request.didResumeNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator resume")
-            if let task = notify.request?.task {
-                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
+            if let request = notify.request {
+                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.request == request else { return }
                 model.indicator?.show(inView: model.view, text: model.text, detailText: nil, animated: true)
             }
         }
-        notificationCenter.addObserver(forName: Request.didSuspendTaskNotification, object: nil, queue: nil) { (notify) in
+        notificationCenter.addObserver(forName: Request.didSuspendNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator suspend")
-            if let task = notify.request?.task {
-                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
+            if let request = notify.request {
+                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.request == request else { return }
                 model.indicator?.hide(inView: model.view, animated: true)
             }
         }
-        notificationCenter.addObserver(forName: Request.didCancelTaskNotification, object: nil, queue: nil) { (notify) in
+        notificationCenter.addObserver(forName: Request.didCancelNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator cancel")
-            if let task = notify.request?.task {
-                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
-                model.indicator?.hide(inView: model.view, animated: true)
+            if let request = notify.request {
+                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.request == request else { return }
                 APNetIndicatorClient.remove(api: model.api)
             }
         }
         notificationCenter.addObserver(forName: Request.didCompleteTaskNotification, object: nil, queue: nil) { (notify) in
             DDLogVerbose("Task Indicator complete")
-            if let task = notify.request?.task {
-                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.task == task else { return }
-                model.indicator?.hide(inView: model.view, animated: true)
+            if let request = notify.request {
+                guard let model = APNetIndicatorClient.getIndicatorModel(identifier: identifier), model.request == request else { return }
                 APNetIndicatorClient.remove(api: model.api)
             }
         }

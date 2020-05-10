@@ -27,7 +27,7 @@ class APLocationTests: BaseTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let expectation = XCTestExpectation(description: "Complete")
         print(APLocation.currentLocation ?? "")
-        APLocation.currentPosition(timeout: .after(3)).then { location -> Promise<[CLPlacemark]?> in
+        APLocation.currentPosition(timeout: 3).then { location -> Promise<[CLPlacemark]?> in
                 print(location)
                 print(APLocation.currentLocation ?? "")
                 return APLocation.transferToPlace(location: location)
@@ -45,10 +45,10 @@ class APLocationTests: BaseTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let expectation = XCTestExpectation(description: "Complete")
         print(APLocation.currentLocation ?? "")
-        APLocation.currentPosition(usingIP: .ipApi).then { location -> Promise<[CLPlacemark]?> in
+        APLocation.currentPosition(usingIP: .ipAPI).then { location -> Promise<[CLPlacemark]?> in
             print(location)
             print(APLocation.currentLocation ?? "")
-            return APLocation.transferToPlace(location: location)
+            return APLocation.transferToPlace(location: CLLocation(latitude: location.coordinates!.latitude, longitude: location.coordinates!.longitude))
             }.done { placemarks in
                 print(placemarks ?? "")
                 expectation.fulfill()

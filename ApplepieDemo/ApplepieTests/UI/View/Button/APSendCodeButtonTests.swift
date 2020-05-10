@@ -45,7 +45,7 @@ class APSendCodeButtonTests: BaseTestCase {
                 assert(button.isSelected == false)
                 assert(button.isUserInteractionEnabled == true)
                 button.countDown(2)
-                sink.fulfill()
+                sink.fulfill(())
             }.then { () -> Guarantee<Void> in
                 assert(button.isSelected == true)
                 assert(button.isUserInteractionEnabled == false)

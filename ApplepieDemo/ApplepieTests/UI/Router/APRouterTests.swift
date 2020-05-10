@@ -35,7 +35,7 @@ class APRouterTests: BaseTestCase {
         let expectation = XCTestExpectation(description: "Complete")
         let root = UIViewController.topMostViewController()
         var v2: ViewController2?
-        let delayTime = 600
+        let delayTime = 1000
 
         firstly {
             assert(root != nil)
@@ -164,7 +164,7 @@ class APRouterTests: BaseTestCase {
             }.done { _ in
                 expectation.fulfill()
             }
-        wait(for: [expectation], timeout: 30)
+        wait(for: [expectation], timeout: 60)
 
     }
 

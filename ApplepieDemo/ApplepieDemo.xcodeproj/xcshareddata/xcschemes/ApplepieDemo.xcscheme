@@ -41,10 +41,10 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A02DEEE2182F11500B41DB6"
+            BlueprintIdentifier = "D14559877113E9C55AE3EAA8F44D1126"
             BuildableName = "Applepie.framework"
             BlueprintName = "Applepie"
-            ReferencedContainer = "container:ApplepieDemo.xcodeproj">
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>

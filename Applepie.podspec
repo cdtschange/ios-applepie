@@ -94,7 +94,11 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "Applepie/Classes/**/*"
-  s.resource = "Applepie/Resources/*"
+#  s.resource = "Applepie/Resources/*"
+  
+  s.resource_bundles = {
+      'Applepie' => ['Applepie/Resources/*.xcassets']
+  }
   
   # s.exclude_files = "Classes/Exclude"
 

@@ -19,6 +19,7 @@ public struct APNetClient {
         return Guarantee { sink in
             reachability?.startListening(onUpdatePerforming: { status in
                 reachability?.stopListening()
+                sink(status)
             })
         }
     }
@@ -29,7 +30,7 @@ public struct APNetClient {
         if sessions.keys.contains(api.sessionIdentifier) {
             return sessions[api.sessionIdentifier]!
         }
-        let sessionManager: Session = {
+        let session: Session = {
             let configuration = URLSessionConfiguration.default
             var headers: [String: Any] = HTTPHeaders.default.dictionary as? [String: Any] ?? [:]
             if let baseHeader = api.baseHeaders {
@@ -40,8 +41,8 @@ public struct APNetClient {
             configuration.timeoutIntervalForRequest = api.timeoutIntervalForRequest
             return Session(configuration: configuration, startRequestsImmediately: false)
         }()
-        sessions[api.sessionIdentifier] = sessionManager
-        return sessionManager
+        sessions[api.sessionIdentifier] = session
+        return session
     }
     
     public static func clearCookie() {
