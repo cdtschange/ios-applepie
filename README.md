@@ -2,13 +2,13 @@
 
 <p align="left">
     <a href="">
-        <img src="http://img.shields.io/badge/OS%20X-10.10%2B-blue.svg" />
+        <img src="http://img.shields.io/badge/OS%20X-10.15%2B-blue.svg" />
     </a>
     <a href="">
-        <img src="http://img.shields.io/badge/Swift-4.2-blue.svg" />
+        <img src="http://img.shields.io/badge/Swift-5-blue.svg" />
     </a>
     <a href="">
-        <img src="https://img.shields.io/badge/ios-9.0+-blue.svg" />
+        <img src="https://img.shields.io/badge/ios-10.0+-blue.svg" />
     </a>
     <a href="">
         <img src="https://img.shields.io/cocoapods/v/Applepie.svg" />

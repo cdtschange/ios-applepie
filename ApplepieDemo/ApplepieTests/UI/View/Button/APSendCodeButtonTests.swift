@@ -33,10 +33,10 @@ class APSendCodeButtonTests: BaseTestCase {
         assert(button.isUserInteractionEnabled == true)
 
         
-        let data = try! NSKeyedArchiver.archivedData(withRootObject: button, requiringSecureCoding: false)
-        let coder = try! NSKeyedUnarchiver(forReadingFrom: data)
-        let button2 = APSendCodeButton(coder: coder)
-        assert(button2 != nil)
+//        let data = try! NSKeyedArchiver.archivedData(withRootObject: button, requiringSecureCoding: false)
+//        let coder = try! NSKeyedUnarchiver(forReadingFrom: data)
+//        let button2 = APSendCodeButton(coder: coder)
+//        assert(button2 != nil)
         
         let expectation = XCTestExpectation(description: "Complete")
         
