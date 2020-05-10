@@ -11,7 +11,7 @@ branches:
   - master
 
 before_install:
-    - gem install xcpretty -N --no-document --no-rdoc
+    - gem install xcpretty -N --no-document
     - pod repo update
     - pod install --project-directory=ApplepieDemo
 
