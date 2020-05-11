@@ -18,7 +18,7 @@ before_install:
 script:
 - |
     set -o pipefail
-    xcodebuild clean test -workspace ApplepieDemo/ApplepieDemo.xcworkspace -scheme ApplepieDemo -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' -enableCodeCoverage YES | bundle exec xcpretty
+    travis_wait 60 xcodebuild clean test -workspace ApplepieDemo/ApplepieDemo.xcworkspace -scheme ApplepieDemo -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' -enableCodeCoverage YES | bundle exec xcpretty
 after_success:
     - sleep 5
     - bash <(curl -s https://codecov.io/bash)
