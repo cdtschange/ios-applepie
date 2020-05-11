@@ -22,24 +22,24 @@ class APLocationTests: BaseTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testLocation() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let expectation = XCTestExpectation(description: "Complete")
-        print(APLocation.currentLocation ?? "")
-        APLocation.currentPosition(timeout: 3).then { location -> Promise<[CLPlacemark]?> in
-                print(location)
-                print(APLocation.currentLocation ?? "")
-                return APLocation.transferToPlace(location: location)
-            }.done { placemarks in
-                print(placemarks ?? "")
-                expectation.fulfill()
-            }.catch { error in
-                print(error)
-                expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 10)
-    }
+//    func testLocation() {
+//        // This is an example of a functional test case.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//        let expectation = XCTestExpectation(description: "Complete")
+//        print(APLocation.currentLocation ?? "")
+//        APLocation.currentPosition(timeout: 3).then { location -> Promise<[CLPlacemark]?> in
+//                print(location)
+//                print(APLocation.currentLocation ?? "")
+//                return APLocation.transferToPlace(location: location)
+//            }.done { placemarks in
+//                print(placemarks ?? "")
+//                expectation.fulfill()
+//            }.catch { error in
+//                print(error)
+//                expectation.fulfill()
+//        }
+//        wait(for: [expectation], timeout: 10)
+//    }
     func testIPLocation() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
