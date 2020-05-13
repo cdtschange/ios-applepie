@@ -18,7 +18,7 @@ public enum APStatusCode: Int {
     
 }
 
-open class APError : NSError {
+open class APError: NSError {
     public var response: HTTPURLResponse?
     public var statusCode: Int = 0
     public var message: String = ""

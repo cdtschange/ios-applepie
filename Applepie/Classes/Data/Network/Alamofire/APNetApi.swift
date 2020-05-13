@@ -12,6 +12,8 @@ import ReactiveSwift
 import PromiseKit
 import CocoaLumberjack
 
+public typealias APResult<Success> = Swift.Result<Success, APError>
+
 public enum APResponseType {
     case json, data, string
 }
@@ -20,9 +22,9 @@ public protocol APNetIndicator {
 }
 
 public protocol APResponseHandler {
-    func adapt(_ result: AFResult<Any>) -> AFResult<Any>
-    func adapt(_ result: AFResult<Data>) -> AFResult<Data>
-    func adapt(_ result: AFResult<String>) -> AFResult<String>
+    func adapt(_ result: APResult<Any>) -> APResult<Any>
+    func adapt(_ result: APResult<Data>) -> APResult<Data>
+    func adapt(_ result: APResult<String>) -> APResult<String>
     
     func fill(data: Any)
     func fill(map: [String: Any])
@@ -105,13 +107,13 @@ public protocol APNetApi: class, APResponseHandler, APNetIndicator {
 
 public extension APNetApi {
     
-    func adapt(_ result: AFResult<Any>) -> AFResult<Any> {
+    func adapt(_ result: APResult<Any>) -> APResult<Any> {
         return result
     }
-    func adapt(_ result: AFResult<Data>) -> AFResult<Data> {
+    func adapt(_ result: APResult<Data>) -> APResult<Data> {
         return result
     }
-    func adapt(_ result: AFResult<String>) -> AFResult<String> {
+    func adapt(_ result: APResult<String>) -> APResult<String> {
         return result
     }
     func fill(data: Any) {
@@ -173,40 +175,44 @@ public extension APNetApi {
         return request
     }
     
-    private func handleError(_ error: Error, request: URLRequest? = nil, response: HTTPURLResponse? = nil) -> (APError, Bool) {
-        if let error = error as? NSError, let statusCode = APStatusCode(rawValue:error.code) {
+    private func handleError(_ error: APError, request: URLRequest? = nil, response: HTTPURLResponse? = nil) -> (APError, Bool) {
+        if let statusCode = APStatusCode(rawValue:error.code) {
             switch(statusCode) {
             case .canceled:
                 DDLogWarn("[AP][NetApi] Request cancel: \(request?.url?.absoluteString ?? "")")
-                let err = APError(statusCode: statusCode.rawValue, message: "Request cancel")
-                self.error = err
-                return (err, true)
+                error.response = response
+                self.error = error
+                return (error, true)
             default:
                 break
             }
-        } else if let error = error as? AFError {
-            switch error {
-            case .responseValidationFailed(reason: .customValidationFailed(error: let error)):
-                if let error = error as? APError, let statusCode = APStatusCode(rawValue:error.code), statusCode == .canceled {
-                    DDLogWarn("[AP][NetApi] Request cancel: \(request?.url?.absoluteString ?? "")")
-                    let err = APError(statusCode: statusCode.rawValue, message: "Request cancel")
-                    self.error = err
-                    return (err, true)
-                }
-            default:
-                break
-            }
-            
         }
-        let err = error is APError ? error as! APError : APError(error: error as NSError)
-        err.response = response
-        self.error = err
-        DDLogError("[AP][NetApi] Request failed: \(request!.url!.absoluteString), error: \(err)")
-        return (err, false)
+        error.response = response
+        self.error = error
+        DDLogError("[AP][NetApi] Request failed: \(request!.url!.absoluteString), error: \(error)")
+        return (error, false)
     }
 }
 
+extension AFResult {
+    func toAPResult() -> APResult<Success> {
+        switch self {
+        case .success(let value):
+            return .success(value)
+        case .failure(let error):
+            if let error = error.asAFError?.underlyingError {
+                if let error = error as? APError {
+                    return .failure(error)
+                } else {
+                    return .failure(APError(error: error as NSError))
+                }
+            }
+            return .failure(APError(error: error as NSError))
+        }
+    }
+}
 public extension APNetApi {
+    
     private func responseJson() -> SignalProducer<Self, APError> {
         APNetClient.add(api: self)
         return SignalProducer { [unowned self] sink, disposable in
@@ -219,7 +225,7 @@ public extension APNetApi {
                 APNetIndicatorClient.remove(api: strongSelf)
                 DDLogInfo("[AP][NetApi] Request complete: \(response.debugDescription)")
                 strongSelf.responseData = response.data
-                let result = strongSelf.adapt(response.result)
+                let result = strongSelf.adapt(response.result.toAPResult())
                 switch result {
                 case .success(let value):
                     strongSelf.fill(data: value)
@@ -254,7 +260,7 @@ public extension APNetApi {
                 APNetIndicatorClient.remove(api: strongSelf)
                 DDLogInfo("[AP][NetApi] Request complete: \(response.debugDescription)")
                 strongSelf.responseData = response.data
-                let result = strongSelf.adapt(response.result)
+                let result = strongSelf.adapt(response.result.toAPResult())
                 switch result {
                 case .success(let value):
                     strongSelf.fill(data: value)
@@ -289,7 +295,7 @@ public extension APNetApi {
                 APNetIndicatorClient.remove(api: strongSelf)
                 DDLogInfo("[AP][NetApi] Request complete: \(response.debugDescription)")
                 strongSelf.responseData = response.data
-                let result = strongSelf.adapt(response.result)
+                let result = strongSelf.adapt(response.result.toAPResult())
                 switch result {
                 case .success(let value):
                     strongSelf.fill(data: value)
