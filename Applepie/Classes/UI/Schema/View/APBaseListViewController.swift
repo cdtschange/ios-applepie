@@ -148,10 +148,10 @@ open class APBaseListViewController:
         DDLogError("Need to implement the function of 'getCellWithTableView'")
         return nil
     }
-    open func fillCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    open func fillCell(with tableView: UITableView, cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         DDLogError("Need to implement the function of 'configureCell'")
     }
-    open func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    open func didSelectCell(with tableView: UITableView, with object: Any, at indexPath: IndexPath) {
     }
     open func object(at indexPath: IndexPath) -> Any? {
         let object = listViewModel.dataArray[indexPath.row]
@@ -167,15 +167,14 @@ open class APBaseListViewController:
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = getCell(with: tableView, at: indexPath)!
         if let object = object(at: indexPath) {
-            fillCell(cell, with: object, at: indexPath)
+            fillCell(with: tableView, cell: cell, with: object, at: indexPath)
         }
         return cell
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let cell = getCell(with: tableView, at: indexPath)!
         if let object = object(at: indexPath) {
-            didSelectCell(cell, with: object, at: indexPath)
+            didSelectCell(with: tableView, with: object, at: indexPath)
         }
     }
     

@@ -56,7 +56,7 @@ class CacheViewController: BaseListViewController {
         }
         return cell
     }
-    override func fillCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func fillCell(with tableView: UITableView, cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         if let model = object as? CacheModel {
             cell.textLabel?.text = model.title
             var value = "\(model.detail ?? "")"
@@ -66,7 +66,7 @@ class CacheViewController: BaseListViewController {
             cell.detailTextLabel?.text = value
         }
     }
-    override func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func didSelectCell(with tableView: UITableView, with object: Any, at indexPath: IndexPath) {
         if let model = object as? CacheModel {
             let type = CacheType(rawValue: self.type)!
             switch model.title {

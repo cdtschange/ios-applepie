@@ -52,12 +52,12 @@ class IndicatorViewController: BaseListViewController {
         }
         return cell
     }
-    override func fillCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func fillCell(with tableView: UITableView, cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         if let text = object as? String {
             cell.textLabel?.text = text
         }
     }
-    override func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func didSelectCell(with tableView: UITableView, with object: Any, at indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             self.showIndicator()

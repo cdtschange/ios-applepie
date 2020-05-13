@@ -77,7 +77,7 @@ class LocationViewController: BaseListViewController {
         }
         return cell
     }
-    override func fillCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func fillCell(with tableView: UITableView, cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         if let model = object as? LocationModel {
             cell.textLabel?.text = model.title
             if let location = model.detail as? CLLocation {
@@ -90,7 +90,7 @@ class LocationViewController: BaseListViewController {
             cell.detailTextLabel?.text = "\(model.detail ?? "")"
         }
     }
-    override func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func didSelectCell(with tableView: UITableView, with object: Any, at indexPath: IndexPath) {
         if let model = object as? LocationModel, let tip = model.detail as? String {
             (indicator as? APIndicator)?.showTip(inView: view, text: nil, detailText: tip, animated: true, hideAfter: 2, completion: {})
         }

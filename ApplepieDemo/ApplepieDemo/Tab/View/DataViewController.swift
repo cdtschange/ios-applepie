@@ -52,13 +52,13 @@ class DataViewController: BaseListViewController {
     override func getCell(with tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell? {
         return tableView.dequeueReusableCell(withIdentifier: InnerConst.CellIdentifier)
     }
-    override func fillCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func fillCell(with tableView: UITableView, cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         if let model = object as? MenuModel {
             cell.textLabel?.text = model.title
             cell.detailTextLabel?.text = model.detail
         }
     }
-    override func didSelectCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func didSelectCell(with tableView: UITableView, with object: Any, at indexPath: IndexPath) {
         if let model = object as? MenuModel {
             if model.url.hasPrefix("http") == true {
                 APRouter.route(toUrl: model.url, params: model.params + APRouter.paramsForTabBarRoute)

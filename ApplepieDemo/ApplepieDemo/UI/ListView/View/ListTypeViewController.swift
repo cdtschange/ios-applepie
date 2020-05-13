@@ -70,7 +70,7 @@ class ListTypeViewController: BaseListViewController {
         }
         return cell
     }
-    override func fillCell(_ cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
+    override func fillCell(with tableView: UITableView, cell: UITableViewCell, with object: Any, at indexPath: IndexPath) {
         if let text = object as? String {
             cell.textLabel?.text = text
         }
