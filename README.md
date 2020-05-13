@@ -38,7 +38,7 @@ Applepie is a convenient sdk for ios project.
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 10.0+
 
 ## Installation
 
